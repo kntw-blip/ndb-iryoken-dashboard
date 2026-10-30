@@ -15,10 +15,12 @@ jobs:
       - run: npm install -g mapshaper@0.6
       - run: bash scripts/geo.sh geo_out
       - name: Report
+        if: always()
         run: |
           echo "::notice title=files::$(ls -la geo_out geo_out/* | sed ':a;N;$!ba;s/\n/%0A/g')"
           echo "::notice title=info::$(cat geo_out/info.txt | head -c 6000 | sed ':a;N;$!ba;s/\n/%0A/g')"
       - name: Push geo branch
+        if: always()
         run: |
           cd geo_out
           git init -q -b geo
