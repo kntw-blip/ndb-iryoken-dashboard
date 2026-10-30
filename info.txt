@@ -1,0 +1,26 @@
+curl rc=0
+warning:  a38.zip appears to use backslashes as path separators
+[o] Wrote geo_out/muni_attr.csv
+[i] Snapped 63770 points
+[dissolve2] Dissolved 116,365 features into 335 features
+[simplify] Repaired 34 intersections
+[filter-slivers] Removed 115,883 slivers using 2+ sqkm variable threshold
+[o] Wrote geo_out/areas_0.5.topo.json
+[dissolve] Dissolved 335 features into 47 features
+[o] Wrote geo_out/prefs_0.5.topo.json
+[i] Snapped 63770 points
+[dissolve2] Dissolved 116,365 features into 335 features
+[simplify] Repaired 29 intersections
+[filter-slivers] Removed 115,893 slivers using 2+ sqkm variable threshold
+[o] Wrote geo_out/areas_1.topo.json
+[dissolve] Dissolved 335 features into 47 features
+[o] Wrote geo_out/prefs_1.topo.json
+total 6012
+drwxr-xr-x 2 runner runner    4096 Oct 30 02:30 .
+drwxr-xr-x 6 runner runner    4096 Oct 30 02:29 ..
+-rw-r--r-- 1 runner runner  474114 Oct 30 02:30 areas_0.5.topo.json
+-rw-r--r-- 1 runner runner  831289 Oct 30 02:30 areas_1.topo.json
+-rw-r--r-- 1 runner runner     742 Oct 30 02:30 info.txt
+-rw-r--r-- 1 runner runner 4056332 Oct 30 02:30 muni_attr.csv
+-rw-r--r-- 1 runner runner  272499 Oct 30 02:30 prefs_0.5.topo.json
+-rw-r--r-- 1 runner runner  500874 Oct 30 02:30 prefs_1.topo.json
