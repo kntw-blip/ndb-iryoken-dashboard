@@ -48,13 +48,17 @@ jobs:
       - name: Build data
         run: |
           mkdir -p site/data
-          python scripts/build_ndb.py raw site/data | grep -v '^parsed' | tee build_log.txt
-          python scripts/build_pop.py raw geo_out site/data | tee -a build_log.txt
+          ls raw raw/ndb geo_out > build_log.txt 2>&1 || true
+          python scripts/build_ndb.py raw site/data 2>&1 | grep -v '^parsed' | tee -a build_log.txt
+          python scripts/build_pop.py raw geo_out site/data 2>&1 | tee -a build_log.txt
           cp geo_out/areas_0.5.topo.json site/data/areas.topo.json
           cp geo_out/prefs_0.5.topo.json site/data/prefs.topo.json
           date -u +%FT%TZ > site/data/built_at.txt
           du -sh site/data
           echo "::notice title=build::$(tail -c 3000 build_log.txt | sed ':a;N;$!ba;s/\n/%0A/g')"
+      - name: Report failure
+        if: failure()
+        run: echo "::error title=log::$(tail -c 4000 build_log.txt 2>/dev/null | sed ':a;N;$!ba;s/\n/%0A/g')"
       - name: Publish to gh-pages
         run: |
           cd site
