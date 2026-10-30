@@ -1,0 +1,27 @@
+name: fetch-raw
+# 一次データを取得して raw ブランチに保存する（開発・検証用）
+on:
+  workflow_dispatch:
+  push:
+    paths: [scripts/fetch.py, .github/workflows/fetch.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install requests beautifulsoup4
+      - run: python scripts/fetch.py raw 2>&1 | tee raw_fetch_stdout.txt
+      - name: Push raw branch
+        run: |
+          mv raw_fetch_stdout.txt raw/
+          cd raw
+          git init -q -b raw
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "raw data $(date -u +%F)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" raw
