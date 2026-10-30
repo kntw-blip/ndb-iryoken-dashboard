@@ -48,15 +48,19 @@ def parse_sheet(rows, kind, grp_label):
     else:
         meta = [str(c).strip() for c in rows[ds - 1][first:first + vals_n]]
     out, bc, bn = [], None, None
+    if bi is None:
+        bc, bn = f"{grp_label[0]}加算:{grp_label[1]}:その他", f"{grp_label[1]} 加算（その他）"
     for r in rows[ds:]:
         if len(r) <= ti: continue
         if bi is not None:
-            if r[bi]: bc, bn = str(r[bi]).strip(), str(r[bi + 1] or "").strip()
+            if str(r[bi] or "").strip(): bc, bn = str(r[bi]).strip(), str(r[bi + 1] or "").strip()
         elif str(r[0] or "").strip():
             lab = str(r[0]).strip()
             bc, bn = f"{grp_label[0]}加算:{grp_label[1]}:{lab}", f"{grp_label[1]} 加算（{lab}）"
         code = num(r[ci])
         if code is None: continue
+        if not bc:
+            bc, bn = f"{grp_label[0]}:{grp_label[1]}:分類なし", f"{grp_label[1]}（分類なし）"
         v = [num(x) for x in r[first:first + vals_n]]
         v += [None] * (vals_n - len(v))
         pt = r[ci + 2]
@@ -64,11 +68,26 @@ def parse_sheet(rows, kind, grp_label):
                         pt=num(pt), total=num(r[ti]), v=v))
     return meta, out
 
-def grp_label_of(base):
-    m = re.match(r"(?:\d+_医科診療行為__)?([A-O])_?([^_]+)__(?:(.+?)_(?:都道府県|性年齢|二次医療圏|款別))?", base)
-    if not m: return ("?", base[:10])
-    sub = m.group(3) or m.group(2)
-    return (m.group(1), sub)
+A_SUBS = ["入院基本料等加算", "入院基本料", "初再診料", "特定入院料", "短期滞在手術等基本料", "看護職員処遇改善評価料"]
+SECTION = {"A": "基本診療料", "B": "医学管理等", "C": "在宅医療", "D": "検査", "E": "画像診断", "F": "投薬", "G": "注射",
+           "H": "リハビリテーション", "I": "精神科専門療法", "J": "処置", "K": "手術・輸血", "L": "麻酔", "M": "放射線治療", "N": "病理診断", "O": "その他"}
+
+def grp_label_of(base, title=""):
+    """(区分の英字, 小区分名) をシートの表題・ファイル名から決める"""
+    t = re.sub(r"\s+", " ", str(title).replace("\u3000", " "))
+    m = re.search(r"月 ?(?:\(歯科\) ?)?([A-OＡ-Ｏ]) ", t)
+    letter = None
+    if m:
+        letter = m.group(1).translate(str.maketrans("ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯ", "ABCDEFGHIJKLMNO"))
+    else:
+        m2 = re.match(r"(?:\d+_医科診療行為__)?([A-O])_?", base)
+        letter = m2.group(1) if m2 else "?"
+    sub = SECTION.get(letter, base[:10])
+    if letter == "A":
+        sub = next((x for x in A_SUBS if x in t or x in base), "基本診療料")
+    elif letter == "K":
+        sub = "輸血料" if "輸血" in base or "輸血" in t else "手術"
+    return (letter, sub)
 
 def setting_of(sheet):
     kasan = "加算" in sheet or "加減算" in sheet
@@ -84,7 +103,7 @@ CANON = None
 for f in reversed(files):
     if kind_of(os.path.basename(f)) == "area":
         wb = CalamineWorkbook.from_path(f)
-        CANON = parse_sheet(wb.get_sheet_by_name(wb.sheet_names[0]).to_python(skip_empty_area=False), "area", grp_label_of(os.path.basename(f)))[0]
+        CANON = parse_sheet(wb.get_sheet_by_name(wb.sheet_names[0]).to_python(skip_empty_area=False), "area", ("?", ""))[0]
         break
 CANON_IDX = {c: i for i, (c, n) in enumerate(CANON)}
 for f in files:
@@ -100,7 +119,7 @@ for f in files:
         if not rows: continue
         fy = fy_of(rows[0][0], ed)
         try:
-            meta, recs = parse_sheet(rows, kind, grp_label_of(os.path.basename(f)))
+            meta, recs = parse_sheet(rows, kind, grp_label_of(os.path.basename(f), rows[0][0]))
         except Exception as e:
             warn[f"parse_error {os.path.basename(f)} {sheet} {e}"] += 1; continue
         if not recs: continue
@@ -121,7 +140,7 @@ for f in files:
         setting, kasan = setting_of(sheet)
         for r in recs:
             gid = (r["bc"] or "NA") + ("_k" if kasan and ":" not in (r["bc"] or "") else "")
-            g = groups.setdefault(gid, {"id": gid, "bc": r["bc"], "name": {}, "cat": grp_label_of(os.path.basename(f))[0], "kasan": kasan, "codes": {}})
+            g = groups.setdefault(gid, {"id": gid, "bc": r["bc"], "name": {}, "cat": grp_label_of(os.path.basename(f), rows[0][0])[0], "kasan": kasan, "codes": {}})
             g["name"][fy] = r["bn"]
             c = g["codes"].setdefault(r["code"], {"name": {}, "pt": {}, "d": {}})
             c["name"][fy] = r["name"]; c["pt"][fy] = r["pt"]
@@ -172,7 +191,7 @@ for gid, g in sorted(groups.items()):
         rec["st"] = sorted(d)
         codes_out[code] = rec
     name = latest(g["name"]) or gid
-    fn = re.sub(r"[^A-Za-z0-9_]", "", gid) if ":" not in gid else "X" + hashlib.md5(gid.encode()).hexdigest()[:10]
+    fn = re.sub(r"[^A-Za-z0-9_-]", "", gid) if ":" not in gid else "X" + hashlib.md5(gid.encode()).hexdigest()[:10]
     (OUT / "items" / f"{fn}.json").write_text(json.dumps({"id": gid, "name": name, "cat": g["cat"], "kasan": g["kasan"], "codes": codes_out},
                                                          ensure_ascii=False, separators=(",", ":")))
     index.append({"id": gid, "f": fn, "n": name + ("（加算）" if g["kasan"] else ""), "cat": g["cat"], "y": sorted(years),
