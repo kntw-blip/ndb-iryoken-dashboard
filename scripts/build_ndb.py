@@ -79,6 +79,14 @@ def setting_of(sheet):
 groups = {}
 meta_area = {}
 files = sorted(glob.glob(str(RAW / "ndb" / "ed*" / "*.xls*")))
+# 医療圏の並び順は最新回のファイルを基準にする（古い回で並び・区分が異なる場合はコードで並べ替え）
+CANON = None
+for f in reversed(files):
+    if kind_of(os.path.basename(f)) == "area":
+        wb = CalamineWorkbook.from_path(f)
+        CANON = parse_sheet(wb.get_sheet_by_name(wb.sheet_names[0]).to_python(skip_empty_area=False), "area", grp_label_of(os.path.basename(f)))[0]
+        break
+CANON_IDX = {c: i for i, (c, n) in enumerate(CANON)}
 for f in files:
     ed = int(re.search(r"ed(\d+)", f).group(1))
     kind = kind_of(os.path.basename(f))
@@ -98,7 +106,18 @@ for f in files:
         if not recs: continue
         if not recs[0]["code"].startswith("1"):  # 医科診療行為コードは1始まり（歯科3・調剤4等は除外）
             warn["non_ika_sheet"] += 1; continue
-        if kind == "area": meta_area[fy] = meta
+        if kind == "area":
+            meta_area[fy] = meta
+            if meta != CANON:
+                pos = [CANON_IDX.get(c) for c, n in meta]
+                miss = sum(p is None for p in pos)
+                warn[f"area_remap {fy} unmatched={miss}"] += 1
+                if miss: continue  # 医療圏の区分が異なる年は医療圏別データを使わない
+                for r in recs:
+                    nv = [None] * len(CANON)
+                    for j, p in enumerate(pos):
+                        if p is not None and j < len(r["v"]): nv[p] = r["v"][j]
+                    r["v"] = nv
         setting, kasan = setting_of(sheet)
         for r in recs:
             gid = (r["bc"] or "NA") + ("_k" if kasan and ":" not in (r["bc"] or "") else "")
@@ -119,10 +138,7 @@ for f in files:
     print("parsed", f, flush=True)
 
 # 医療圏コード一覧の整合確認
-lists = {fy: tuple(m) for fy, m in meta_area.items()}
-base = lists[max(lists)]
-for fy, m in lists.items():
-    if m != base: warn[f"area_list_differs_{fy}"] += 1
+base = CANON
 
 def latest(d): return d[max(d)] if d else None
 

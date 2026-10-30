@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NDB 医療圏ダッシュボード｜診療行為の地域分析</title>
+<meta name="description" content="厚生労働省NDBオープンデータ（医科診療行為）を都道府県・二次医療圏単位で可視化。人口あたり算定件数、年齢調整比(SCR)、将来推計。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="viz-root">
+<header class="site-header">
+  <div class="wrap">
+    <h1>NDB 医療圏ダッシュボード</h1>
+    <p class="lead">厚生労働省「NDBオープンデータ」の医科診療行為（算定回数）を、都道府県・二次医療圏ごとに人口と組み合わせて見るためのツールです。</p>
+  </div>
+</header>
+
+<section class="controls wrap" aria-label="条件">
+  <div class="ctl ctl-item">
+    <label for="itemSearch">診療行為（分類）</label>
+    <div class="search">
+      <input id="itemSearch" type="search" placeholder="例：特定集中治療室、A301、人工腎臓、内視鏡" autocomplete="off">
+      <div id="searchResults" class="search-results" role="listbox" hidden></div>
+    </div>
+    <div class="item-title"><span id="itemName">読み込み中…</span> <button id="codeToggle" class="link" type="button" aria-expanded="false">対象コードを選ぶ</button></div>
+  </div>
+  <div class="ctl">
+    <label for="setting">入院／外来</label>
+    <select id="setting"><option value="all">全体</option><option value="in">入院</option><option value="out">外来</option></select>
+  </div>
+  <div class="ctl">
+    <label for="prefSel">都道府県</label>
+    <select id="prefSel"></select>
+  </div>
+  <div class="ctl">
+    <label for="areaSel">二次医療圏</label>
+    <select id="areaSel"></select>
+  </div>
+  <div class="ctl">
+    <label for="denom">人口あたりの分母</label>
+    <select id="denom"><option value="t">総人口</option><option value="65">65歳以上人口</option><option value="75">75歳以上人口</option></select>
+  </div>
+</section>
+
+<section id="codePanel" class="wrap code-panel" hidden aria-label="対象コード">
+  <div class="code-tools">
+    <input id="codeFilter" type="search" placeholder="コード名で絞り込み（例：コロナ）">
+    <button id="codeAll" type="button">表示中をすべて選択</button>
+    <button id="codeNone" type="button">表示中をすべて解除</button>
+    <span id="codeCount" class="muted"></span>
+  </div>
+  <div id="codeList" class="code-list"></div>
+</section>
+
+<main class="wrap">
+  <div id="notice" class="notice" hidden></div>
+
+  <section class="kpis" id="kpis" aria-label="主要指標"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>年次推移 <span class="sub" id="trendRegion"></span></h2>
+      <button class="link" data-table="trend" type="button">表で見る</button>
+    </div>
+    <div class="grid3">
+      <figure><figcaption>算定回数</figcaption><div class="chart" id="cCount"></div></figure>
+      <figure><figcaption id="popCap">人口（千人）</figcaption><div class="chart" id="cPop"></div></figure>
+      <figure><figcaption id="rateCap">人口千人あたり算定回数</figcaption><div class="chart" id="cRate"></div></figure>
+    </div>
+    <div class="table-wrap" id="tbl-trend" hidden></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>地域比較 <span class="sub" id="cmpTitle"></span></h2>
+      <div class="inline">
+        <label>指標 <select id="cmpMetric"><option value="rate">人口千人あたり</option><option value="scr">年齢調整比 SCR</option><option value="count">算定回数</option></select></label>
+        <label>年度 <select id="cmpYear"></select></label>
+        <button class="link" data-table="cmp" type="button">表で見る</button>
+      </div>
+    </div>
+    <div class="grid2">
+      <figure><div class="chart tall" id="cMap"></div><figcaption class="note" id="mapNote"></figcaption></figure>
+      <figure><div class="chart tall" id="cRank"></div></figure>
+    </div>
+    <h3 class="h3">医療圏ごとの推移（人口千人あたり・同じ目盛り）</h3>
+    <div id="multiples" class="multiples"></div>
+    <div class="table-wrap" id="tbl-cmp" hidden></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>性・年齢別（全国） <span class="sub" id="saYearLab"></span></h2>
+      <div class="inline">
+        <label>年度 <select id="saYear"></select></label>
+        <button class="link" data-table="sa" type="button">表で見る</button>
+      </div>
+    </div>
+    <div class="grid2">
+      <figure><figcaption>性・年齢階級別 算定回数</figcaption><div class="chart" id="cSa"></div></figure>
+      <figure><figcaption>性・年齢階級別 人口千人あたり算定回数</figcaption><div class="chart" id="cSaRate"></div></figure>
+    </div>
+    <p class="note">NDBオープンデータでは、性・年齢別の内訳は全国単位のみ公表されています（都道府県・医療圏別の内訳はありません）。</p>
+    <div class="table-wrap" id="tbl-sa" hidden></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>将来推計 <span class="sub" id="futTitle"></span></h2>
+      <button class="link" data-table="fut" type="button">表で見る</button>
+    </div>
+    <div class="grid2">
+      <figure><figcaption>推計算定回数</figcaption><div class="chart" id="cFut"></div></figure>
+      <figure><figcaption>指数（2025年＝100）</figcaption><div class="chart" id="cFutIdx"></div></figure>
+    </div>
+    <p class="note" id="futNote"></p>
+    <div class="table-wrap" id="tbl-fut" hidden></div>
+  </section>
+
+  <section class="panel method" id="method">
+    <h2>データと計算方法</h2>
+    <ul>
+      <li><b>出典</b>：厚生労働省「<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html" target="_blank" rel="noopener">NDBオープンデータ</a>」第1回〜第11回（2014〜2024年度診療分）医科診療行為の算定回数。第12回（2025年度）は3か月分のみの公表のため含めていません。</li>
+      <li><b>公費レセプト</b>：年次比較のため、全年度で「公費レセプトを含まない」集計を使っています（公費を含む集計は第10回以降のみ）。</li>
+      <li><b>地域の単位</b>：<b>医療機関の所在地</b>で集計されています。医療圏の値は「その医療圏の医療機関で算定された回数」で、患者の流入・流出を含みます。住民の受療量とは異なります。</li>
+      <li><b>二次医療圏</b>：NDBオープンデータの区分（335医療圏、第7次医療計画）。医療圏別の集計は第5回（2018年度、一部項目）・第6回（2019年度）以降です。「二次医療圏判別不可」は医療圏の集計に含まれません。</li>
+      <li><b>秘匿</b>：10未満（リハビリの単位数は100未満）の値は「‐」で公表されており、本ツールでは0として合計しています。件数の少ない項目・地域では過小になります。</li>
+      <li><b>人口</b>：総務省「住民基本台帳に基づく人口」（翌年1月1日現在、例：2022年度＝2023年1月1日）。市区町村を国土数値情報「医療圏データ（2020年度）」で二次医療圏に集計。</li>
+      <li><b>年齢調整比（SCR）</b>：全国の性・年齢階級別算定率（算定回数÷人口）をその地域の性・年齢別人口に当てはめた期待値に対する、実際の算定回数の比（×100）。100＝全国並み。</li>
+      <li><b>将来推計</b>：国立社会保障・人口問題研究所「日本の地域別将来推計人口（令和5年推計）」に、最新年度の全国の性・年齢階級別算定率を当てはめた期待値の変化率を、地域の実績値に掛けて推計。受療率・診療報酬・医療提供体制は最新年度のまま一定と仮定しています。</li>
+    </ul>
+  </section>
+</main>
+<footer class="wrap foot">
+  <p>データ：厚生労働省 NDBオープンデータ／総務省 住民基本台帳人口／国立社会保障・人口問題研究所／国土交通省 国土数値情報（医療圏データ）を加工して作成。<a href="https://github.com/kentowatanabe00-blip/ndb-iryoken-dashboard" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+</div>
+<script src="vendor/echarts.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
