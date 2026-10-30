@@ -363,7 +363,9 @@ function renderCompare() {
   // 地図
   const geo = U.lv === "pref" ? D.geo.prefs : D.geo.areas;
   if (geo) {
-    const feats = U.lv === "pref" ? geo.features : geo.features.filter((f) => f.properties.code.startsWith(U.pc));
+    // 東京都の島しょは本土から遠く地図が縮むため地図上のみ除外（ランキングには表示）
+    const MAP_SKIP = ["1313"];
+    const feats = U.lv === "pref" ? geo.features : geo.features.filter((f) => f.properties.code.startsWith(U.pc) && !MAP_SKIP.includes(f.properties.code));
     const mapName = U.lv === "pref" ? "jp_prefs" : "areas_" + U.pc;
     if (!echarts.getMap(mapName)) echarts.registerMap(mapName, { type: "FeatureCollection", features: feats });
     const data = vals.map((x) => ({ name: x.u.code, value: x.v, label2: x.u.short }));
@@ -394,7 +396,7 @@ function renderCompare() {
       else { S.area = d.name; $("#areaSel").value = S.area; }
       render();
     });
-    $("#mapNote").textContent = "地図をクリックすると地域を選択できます。" + (U.lv === "area" ? "医療圏は医療機関所在地ベースのため、都市部は周辺からの流入で高く出ます。" : "");
+    $("#mapNote").textContent = "地図をクリックすると地域を選択できます。" + (U.lv === "area" ? "医療圏は医療機関所在地ベースのため、都市部は周辺からの流入で高く出ます。" : "") + (U.pc === "13" ? "島しょは地図から除いています。" : "");
   }
   // 小さな推移グラフ（同じ目盛り）
   const ysT = U.lv === "area" ? yearsOf("area").filter(areaYearOK) : yearsOf("pref");
