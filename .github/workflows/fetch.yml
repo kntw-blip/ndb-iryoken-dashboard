@@ -16,12 +16,19 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install requests beautifulsoup4
       - run: python scripts/fetch.py raw 2>&1 | tee raw_fetch_stdout.txt
+      - name: Summary
+        run: |
+          du -sh raw; find raw -type f | wc -l
+          echo "::notice title=size::$(du -sh raw | cut -f1) / $(find raw -type f | wc -l) files / large: $(find raw -size +90M | tr '\n' ' ')"
+          echo "::notice title=tail::$(tail -c 3000 raw_fetch_stdout.txt | sed ':a;N;$!ba;s/\n/%0A/g')"
+          echo "::notice title=dirs::$(du -sh raw/* raw/ndb/* 2>/dev/null | sed ':a;N;$!ba;s/\n/%0A/g')"
       - name: Push raw branch
         run: |
           mv raw_fetch_stdout.txt raw/
+          find raw -size +95M -print -delete
           cd raw
           git init -q -b raw
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -qm "raw data $(date -u +%F)"
-          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" raw
+          git -c http.postBuffer=524288000 push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" raw
