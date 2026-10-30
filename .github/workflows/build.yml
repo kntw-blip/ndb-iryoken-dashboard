@@ -1,0 +1,66 @@
+name: build-and-publish
+# 一次データ取得 → 加工 → gh-pages ブランチへ公開
+on:
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: "一次データを再取得する（キャッシュを使わない）"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: [site/**, scripts/**, .github/workflows/build.yml]
+  schedule:
+    - cron: "17 21 1 * *"   # 毎月2日 06:17 JST（新しい回の公表を取り込む）
+permissions:
+  contents: write
+concurrency:
+  group: build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: pip install requests beautifulsoup4 python-calamine
+      - run: npm install -g mapshaper@0.6
+      - name: Cache key (月単位で一次データを更新)
+        id: key
+        run: echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        id: cache
+        if: ${{ !inputs.refresh }}
+        with:
+          path: |
+            raw
+            geo_out
+          key: rawdata-v1-${{ steps.key.outputs.month }}
+      - name: Fetch raw data
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          python scripts/fetch.py raw
+          bash scripts/geo.sh geo_out
+      - name: Build data
+        run: |
+          mkdir -p site/data
+          python scripts/build_ndb.py raw site/data | grep -v '^parsed' | tee build_log.txt
+          python scripts/build_pop.py raw geo_out site/data | tee -a build_log.txt
+          cp geo_out/areas_0.5.topo.json site/data/areas.topo.json
+          cp geo_out/prefs_0.5.topo.json site/data/prefs.topo.json
+          date -u +%FT%TZ > site/data/built_at.txt
+          du -sh site/data
+          echo "::notice title=build::$(tail -c 3000 build_log.txt | sed ':a;N;$!ba;s/\n/%0A/g')"
+      - name: Publish to gh-pages
+        run: |
+          cd site
+          touch .nojekyll
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "publish $(date -u +%F)"
+          git -c http.postBuffer=524288000 push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" gh-pages
