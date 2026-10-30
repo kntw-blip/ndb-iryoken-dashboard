@@ -1,0 +1,5970 @@
+{
+ "soumu_past": [
+  {
+   "heading": "",
+   "text": "メインナビゲーションへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToNavi"
+  },
+  {
+   "heading": "",
+   "text": "メインコンテンツへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToContents"
+  },
+  {
+   "heading": "",
+   "text": "フッターへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToFooter"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見・ご提案",
+   "href": "https://www.soumu.go.jp/form/common/opinions.html"
+  },
+  {
+   "heading": "",
+   "text": "ENGLISH(TOP)",
+   "href": "https://www.soumu.go.jp/english/index.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/"
+  },
+  {
+   "heading": "",
+   "text": "Français",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/fr/"
+  },
+  {
+   "heading": "",
+   "text": "Español",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/esp/"
+  },
+  {
+   "heading": "",
+   "text": "Русский",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/rus/"
+  },
+  {
+   "heading": "",
+   "text": "中文",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/chs/"
+  },
+  {
+   "heading": "",
+   "text": "عربي",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/ar/"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介 TOP",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道 TOP",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内 TOP",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令 TOP",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算 TOP",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続 TOP",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省トップ",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方行財政",
+   "href": "https://www.soumu.go.jp/menu_seisaku/chiho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "住民基本台帳等",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数のポイント（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892926.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892947.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892948.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892949.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892952.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892953.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892954.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892955.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892956.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892957.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892958.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892959.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892960.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892961.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(1)",
+   "href": "https://www.soumu.go.jp/main_content/001023676.xls"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(2)",
+   "href": "https://www.soumu.go.jp/main_content/001023677.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "該当ページはこちら",
+   "href": "http://www.e-stat.go.jp/SG1/estat/GL08020101.do?_toGL08020101_&tstatCode=000001039591"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "ページトップへ戻る",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#pTop"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "人口・人口動態及び世帯数",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "マイナンバー制度とマイナンバーカード",
+   "href": "https://www.soumu.go.jp/kojinbango_card/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳ネットワーク",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/daityo/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住所の異動届は正しく行われていますか？",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/important/topics081127.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民票の写しの交付制度等の見直し",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/jyuminhyo_utusi.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "DV等支援措置",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/dv_shien.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "外国人住民に係る住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住居表示制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/juukyo_hyouji_seido.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "総務省ソーシャルアカウント一覧",
+   "href": "https://www.soumu.go.jp/sns/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://x.com/MIC_JAPAN"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.facebook.com/MICJAPAN.gov"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.instagram.com/mic_koho/"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.youtube.com/user/soumuchannel"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://soumu-gov.note.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "関連リンク",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/link.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.fdma.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.e-stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所在地図",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "※ 電話リレーサービス（手話リンク）のご利用について",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/shuwa-link.html"
+  }
+ ],
+ "mlit_a38_2020": [
+  {
+   "heading": "",
+   "text": "国土数値情報ダウンロードサイト",
+   "href": "https://nlftp.mlit.go.jp/"
+  },
+  {
+   "heading": "",
+   "text": "初めての方へ",
+   "href": "https://nlftp.mlit.go.jp/first.html"
+  },
+  {
+   "heading": "",
+   "text": "利用規約",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/agreement.html"
+  },
+  {
+   "heading": "",
+   "text": "その他",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/other.html"
+  },
+  {
+   "heading": "",
+   "text": "お問合せ",
+   "href": "https://nlftp.mlit.go.jp/ksj/inquiry.html"
+  },
+  {
+   "heading": "",
+   "text": "国土数値情報 widgets",
+   "href": "https://nlftp.mlit.go.jp/ksj/index.html"
+  },
+  {
+   "heading": "",
+   "text": "位置参照情報 widgets",
+   "href": "https://nlftp.mlit.go.jp/cgi-bin/isj/dls/_choose_method.cgi"
+  },
+  {
+   "heading": "",
+   "text": "国土調査 widgets",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html"
+  },
+  {
+   "heading": "",
+   "text": "地図で見る widgets",
+   "href": "https://nlftp.mlit.go.jp/webmapc/mapmain.html"
+  },
+  {
+   "heading": "",
+   "text": "初めての方へ",
+   "href": "https://nlftp.mlit.go.jp/first.html"
+  },
+  {
+   "heading": "",
+   "text": "活用事例",
+   "href": "https://nlftp.mlit.go.jp/ksj/case_studies.html"
+  },
+  {
+   "heading": "",
+   "text": "お問合せ",
+   "href": "https://nlftp.mlit.go.jp/ksj/inquiry.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見ご感想",
+   "href": "https://docs.google.com/forms/d/1VfarNUmLFhKzAVWIQNQbfgAdNs1nT2kqTERdBbwq7eo/viewform"
+  },
+  {
+   "heading": "",
+   "text": "その他",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/other.html"
+  },
+  {
+   "heading": "",
+   "text": "データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/ksj/index.html"
+  },
+  {
+   "heading": "",
+   "text": "JPGIS2.1準拠 整備データ一覧",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/gml_datalist.html"
+  },
+  {
+   "heading": "",
+   "text": "国土数値情報とは",
+   "href": "https://nlftp.mlit.go.jp/first.html#about_ksj"
+  },
+  {
+   "heading": "",
+   "text": "GISとは",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/about_GIS.html"
+  },
+  {
+   "heading": "",
+   "text": "国土数値情報のデータ形式",
+   "href": "https://nlftp.mlit.go.jp/ksj/ksj_dataformat.html"
+  },
+  {
+   "heading": "",
+   "text": "国土数値情報 活用事例",
+   "href": "https://nlftp.mlit.go.jp/ksj/case_studies.html"
+  },
+  {
+   "heading": "",
+   "text": "新着情報",
+   "href": "https://nlftp.mlit.go.jp/ksj_news.html"
+  },
+  {
+   "heading": "",
+   "text": "修正情報",
+   "href": "https://nlftp.mlit.go.jp/ksj_error.html"
+  },
+  {
+   "heading": "",
+   "text": "エラー情報",
+   "href": "https://nlftp.mlit.go.jp/ksj/error-report/error-report.html"
+  },
+  {
+   "heading": "",
+   "text": "データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/cgi-bin/isj/dls/_choose_method.cgi"
+  },
+  {
+   "heading": "",
+   "text": "位置参照情報とは",
+   "href": "https://nlftp.mlit.go.jp/isj/index.html"
+  },
+  {
+   "heading": "",
+   "text": "新着情報",
+   "href": "https://nlftp.mlit.go.jp/isj_news.html"
+  },
+  {
+   "heading": "",
+   "text": "修正情報",
+   "href": "https://nlftp.mlit.go.jp/isj_error.html"
+  },
+  {
+   "heading": "",
+   "text": "エラー情報",
+   "href": "https://nlftp.mlit.go.jp/isj/error-report/error-report.html"
+  },
+  {
+   "heading": "",
+   "text": "データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html"
+  },
+  {
+   "heading": "",
+   "text": "GISデータのダウンロード",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/download.html"
+  },
+  {
+   "heading": "",
+   "text": "国土調査とは",
+   "href": "https://nlftp.mlit.go.jp/ksj/kokjo.html"
+  },
+  {
+   "heading": "",
+   "text": "土地分類調査・水調査の概要",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/index.html"
+  },
+  {
+   "heading": "",
+   "text": "土地履歴調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/land_history_2011/index_tile.html"
+  },
+  {
+   "heading": "",
+   "text": "5万分の1都道府県土地分類基本調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_5-1.html"
+  },
+  {
+   "heading": "",
+   "text": "20万分の1土地分類基本調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_20-1.html"
+  },
+  {
+   "heading": "",
+   "text": "50万分の1土地分類基本調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_50-1.html"
+  },
+  {
+   "heading": "",
+   "text": "土地分類調査（細部調査）",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_det.html"
+  },
+  {
+   "heading": "",
+   "text": "20万分の1土地保全基本調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_20-1-hozen.html"
+  },
+  {
+   "heading": "",
+   "text": "災害類型別土地保全調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_d.html"
+  },
+  {
+   "heading": "",
+   "text": "土地分類基本調査（垂直調査）",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/l_national_map_v.html"
+  },
+  {
+   "heading": "",
+   "text": "地形分類図から選ぶ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/chikei_bunrui.html"
+  },
+  {
+   "heading": "",
+   "text": "災害履歴図から選ぶ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/saigai_rireki.html"
+  },
+  {
+   "heading": "",
+   "text": "土地利用図から選ぶ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/tochi_riyou.html"
+  },
+  {
+   "heading": "",
+   "text": "表層地質図から選ぶ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/hyousou_chisitsu.html"
+  },
+  {
+   "heading": "",
+   "text": "土壌図から選ぶ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/land/dojyou.html"
+  },
+  {
+   "heading": "",
+   "text": "表流水",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html#suikei"
+  },
+  {
+   "heading": "",
+   "text": "○主要水系調査（更新調査：2003年～）",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/w_national_map.html"
+  },
+  {
+   "heading": "",
+   "text": "○主要水系調査（1966年～2002年）",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/w_national_map_p.html"
+  },
+  {
+   "heading": "",
+   "text": "○都道府県水調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/w_national_map_pref.html"
+  },
+  {
+   "heading": "",
+   "text": "地下水",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html#suikei"
+  },
+  {
+   "heading": "",
+   "text": "○全国地下水資料台帳",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/f9_exp.html"
+  },
+  {
+   "heading": "",
+   "text": "○地下水の見える化調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/w_national_map_ug.html"
+  },
+  {
+   "heading": "",
+   "text": "○地下水マップ",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/water/w_national_map_cw.html"
+  },
+  {
+   "heading": "",
+   "text": "ウェブマッピングシステムを起動",
+   "href": "https://nlftp.mlit.go.jp/webmapc/mapmain.html"
+  },
+  {
+   "heading": "",
+   "text": "ウェブマッピングシステムとは",
+   "href": "https://nlftp.mlit.go.jp/ksj/webgis.html"
+  },
+  {
+   "heading": "",
+   "text": "ウェブマッピングシステム 操作方法",
+   "href": "https://nlftp.mlit.go.jp/webmapc/WMS_manual.pdf"
+  },
+  {
+   "heading": "",
+   "text": "TOP",
+   "href": "https://nlftp.mlit.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国土数値情報",
+   "href": "https://nlftp.mlit.go.jp/ksj/index.html"
+  },
+  {
+   "heading": "",
+   "text": "医療圏データ",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html#!"
+  },
+  {
+   "heading": "",
+   "text": "こちら",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2014.html"
+  },
+  {
+   "heading": "",
+   "text": "このデータの使用許諾条件",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/agreement_01.html"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/img/A38-3.jpg"
+  },
+  {
+   "heading": "",
+   "text": "行政区域コード",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/codelist/AdminiBoundary_CD.xlsx"
+  },
+  {
+   "heading": "",
+   "text": "設定フラグ",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/codelist/SettingFlag.html"
+  },
+  {
+   "heading": "",
+   "text": "行政区域コード",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/codelist/AdminiBoundary_CD.xlsx"
+  },
+  {
+   "heading": "",
+   "text": "製品仕様書",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/product_spec/KS-PS-A38-v2_0.pdf"
+  },
+  {
+   "heading": "",
+   "text": "シェープファイルの属性について",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/codelist/shape_property_table2.xlsx"
+  },
+  {
+   "heading": "",
+   "text": "登録あり",
+   "href": "https://nlftp.mlit.go.jp/webmapc/mapmain.html"
+  },
+  {
+   "heading": "",
+   "text": "2020年度（令和2年度）版",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html"
+  },
+  {
+   "heading": "",
+   "text": "vertical_align_center",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html#Jmap"
+  },
+  {
+   "heading": "",
+   "text": "vertical_align_top",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html"
+  },
+  {
+   "heading": "",
+   "text": "キャンセル",
+   "href": "javascript:void(0)"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報 データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/ksj/index.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "JPGIS2.1準拠 整備データ一覧",
+   "href": "https://nlftp.mlit.go.jp/ksj/gml/gml_datalist.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報とは",
+   "href": "https://nlftp.mlit.go.jp/first.html#about_ksj"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "GISとは",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/about_GIS.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報のデータ形式",
+   "href": "https://nlftp.mlit.go.jp/ksj/ksj_dataformat.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報 活用事例",
+   "href": "https://nlftp.mlit.go.jp/ksj/case_studies.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報 新着情報",
+   "href": "https://nlftp.mlit.go.jp/ksj_news.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報 修正情報",
+   "href": "https://nlftp.mlit.go.jp/ksj_error.html"
+  },
+  {
+   "heading": "国土数値情報",
+   "text": "国土数値情報 エラー情報",
+   "href": "https://nlftp.mlit.go.jp/ksj/error-report/error-report.html"
+  },
+  {
+   "heading": "位置参照情報",
+   "text": "位置参照情報 データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/cgi-bin/isj/dls/_choose_method.cgi"
+  },
+  {
+   "heading": "位置参照情報",
+   "text": "位置参照情報とは",
+   "href": "https://nlftp.mlit.go.jp/isj/index.html"
+  },
+  {
+   "heading": "位置参照情報",
+   "text": "位置参照情報 新着情報",
+   "href": "https://nlftp.mlit.go.jp/isj_news.html"
+  },
+  {
+   "heading": "位置参照情報",
+   "text": "位置参照情報 修正情報",
+   "href": "https://nlftp.mlit.go.jp/isj_error.html"
+  },
+  {
+   "heading": "位置参照情報",
+   "text": "位置参照情報 エラー情報",
+   "href": "https://nlftp.mlit.go.jp/isj/error-report/error-report.html"
+  },
+  {
+   "heading": "国土調査",
+   "text": "国土調査 データダウンロード",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html"
+  },
+  {
+   "heading": "国土調査",
+   "text": "国土調査 GISデータのダウンロード",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/landclassification/download.html"
+  },
+  {
+   "heading": "国土調査",
+   "text": "国土調査とは",
+   "href": "https://nlftp.mlit.go.jp/ksj/kokjo.html"
+  },
+  {
+   "heading": "国土調査",
+   "text": "土地分類調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html#tochibunrui"
+  },
+  {
+   "heading": "国土調査",
+   "text": "水調査",
+   "href": "https://nlftp.mlit.go.jp/kokjo/inspect/inspect.html#suikei"
+  },
+  {
+   "heading": "地図で見る",
+   "text": "ウェブマッピングシステムを起動",
+   "href": "https://nlftp.mlit.go.jp/webmapc/mapmain.html"
+  },
+  {
+   "heading": "地図で見る",
+   "text": "ウェブマッピングシステムとは",
+   "href": "https://nlftp.mlit.go.jp/ksj/webgis.html"
+  },
+  {
+   "heading": "地図で見る",
+   "text": "ウェブマッピングシステム 操作方法",
+   "href": "https://nlftp.mlit.go.jp/webmapc/WMS_manual.pdf"
+  },
+  {
+   "heading": "その他",
+   "text": "重要なお知らせ一覧",
+   "href": "https://nlftp.mlit.go.jp/i_news.html"
+  },
+  {
+   "heading": "その他",
+   "text": "よくある質問（FAQ）",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/faq.html"
+  },
+  {
+   "heading": "その他",
+   "text": "利用規約",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/agreement.html"
+  },
+  {
+   "heading": "その他",
+   "text": "QGIS活用マニュアル",
+   "href": "https://nlftp.mlit.go.jp/ksj/manual/manual.html"
+  },
+  {
+   "heading": "その他",
+   "text": "Tableau活用マニュアル",
+   "href": "https://nlftp.mlit.go.jp/ksj/manual/manual.html#tableau-manual"
+  },
+  {
+   "heading": "その他",
+   "text": "イベント特集",
+   "href": "https://nlftp.mlit.go.jp/ksj/event/event.html"
+  },
+  {
+   "heading": "その他",
+   "text": "プライバシーポリシー",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/privacy.html"
+  },
+  {
+   "heading": "その他",
+   "text": "お問合せ",
+   "href": "https://nlftp.mlit.go.jp/ksj/inquiry.html"
+  },
+  {
+   "heading": "その他",
+   "text": "サイトマップ",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/sitemap.html"
+  },
+  {
+   "heading": "その他",
+   "text": "リンク",
+   "href": "https://nlftp.mlit.go.jp/ksj/other/link.html"
+  }
+ ],
+ "ed12": [
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.mhlw.go.jp/"
+  },
+  {
+   "heading": "",
+   "text": "本文へ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#content"
+  },
+  {
+   "heading": "",
+   "text": "お問合わせ窓口",
+   "href": "https://www.mhlw.go.jp/otoiawase/index.html"
+  },
+  {
+   "heading": "",
+   "text": "よくある御質問",
+   "href": "https://www.mhlw.go.jp/qa/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.mhlw.go.jp/sitemap/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国民参加の場",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "点字ダウンロード",
+   "href": "https://www.mhlw.go.jp/tenji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jaen/"
+  },
+  {
+   "heading": "",
+   "text": "中文(简体字)",
+   "href": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jazh/"
+  },
+  {
+   "heading": "",
+   "text": "中文(繁體字)",
+   "href": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jazhb/"
+  },
+  {
+   "heading": "",
+   "text": "한국어",
+   "href": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jako/"
+  },
+  {
+   "heading": "",
+   "text": "点字ダウンロード",
+   "href": "https://www.mhlw.go.jp/tenji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイト閲覧支援ツール起動",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "(ヘルプ)",
+   "href": "https://www.mhlw.go.jp/etsuranshien/index.html"
+  },
+  {
+   "heading": "",
+   "text": "標準",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "大",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "特大",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "テーマ別に探す",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "テーマ別に探す",
+   "href": "https://www.mhlw.go.jp/theme/index.html"
+  },
+  {
+   "heading": "",
+   "text": "テーマ別に探す",
+   "href": "https://www.mhlw.go.jp/theme/index.html"
+  },
+  {
+   "heading": "",
+   "text": "テーマ別に探すトップへ",
+   "href": "https://www.mhlw.go.jp/theme/index.html"
+  },
+  {
+   "heading": "",
+   "text": "健康・医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "福祉・介護",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "雇用・労働",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "年金",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "他分野の取り組み",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+  },
+  {
+   "heading": "",
+   "text": "健康・医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "健康",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "食品",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "医療保険",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "医薬品・医療機器",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "生活衛生",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000099450.html"
+  },
+  {
+   "heading": "",
+   "text": "水道",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suido/index.html"
+  },
+  {
+   "heading": "",
+   "text": "福祉・介護",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "障害者福祉",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "生活保護・福祉一般",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "介護・高齢者福祉",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/index.html"
+  },
+  {
+   "heading": "",
+   "text": "雇用・労働",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "雇用",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "人材開発",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "労働基準",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/index.html"
+  },
+  {
+   "heading": "",
+   "text": "雇用環境・均等",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyoukintou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "職場における子育て支援",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/index.html"
+  },
+  {
+   "heading": "",
+   "text": "非正規雇用（有期・パート・派遣労働）",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "労働政策全般",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudouzenpan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "相談窓口等",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/soudanmadogutitou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "年金",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "年金・日本年金機構関係",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "他分野の取り組み",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+  },
+  {
+   "heading": "",
+   "text": "「年収の壁」への対応",
+   "href": "https://www.mhlw.go.jp/stf/taiou_001_00002.html"
+  },
+  {
+   "heading": "",
+   "text": "国際関係",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kokusai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究事業",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kenkyujigyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "社会保障全般",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/shakaihoshou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "戦没者遺族等への援護",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/senbotsusha/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害・危機管理",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055967.html"
+  },
+  {
+   "heading": "",
+   "text": "情報政策",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/jyouhouseisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "規制改革・行政手続関係",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kansoka/index_00003.html"
+  },
+  {
+   "heading": "",
+   "text": "医薬品等行政評価・監視委員会",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index_00005.html"
+  },
+  {
+   "heading": "",
+   "text": "性的マイノリティに関する厚生労働省の取組",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/shougaishakoyou/index_00007.html"
+  },
+  {
+   "heading": "",
+   "text": "中東呼吸器症候群（MERS）",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou/kekkaku-kansenshou19/mers.html"
+  },
+  {
+   "heading": "",
+   "text": "デング熱",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000131101.html"
+  },
+  {
+   "heading": "",
+   "text": "予防接種",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "新型コロナワクチン",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_00184.html"
+  },
+  {
+   "heading": "",
+   "text": "後期高齢者医療制度",
+   "href": "https://www.mhlw.go.jp/bunya/shakaihosho/iryouseido01/info02d.html"
+  },
+  {
+   "heading": "",
+   "text": "診療報酬改定",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000106602.html"
+  },
+  {
+   "heading": "",
+   "text": "出産一時金",
+   "href": "https://www.mhlw.go.jp/bunya/iryouhoken/iryouhoken09/07-2.html"
+  },
+  {
+   "heading": "",
+   "text": "食品中の放射性物質への対応",
+   "href": "https://www.mhlw.go.jp/shinsai_jouhou/shokuhin.html"
+  },
+  {
+   "heading": "",
+   "text": "後発医薬品の使用促進",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/kouhatu-iyaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "風しん",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/"
+  },
+  {
+   "heading": "",
+   "text": "難病対策",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/nanbyou/"
+  },
+  {
+   "heading": "",
+   "text": "消費税と診療報酬について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/iryouhoken14/index.html"
+  },
+  {
+   "heading": "",
+   "text": "保健医療2035",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hokabunya/shakaihoshou/hokeniryou2035/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ジカウイルス感染症",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000109881.html"
+  },
+  {
+   "heading": "",
+   "text": "12月1日は世界エイズデー",
+   "href": "https://www.mhlw.go.jp/bunya/kenkou/eizu/"
+  },
+  {
+   "heading": "",
+   "text": "くるみんマークについて",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/kurumin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "認知症施策",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/ninchi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "介護サービス情報公表システム",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/kouhyou/"
+  },
+  {
+   "heading": "",
+   "text": "自殺",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "世界自閉症啓発デー2017",
+   "href": "https://www.worldautismawarenessday.jp/"
+  },
+  {
+   "heading": "",
+   "text": "労働者派遣法の改正",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000077386.html"
+  },
+  {
+   "heading": "",
+   "text": "教育訓練給付制度について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/kyouiku.html"
+  },
+  {
+   "heading": "",
+   "text": "SAFEコンソーシアム",
+   "href": "https://safeconsortium.mhlw.go.jp/"
+  },
+  {
+   "heading": "",
+   "text": "中小企業お役立ち",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/chushoukigyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "若者の就職支援",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/jakunen/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個別労働紛争解決制度",
+   "href": "https://www.mhlw.go.jp/general/seido/chihou/kaiketu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "人材確保対策",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000053276.html"
+  },
+  {
+   "heading": "",
+   "text": "労働基準法の見直し",
+   "href": "https://www.mhlw.go.jp/stf/houdou/0000073981.html"
+  },
+  {
+   "heading": "",
+   "text": "高度プロフェッショナル制度",
+   "href": "https://www.mhlw.go.jp/stf/houdou/0000073981.html"
+  },
+  {
+   "heading": "",
+   "text": "働き方・休み方改善ポータルサイト",
+   "href": "https://work-holiday.mhlw.go.jp/"
+  },
+  {
+   "heading": "",
+   "text": "能力開発基本調査",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html"
+  },
+  {
+   "heading": "",
+   "text": "サポステ",
+   "href": "https://saposute-net.mhlw.go.jp/"
+  },
+  {
+   "heading": "",
+   "text": "ストレスチェック",
+   "href": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/"
+  },
+  {
+   "heading": "",
+   "text": "外国人技能実習制度",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/01.html"
+  },
+  {
+   "heading": "",
+   "text": "日本年金機構における不正アクセスによる情報流出事案について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000152638.html"
+  },
+  {
+   "heading": "",
+   "text": "年金記録の再確認をお願いします",
+   "href": "https://www.nenkin.go.jp/service/nenkinkiroku/torikumi/sonota/kini-cam/20140331.html"
+  },
+  {
+   "heading": "",
+   "text": "「ねんきんネット」であなたの年金を簡単確認",
+   "href": "https://www.nenkin.go.jp/denshibenri_kojin/n_net/index.html"
+  },
+  {
+   "heading": "",
+   "text": "保険料が払えないと思っている方へ",
+   "href": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html"
+  },
+  {
+   "heading": "",
+   "text": "iDeCo（個人型確定拠出年金）",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/kyoshutsu/ideco.html"
+  },
+  {
+   "heading": "",
+   "text": "社会保障改革",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hokabunya/shakaihoshou/kaikaku.html"
+  },
+  {
+   "heading": "",
+   "text": "戦没者の遺品をお持ちの方へ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000039987.html"
+  },
+  {
+   "heading": "",
+   "text": "ロシア連邦政府等から提供された抑留者に関する資料について",
+   "href": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/"
+  },
+  {
+   "heading": "",
+   "text": "出産なび",
+   "href": "https://www.mhlw.go.jp/stf/birth-navi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "難聴への対応",
+   "href": "https://www.mhlw.go.jp/nanntyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道・広報",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "報道・広報",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道・広報",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道・広報トップへ",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣記者会見",
+   "href": "https://www.mhlw.go.jp/stf/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道発表資料",
+   "href": "https://www.mhlw.go.jp/stf/houdou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・出版",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/kouhou_shuppan/"
+  },
+  {
+   "heading": "",
+   "text": "行事・会議の予定",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/"
+  },
+  {
+   "heading": "",
+   "text": "国民参加の場",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策についてトップへ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "",
+   "text": "分野別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種助成金・奨励金等の制度",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・研究会等",
+   "href": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+  },
+  {
+   "heading": "",
+   "text": "国会会議録",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+  },
+  {
+   "heading": "",
+   "text": "予算および決算・税制の概要",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+  },
+  {
+   "heading": "",
+   "text": "政策評価・独法評価",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+  },
+  {
+   "heading": "",
+   "text": "厚生労働省について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "厚生労働省について",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "厚生労働省について",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "厚生労働省についてトップへ",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官の紹介",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/profile/"
+  },
+  {
+   "heading": "",
+   "text": "幹部名簿",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地案内",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shozaiannai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "主な仕事（所掌事務）",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shigoto/"
+  },
+  {
+   "heading": "",
+   "text": "地方厚生（支）局",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/chihoukouseikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "労働局・労働基準監督署・ハローワーク",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/roudoukyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "施設等機関",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/sisetu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "中央労働委員会",
+   "href": "https://www.mhlw.go.jp/churoi/"
+  },
+  {
+   "heading": "",
+   "text": "資格・試験情報",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/"
+  },
+  {
+   "heading": "",
+   "text": "統計情報・白書",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報・白書",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報・白書",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報・白書トップへ",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種統計調査",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/toukei/"
+  },
+  {
+   "heading": "",
+   "text": "白書、年次報告書",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/hakusho/"
+  },
+  {
+   "heading": "",
+   "text": "調査票情報を利用したい方へ",
+   "href": "https://www.mhlw.go.jp/stf/toukei/goriyou/chousahyo.html"
+  },
+  {
+   "heading": "",
+   "text": "所管の法令等",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "所管の法令等",
+   "href": "https://www.mhlw.go.jp/shokanhourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管の法令等",
+   "href": "https://www.mhlw.go.jp/shokanhourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管の法令等トップへ",
+   "href": "https://www.mhlw.go.jp/shokanhourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.mhlw.go.jp/shokanhourei/teishutsuhouan/"
+  },
+  {
+   "heading": "",
+   "text": "所管の法令、告示・通達等",
+   "href": "https://www.mhlw.go.jp/hourei/"
+  },
+  {
+   "heading": "",
+   "text": "覚書等",
+   "href": "https://www.mhlw.go.jp/stf/newpage_19921.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・募集・情報公開",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・募集・情報公開",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・募集・情報公開",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・募集・情報公開トップへ",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "電子申請（申請・届出等の手続案内）",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/denshishinesei/"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/houreitekiyou/"
+  },
+  {
+   "heading": "",
+   "text": "調達情報",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/choutatsujouhou/"
+  },
+  {
+   "heading": "",
+   "text": "グレーゾーン解消制度・新事業特例制度",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gray_zone/gray_zone.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者の保護",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/kouekitsuhousha/"
+  },
+  {
+   "heading": "",
+   "text": "情報公開・個人情報保護",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/jouhoukoukai/"
+  },
+  {
+   "heading": "",
+   "text": "デジタル・ガバメントの推進",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/denshiseihu/"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseibunsho/"
+  },
+  {
+   "heading": "",
+   "text": "行政手続法に基づく申出",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseitetsuzuki_moushide/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行政不服審査法に基づく審理員候補者名簿",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseihuhukushinsa/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ホーム",
+   "href": "https://www.mhlw.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "",
+   "text": "分野別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+  },
+  {
+   "heading": "",
+   "text": "健康・医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "医療保険",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "NDBオープンデータ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html"
+  },
+  {
+   "heading": "第１２回NDBオープンデータ",
+   "text": "NDBオープンデータの月次公開について［301KB］",
+   "href": "https://www.mhlw.go.jp/content/12400000/001727731.pdf"
+  },
+  {
+   "heading": "データ編",
+   "text": "医科診療行為（算定回数）",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#m-naAncTarget1"
+  },
+  {
+   "heading": "データ編",
+   "text": "医科診療行為（患者数）",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#m-naAncTarget2"
+  },
+  {
+   "heading": "データ編",
+   "text": "処方薬",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#m-naAncTarget8"
+  },
+  {
+   "heading": "データ編",
+   "text": "特定保険医療材料",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#m-naAncTarget9"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度 ●含まれているデータ",
+   "text": "2025年4月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758791.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度 ●含まれているデータ",
+   "text": "2025年5月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758792.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度 ●含まれているデータ",
+   "text": "2025年6月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758797.zip"
+  },
+  {
+   "heading": "公費レセプトを含まないデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年4月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758798.zip"
+  },
+  {
+   "heading": "公費レセプトを含まないデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年5月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758799.zip"
+  },
+  {
+   "heading": "公費レセプトを含まないデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年6月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758800.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年4月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758801.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年5月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001760216.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年6月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758804.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年4月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758805.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年5月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758806.zip"
+  },
+  {
+   "heading": "公費レセプトを含むデータ 2025年4月度 2025年5月度 2025年6月度",
+   "text": "2025年6月度",
+   "href": "https://www.mhlw.go.jp/content/12400000/001758807.zip"
+  },
+  {
+   "heading": "●含まれているデータ",
+   "text": "PDFファイルを見るためには、Adobe Readerというソフトが必要です。Adobe Readerは無料で配布されていますので、こちらからダウンロードしてください。",
+   "href": "https://get.adobe.com/jp/reader/"
+  },
+  {
+   "heading": "政策について",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "分野別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "健康・医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "健康",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "食品",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "医療保険",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "医薬品・医療機器",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "生活衛生",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000099450.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "水道",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suido/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "福祉・介護",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "雇用・労働",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "年金",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "他分野の取り組み",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "組織別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "各種助成金・奨励金等の制度",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "審議会・研究会等",
+   "href": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "国会会議録",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+  },
+  {
+   "heading": "政策について",
+   "text": "予算および決算・税制の概要",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+  },
+  {
+   "heading": "政策について",
+   "text": "政策評価・独法評価",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+  },
+  {
+   "heading": "政策について",
+   "text": "ページの先頭へ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177221_00020.html#top"
+  },
+  {
+   "heading": "政策について",
+   "text": "国民参加の場",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/sanka/"
+  },
+  {
+   "heading": "政策について",
+   "text": "テーマ別に探す",
+   "href": "https://www.mhlw.go.jp/theme/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "テーマ別に探すトップへ",
+   "href": "https://www.mhlw.go.jp/theme/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "健康・医療",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "福祉・介護",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "雇用・労働",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "年金",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "他分野の取り組み",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "報道・広報",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "報道・広報トップへ",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "大臣記者会見",
+   "href": "https://www.mhlw.go.jp/stf/kaiken/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "報道発表資料",
+   "href": "https://www.mhlw.go.jp/stf/houdou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "広報・出版",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/kouhou_shuppan/"
+  },
+  {
+   "heading": "政策について",
+   "text": "行事・会議の予定",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/"
+  },
+  {
+   "heading": "政策について",
+   "text": "国民参加の場",
+   "href": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "政策について",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "政策についてトップへ",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "分野別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "組織別の政策一覧",
+   "href": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "各種助成金・奨励金等の制度",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "審議会・研究会等",
+   "href": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "国会会議録",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+  },
+  {
+   "heading": "政策について",
+   "text": "予算および決算・税制の概要",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+  },
+  {
+   "heading": "政策について",
+   "text": "政策評価・独法評価",
+   "href": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+  },
+  {
+   "heading": "政策について",
+   "text": "厚生労働省について",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "厚生労働省についてトップへ",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "大臣・副大臣・政務官の紹介",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/profile/"
+  },
+  {
+   "heading": "政策について",
+   "text": "幹部名簿",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "所在地案内",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shozaiannai/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "主な仕事（所掌事務）",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shigoto/"
+  },
+  {
+   "heading": "政策について",
+   "text": "地方厚生（支）局",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/chihoukouseikyoku/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "労働局・労働基準監督署・ハローワーク",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/roudoukyoku/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "施設等機関",
+   "href": "https://www.mhlw.go.jp/stf/kouseiroudoushou/sisetu/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "中央労働委員会",
+   "href": "https://www.mhlw.go.jp/churoi/"
+  },
+  {
+   "heading": "政策について",
+   "text": "資格・試験情報",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/"
+  },
+  {
+   "heading": "政策について",
+   "text": "採用情報",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/"
+  },
+  {
+   "heading": "政策について",
+   "text": "統計情報・白書",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "統計情報・白書トップへ",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "各種統計調査",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/toukei/"
+  },
+  {
+   "heading": "政策について",
+   "text": "白書、年次報告書",
+   "href": "https://www.mhlw.go.jp/toukei_hakusho/hakusho/"
+  },
+  {
+   "heading": "政策について",
+   "text": "調査票情報を利用したい方へ",
+   "href": "https://www.mhlw.go.jp/stf/toukei/goriyou/chousahyo.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "所管の法令等",
+   "href": "https://www.mhlw.go.jp/shokanhourei/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "所管の法令等トップへ",
+   "href": "https://www.mhlw.go.jp/shokanhourei/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "国会提出法案",
+   "href": "https://www.mhlw.go.jp/shokanhourei/teishutsuhouan/"
+  },
+  {
+   "heading": "政策について",
+   "text": "所管の法令、告示・通達等",
+   "href": "https://www.mhlw.go.jp/hourei/"
+  },
+  {
+   "heading": "政策について",
+   "text": "覚書等",
+   "href": "https://www.mhlw.go.jp/stf/newpage_19921.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "申請・募集・情報公開",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "申請・募集・情報公開トップへ",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "電子申請（申請・届出等の手続案内）",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/denshishinesei/"
+  },
+  {
+   "heading": "政策について",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/houreitekiyou/"
+  },
+  {
+   "heading": "政策について",
+   "text": "調達情報",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/choutatsujouhou/"
+  },
+  {
+   "heading": "政策について",
+   "text": "グレーゾーン解消制度・新事業特例制度",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gray_zone/gray_zone.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "公益通報者の保護",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/kouekitsuhousha/"
+  },
+  {
+   "heading": "政策について",
+   "text": "情報公開・個人情報保護",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/jouhoukoukai/"
+  },
+  {
+   "heading": "政策について",
+   "text": "デジタル・ガバメントの推進",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/denshiseihu/"
+  },
+  {
+   "heading": "政策について",
+   "text": "公文書管理",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseibunsho/"
+  },
+  {
+   "heading": "政策について",
+   "text": "行政手続法に基づく申出",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseitetsuzuki_moushide/index.html"
+  },
+  {
+   "heading": "政策について",
+   "text": "行政不服審査法に基づく審理員候補者名簿",
+   "href": "https://www.mhlw.go.jp/shinsei_boshu/gyouseihuhukushinsa/index.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "他府省",
+   "href": "https://www.mhlw.go.jp/link/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所管の法人等",
+   "href": "https://www.mhlw.go.jp/link/#navAncLink-houjin"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "図書館利用案内",
+   "href": "https://www.mhlw.go.jp/library/opac4/opac/top"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "クローズアップ厚生労働省一覧",
+   "href": "https://www.mhlw.go.jp/closeup/index.html"
+  },
+  {
+   "heading": "情報配信サービス",
+   "text": "情報配信サービスメルマガ登録",
+   "href": "https://www.mhlw.go.jp/mailmagazine/"
+  },
+  {
+   "heading": "情報配信サービス",
+   "text": "WEBマガジン「厚生労働」",
+   "href": "https://www.mhlw.go.jp/web_magazine/"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "facebook",
+   "href": "https://www.mhlw.go.jp/stf/facebook.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "Ｘ（旧Twitter）",
+   "href": "https://www.mhlw.go.jp/stf/twitter.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "SNS一覧",
+   "href": "https://www.mhlw.go.jp/stf/SNSpage.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "利用規約・リンク・著作権等",
+   "href": "https://www.mhlw.go.jp/chosakuken/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "個人情報保護方針",
+   "href": "https://www.mhlw.go.jp/kojinjouhouhogo/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "シンボルマークとキャッチフレーズについて",
+   "href": "https://www.mhlw.go.jp/kouseiroudoushou/symbol/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "アクセシビリティについて",
+   "href": "https://www.mhlw.go.jp/accessibility/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "サイトの使い方(ヘルプ)",
+   "href": "https://www.mhlw.go.jp/tsukaikata/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "RSSについて",
+   "href": "https://www.mhlw.go.jp/rss/index.html"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "ホームページへのご意見",
+   "href": "https://www.mhlw.go.jp/form/pub/mhlw01/getmail"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "",
+   "href": "https://www.mhlw.go.jp/"
+  },
+  {
+   "heading": "ソーシャルメディア",
+   "text": "03-5253-1111",
+   "href": "tel:0352531111"
+  }
+ ],
+ "soumu:メインコンテンツへジャンプ": [
+  {
+   "heading": "",
+   "text": "メインナビゲーションへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToNavi"
+  },
+  {
+   "heading": "",
+   "text": "メインコンテンツへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToContents"
+  },
+  {
+   "heading": "",
+   "text": "フッターへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToFooter"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見・ご提案",
+   "href": "https://www.soumu.go.jp/form/common/opinions.html"
+  },
+  {
+   "heading": "",
+   "text": "ENGLISH(TOP)",
+   "href": "https://www.soumu.go.jp/english/index.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/"
+  },
+  {
+   "heading": "",
+   "text": "Français",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/fr/"
+  },
+  {
+   "heading": "",
+   "text": "Español",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/esp/"
+  },
+  {
+   "heading": "",
+   "text": "Русский",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/rus/"
+  },
+  {
+   "heading": "",
+   "text": "中文",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/chs/"
+  },
+  {
+   "heading": "",
+   "text": "عربي",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/ar/"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介 TOP",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道 TOP",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内 TOP",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令 TOP",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算 TOP",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続 TOP",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省トップ",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方行財政",
+   "href": "https://www.soumu.go.jp/menu_seisaku/chiho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "住民基本台帳等",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数のポイント（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892926.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892947.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892948.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892949.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892952.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892953.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892954.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892955.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892956.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892957.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892958.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892959.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892960.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892961.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(1)",
+   "href": "https://www.soumu.go.jp/main_content/001023676.xls"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(2)",
+   "href": "https://www.soumu.go.jp/main_content/001023677.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "該当ページはこちら",
+   "href": "http://www.e-stat.go.jp/SG1/estat/GL08020101.do?_toGL08020101_&tstatCode=000001039591"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "ページトップへ戻る",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#pTop"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "人口・人口動態及び世帯数",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "マイナンバー制度とマイナンバーカード",
+   "href": "https://www.soumu.go.jp/kojinbango_card/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳ネットワーク",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/daityo/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住所の異動届は正しく行われていますか？",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/important/topics081127.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民票の写しの交付制度等の見直し",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/jyuminhyo_utusi.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "DV等支援措置",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/dv_shien.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "外国人住民に係る住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住居表示制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/juukyo_hyouji_seido.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "総務省ソーシャルアカウント一覧",
+   "href": "https://www.soumu.go.jp/sns/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://x.com/MIC_JAPAN"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.facebook.com/MICJAPAN.gov"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.instagram.com/mic_koho/"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.youtube.com/user/soumuchannel"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://soumu-gov.note.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "関連リンク",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/link.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.fdma.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.e-stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所在地図",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "※ 電話リレーサービス（手話リンク）のご利用について",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/shuwa-link.html"
+  }
+ ],
+ "soumu:フッターへジャンプ": [
+  {
+   "heading": "",
+   "text": "メインナビゲーションへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToNavi"
+  },
+  {
+   "heading": "",
+   "text": "メインコンテンツへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToContents"
+  },
+  {
+   "heading": "",
+   "text": "フッターへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToFooter"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見・ご提案",
+   "href": "https://www.soumu.go.jp/form/common/opinions.html"
+  },
+  {
+   "heading": "",
+   "text": "ENGLISH(TOP)",
+   "href": "https://www.soumu.go.jp/english/index.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/"
+  },
+  {
+   "heading": "",
+   "text": "Français",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/fr/"
+  },
+  {
+   "heading": "",
+   "text": "Español",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/esp/"
+  },
+  {
+   "heading": "",
+   "text": "Русский",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/rus/"
+  },
+  {
+   "heading": "",
+   "text": "中文",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/chs/"
+  },
+  {
+   "heading": "",
+   "text": "عربي",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/ar/"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介 TOP",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道 TOP",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内 TOP",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令 TOP",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算 TOP",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続 TOP",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省トップ",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方行財政",
+   "href": "https://www.soumu.go.jp/menu_seisaku/chiho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "住民基本台帳等",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数のポイント（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892926.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892947.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892948.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892949.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892952.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892953.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892954.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892955.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892956.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892957.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892958.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892959.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892960.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892961.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(1)",
+   "href": "https://www.soumu.go.jp/main_content/001023676.xls"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(2)",
+   "href": "https://www.soumu.go.jp/main_content/001023677.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "該当ページはこちら",
+   "href": "http://www.e-stat.go.jp/SG1/estat/GL08020101.do?_toGL08020101_&tstatCode=000001039591"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "ページトップへ戻る",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#pTop"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "人口・人口動態及び世帯数",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "マイナンバー制度とマイナンバーカード",
+   "href": "https://www.soumu.go.jp/kojinbango_card/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳ネットワーク",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/daityo/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住所の異動届は正しく行われていますか？",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/important/topics081127.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民票の写しの交付制度等の見直し",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/jyuminhyo_utusi.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "DV等支援措置",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/dv_shien.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "外国人住民に係る住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住居表示制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/juukyo_hyouji_seido.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "総務省ソーシャルアカウント一覧",
+   "href": "https://www.soumu.go.jp/sns/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://x.com/MIC_JAPAN"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.facebook.com/MICJAPAN.gov"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.instagram.com/mic_koho/"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.youtube.com/user/soumuchannel"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://soumu-gov.note.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "関連リンク",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/link.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.fdma.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.e-stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所在地図",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "※ 電話リレーサービス（手話リンク）のご利用について",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/shuwa-link.html"
+  }
+ ],
+ "soumu:ページトップへ戻る": [
+  {
+   "heading": "",
+   "text": "メインナビゲーションへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToNavi"
+  },
+  {
+   "heading": "",
+   "text": "メインコンテンツへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToContents"
+  },
+  {
+   "heading": "",
+   "text": "フッターへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToFooter"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見・ご提案",
+   "href": "https://www.soumu.go.jp/form/common/opinions.html"
+  },
+  {
+   "heading": "",
+   "text": "ENGLISH(TOP)",
+   "href": "https://www.soumu.go.jp/english/index.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/"
+  },
+  {
+   "heading": "",
+   "text": "Français",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/fr/"
+  },
+  {
+   "heading": "",
+   "text": "Español",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/esp/"
+  },
+  {
+   "heading": "",
+   "text": "Русский",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/rus/"
+  },
+  {
+   "heading": "",
+   "text": "中文",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/chs/"
+  },
+  {
+   "heading": "",
+   "text": "عربي",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/ar/"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介 TOP",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道 TOP",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内 TOP",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令 TOP",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算 TOP",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続 TOP",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省トップ",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方行財政",
+   "href": "https://www.soumu.go.jp/menu_seisaku/chiho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "住民基本台帳等",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数のポイント（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892926.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892947.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892948.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892949.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892952.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892953.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892954.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892955.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892956.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892957.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892958.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892959.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892960.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892961.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(1)",
+   "href": "https://www.soumu.go.jp/main_content/001023676.xls"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(2)",
+   "href": "https://www.soumu.go.jp/main_content/001023677.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "該当ページはこちら",
+   "href": "http://www.e-stat.go.jp/SG1/estat/GL08020101.do?_toGL08020101_&tstatCode=000001039591"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "ページトップへ戻る",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#pTop"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "人口・人口動態及び世帯数",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "マイナンバー制度とマイナンバーカード",
+   "href": "https://www.soumu.go.jp/kojinbango_card/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳ネットワーク",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/daityo/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住所の異動届は正しく行われていますか？",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/important/topics081127.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民票の写しの交付制度等の見直し",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/jyuminhyo_utusi.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "DV等支援措置",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/dv_shien.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "外国人住民に係る住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住居表示制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/juukyo_hyouji_seido.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "総務省ソーシャルアカウント一覧",
+   "href": "https://www.soumu.go.jp/sns/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://x.com/MIC_JAPAN"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.facebook.com/MICJAPAN.gov"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.instagram.com/mic_koho/"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.youtube.com/user/soumuchannel"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://soumu-gov.note.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "関連リンク",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/link.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.fdma.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.e-stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所在地図",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "※ 電話リレーサービス（手話リンク）のご利用について",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/shuwa-link.html"
+  }
+ ],
+ "soumu:人口・人口動態及び世帯数": [
+  {
+   "heading": "",
+   "text": "メインナビゲーションへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToNavi"
+  },
+  {
+   "heading": "",
+   "text": "メインコンテンツへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToContents"
+  },
+  {
+   "heading": "",
+   "text": "フッターへジャンプ",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#jumpToFooter"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "ご意見・ご提案",
+   "href": "https://www.soumu.go.jp/form/common/opinions.html"
+  },
+  {
+   "heading": "",
+   "text": "ENGLISH(TOP)",
+   "href": "https://www.soumu.go.jp/english/index.html"
+  },
+  {
+   "heading": "",
+   "text": "English",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/eng/"
+  },
+  {
+   "heading": "",
+   "text": "Français",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/fr/"
+  },
+  {
+   "heading": "",
+   "text": "Español",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/esp/"
+  },
+  {
+   "heading": "",
+   "text": "Русский",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/rus/"
+  },
+  {
+   "heading": "",
+   "text": "中文",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/chs/"
+  },
+  {
+   "heading": "",
+   "text": "عربي",
+   "href": "https://www.soumu.go.jp/main_sosiki/joho_tsusin/ar/"
+  },
+  {
+   "heading": "",
+   "text": "",
+   "href": "javascript:ptspkLoader('toggle')"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省の紹介 TOP",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "広報・報道 TOP",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "組織案内 TOP",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "所管法令 TOP",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算・決算 TOP",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・手続 TOP",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価 TOP",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "",
+   "text": "総務省トップ",
+   "href": "https://www.soumu.go.jp/index.html"
+  },
+  {
+   "heading": "",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "",
+   "text": "地方行財政",
+   "href": "https://www.soumu.go.jp/menu_seisaku/chiho/index.html"
+  },
+  {
+   "heading": "",
+   "text": "住民基本台帳等",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数のポイント（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892926.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳に基づく人口、人口動態及び世帯数（令和8年1月1日現在）",
+   "href": "https://www.soumu.go.jp/main_content/000892947.pdf"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892948.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892949.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892952.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【総計】令和8住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892953.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892954.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892955.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892956.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【日本人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892957.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892958.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（都道府県別）",
+   "href": "https://www.soumu.go.jp/main_content/000892959.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳人口・世帯数、令和7年人口動態（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892960.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "【外国人住民】令和8年住民基本台帳年齢階級別人口（市区町村別）",
+   "href": "https://www.soumu.go.jp/main_content/000892961.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(1)",
+   "href": "https://www.soumu.go.jp/main_content/001023676.xls"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "参考データ(2)",
+   "href": "https://www.soumu.go.jp/main_content/001023677.xlsx"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "該当ページはこちら",
+   "href": "http://www.e-stat.go.jp/SG1/estat/GL08020101.do?_toGL08020101_&tstatCode=000001039591"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "ページトップへ戻る",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html#pTop"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/gaiyou.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "人口・人口動態及び世帯数",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/jinkou_jinkoudoutai-setaisuu.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "マイナンバー制度とマイナンバーカード",
+   "href": "https://www.soumu.go.jp/kojinbango_card/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民基本台帳ネットワーク",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/daityo/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住所の異動届は正しく行われていますか？",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/important/topics081127.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住民票の写しの交付制度等の見直し",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/jyuminhyo_utusi.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "DV等支援措置",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/dv_shien.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "外国人住民に係る住民基本台帳制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/index.html"
+  },
+  {
+   "heading": "令和8年1月1日現在",
+   "text": "住居表示制度",
+   "href": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/daityo/juukyo_hyouji_seido.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "総務省の紹介",
+   "href": "https://www.soumu.go.jp/menu_syokai/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "大臣・副大臣・政務官",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/soshiki/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "所在地・連絡先",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "採用情報",
+   "href": "https://www.soumu.go.jp/menu_syokai/saiyou/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "各種募集",
+   "href": "https://www.soumu.go.jp/menu_syokai/bosyu/index.html"
+  },
+  {
+   "heading": "総務省の紹介",
+   "text": "子どもページ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/kids/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報・報道",
+   "href": "https://www.soumu.go.jp/menu_news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "大臣会見・発言等",
+   "href": "https://www.soumu.go.jp/menu_news/kaiken/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道資料",
+   "href": "https://www.soumu.go.jp/menu_news/s-news/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "報道予定",
+   "href": "https://www.soumu.go.jp/menu_news/release001.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "広報誌・パンフレット",
+   "href": "https://www.soumu.go.jp/menu_news/kouhoushi/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "行事案内",
+   "href": "https://www.soumu.go.jp/menu_news/gyouji/index.html"
+  },
+  {
+   "heading": "広報・報道",
+   "text": "フォトギャラリー",
+   "href": "https://www.soumu.go.jp/photo_gallery/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "政策",
+   "href": "https://www.soumu.go.jp/menu_seisaku/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "白書",
+   "href": "https://www.soumu.go.jp/menu_seisaku/hakusyo/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "統計情報",
+   "href": "https://www.soumu.go.jp/menu_seisaku/toukei/index.html"
+  },
+  {
+   "heading": "政策",
+   "text": "意見募集(パブリックコメント）",
+   "href": "https://www.soumu.go.jp/menu_seisaku/iken_bosyu/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "組織案内",
+   "href": "https://www.soumu.go.jp/menu_sosiki/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "外局等",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/gaikyoku/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "地方支分部局",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/chihou.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "審議会・委員会・会議等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/singi/index.html"
+  },
+  {
+   "heading": "組織案内",
+   "text": "研究会等",
+   "href": "https://www.soumu.go.jp/menu_sosiki/kenkyu/kenkyu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "所管法令",
+   "href": "https://www.soumu.go.jp/menu_hourei/index.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "国会提出法案",
+   "href": "https://www.soumu.go.jp/menu_hourei/k_houan.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "新規制定・改正法令・告示",
+   "href": "https://www.soumu.go.jp/menu_hourei/s_houritsu.html"
+  },
+  {
+   "heading": "所管法令",
+   "text": "通知・通達",
+   "href": "https://www.soumu.go.jp/menu_hourei/tsutatsu/t_tsutatsu.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算・決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/index.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "予算",
+   "href": "https://www.soumu.go.jp/menu_yosan/yosan.html"
+  },
+  {
+   "heading": "予算・決算",
+   "text": "決算",
+   "href": "https://www.soumu.go.jp/menu_yosan/kesan.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "調達情報・電子入札",
+   "href": "https://www.soumu.go.jp/menu_sinsei/cyoutatsu/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "申請・届出等の手続案内",
+   "href": "https://www.soumu.go.jp/menu_sinsei/shinsei/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "個人情報保護",
+   "href": "https://www.soumu.go.jp/menu_sinsei/kojin_jyouhou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "法令適用事前確認手続",
+   "href": "https://www.soumu.go.jp/menu_sinsei/hourei_tekiyou/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公文書管理",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koubunsho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "情報公開",
+   "href": "https://www.soumu.go.jp/menu_sinsei/jyouhou_koukai/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "公益通報者保護・コンプライアンス",
+   "href": "https://www.soumu.go.jp/menu_sinsei/koekitsuho/index.html"
+  },
+  {
+   "heading": "申請・手続",
+   "text": "災害用備蓄食品の提供",
+   "href": "https://www.soumu.go.jp/menu_sinsei/saigaiyo_bichiku/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価",
+   "href": "https://www.soumu.go.jp/menu_seisakuhyouka/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "政策評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/hyouka/seisaku_n/portal/index.html"
+  },
+  {
+   "heading": "政策評価",
+   "text": "独立行政法人評価ポータルサイト",
+   "href": "https://www.soumu.go.jp/main_sosiki/gyoukan/kanri/portal/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "総務省ソーシャルアカウント一覧",
+   "href": "https://www.soumu.go.jp/sns/index.html"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://x.com/MIC_JAPAN"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.facebook.com/MICJAPAN.gov"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.instagram.com/mic_koho/"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://www.youtube.com/user/soumuchannel"
+  },
+  {
+   "heading": "総務省ソーシャルアカウント一覧",
+   "text": "",
+   "href": "https://soumu-gov.note.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "関連リンク",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/link.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.fdma.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "",
+   "href": "https://www.e-stat.go.jp/"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "サイトマップ",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/sitemap.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "プライバシーポリシー",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/policy.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "当省ホームページについて",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/tyosaku.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "所在地図",
+   "href": "https://www.soumu.go.jp/menu_sosiki/annai/map-1.html"
+  },
+  {
+   "heading": "関連リンク",
+   "text": "※ 電話リレーサービス（手話リンク）のご利用について",
+   "href": "https://www.soumu.go.jp/menu_kyotsuu/policy/shuwa-link.html"
+  }
+ ],
+ "a38_zip_names": [
+  "../data/A38/A38-14/A38-14_01_GML.zip",
+  "../data/A38/A38-14/A38-14_02_GML.zip",
+  "../data/A38/A38-14/A38-14_03_GML.zip",
+  "../data/A38/A38-14/A38-14_04_GML.zip",
+  "../data/A38/A38-14/A38-14_05_GML.zip",
+  "../data/A38/A38-14/A38-14_06_GML.zip",
+  "../data/A38/A38-14/A38-14_07_GML.zip",
+  "../data/A38/A38-14/A38-14_08_GML.zip",
+  "../data/A38/A38-14/A38-14_09_GML.zip",
+  "../data/A38/A38-14/A38-14_10_GML.zip",
+  "../data/A38/A38-14/A38-14_11_GML.zip",
+  "../data/A38/A38-14/A38-14_12_GML.zip",
+  "../data/A38/A38-14/A38-14_13_GML.zip",
+  "../data/A38/A38-14/A38-14_14_GML.zip",
+  "../data/A38/A38-14/A38-14_15_GML.zip",
+  "../data/A38/A38-14/A38-14_16_GML.zip",
+  "../data/A38/A38-14/A38-14_17_GML.zip",
+  "../data/A38/A38-14/A38-14_18_GML.zip",
+  "../data/A38/A38-14/A38-14_19_GML.zip",
+  "../data/A38/A38-14/A38-14_20_GML.zip",
+  "../data/A38/A38-14/A38-14_21_GML.zip",
+  "../data/A38/A38-14/A38-14_22_GML.zip",
+  "../data/A38/A38-14/A38-14_23_GML.zip",
+  "../data/A38/A38-14/A38-14_24_GML.zip",
+  "../data/A38/A38-14/A38-14_25_GML.zip",
+  "../data/A38/A38-14/A38-14_26_GML.zip",
+  "../data/A38/A38-14/A38-14_27_GML.zip",
+  "../data/A38/A38-14/A38-14_28_GML.zip",
+  "../data/A38/A38-14/A38-14_29_GML.zip",
+  "../data/A38/A38-14/A38-14_30_GML.zip",
+  "../data/A38/A38-14/A38-14_31_GML.zip",
+  "../data/A38/A38-14/A38-14_32_GML.zip",
+  "../data/A38/A38-14/A38-14_33_GML.zip",
+  "../data/A38/A38-14/A38-14_34_GML.zip",
+  "../data/A38/A38-14/A38-14_35_GML.zip",
+  "../data/A38/A38-14/A38-14_36_GML.zip",
+  "../data/A38/A38-14/A38-14_37_GML.zip",
+  "../data/A38/A38-14/A38-14_38_GML.zip",
+  "../data/A38/A38-14/A38-14_39_GML.zip",
+  "../data/A38/A38-14/A38-14_40_GML.zip",
+  "../data/A38/A38-14/A38-14_41_GML.zip",
+  "../data/A38/A38-14/A38-14_42_GML.zip",
+  "../data/A38/A38-14/A38-14_43_GML.zip",
+  "../data/A38/A38-14/A38-14_44_GML.zip",
+  "../data/A38/A38-14/A38-14_45_GML.zip",
+  "../data/A38/A38-14/A38-14_46_GML.zip",
+  "../data/A38/A38-14/A38-14_47_GML.zip",
+  "../data/A38/A38-14/A38-14_GML.zip",
+  "../data/A38/A38-20/A38-20_01_GML.zip",
+  "../data/A38/A38-20/A38-20_02_GML.zip",
+  "../data/A38/A38-20/A38-20_03_GML.zip",
+  "../data/A38/A38-20/A38-20_04_GML.zip",
+  "../data/A38/A38-20/A38-20_05_GML.zip",
+  "../data/A38/A38-20/A38-20_06_GML.zip",
+  "../data/A38/A38-20/A38-20_07_GML.zip",
+  "../data/A38/A38-20/A38-20_08_GML.zip",
+  "../data/A38/A38-20/A38-20_09_GML.zip",
+  "../data/A38/A38-20/A38-20_10_GML.zip",
+  "../data/A38/A38-20/A38-20_11_GML.zip",
+  "../data/A38/A38-20/A38-20_12_GML.zip",
+  "../data/A38/A38-20/A38-20_13_GML.zip",
+  "../data/A38/A38-20/A38-20_14_GML.zip",
+  "../data/A38/A38-20/A38-20_15_GML.zip",
+  "../data/A38/A38-20/A38-20_16_GML.zip",
+  "../data/A38/A38-20/A38-20_17_GML.zip",
+  "../data/A38/A38-20/A38-20_18_GML.zip",
+  "../data/A38/A38-20/A38-20_19_GML.zip",
+  "../data/A38/A38-20/A38-20_20_GML.zip",
+  "../data/A38/A38-20/A38-20_21_GML.zip",
+  "../data/A38/A38-20/A38-20_22_GML.zip",
+  "../data/A38/A38-20/A38-20_23_GML.zip",
+  "../data/A38/A38-20/A38-20_24_GML.zip",
+  "../data/A38/A38-20/A38-20_25_GML.zip",
+  "../data/A38/A38-20/A38-20_26_GML.zip",
+  "../data/A38/A38-20/A38-20_27_GML.zip",
+  "../data/A38/A38-20/A38-20_28_GML.zip",
+  "../data/A38/A38-20/A38-20_29_GML.zip",
+  "../data/A38/A38-20/A38-20_30_GML.zip",
+  "../data/A38/A38-20/A38-20_31_GML.zip",
+  "../data/A38/A38-20/A38-20_32_GML.zip",
+  "../data/A38/A38-20/A38-20_33_GML.zip",
+  "../data/A38/A38-20/A38-20_34_GML.zip",
+  "../data/A38/A38-20/A38-20_35_GML.zip",
+  "../data/A38/A38-20/A38-20_36_GML.zip",
+  "../data/A38/A38-20/A38-20_37_GML.zip",
+  "../data/A38/A38-20/A38-20_38_GML.zip",
+  "../data/A38/A38-20/A38-20_39_GML.zip",
+  "../data/A38/A38-20/A38-20_40_GML.zip",
+  "../data/A38/A38-20/A38-20_41_GML.zip",
+  "../data/A38/A38-20/A38-20_42_GML.zip",
+  "../data/A38/A38-20/A38-20_43_GML.zip",
+  "../data/A38/A38-20/A38-20_44_GML.zip",
+  "../data/A38/A38-20/A38-20_45_GML.zip",
+  "../data/A38/A38-20/A38-20_46_GML.zip",
+  "../data/A38/A38-20/A38-20_47_GML.zip",
+  "../data/A38/A38-20/A38-20_GML.zip",
+  "A38-14_01_GML.zip",
+  "A38-14_02_GML.zip",
+  "A38-14_03_GML.zip",
+  "A38-14_04_GML.zip",
+  "A38-14_05_GML.zip",
+  "A38-14_06_GML.zip",
+  "A38-14_07_GML.zip",
+  "A38-14_08_GML.zip",
+  "A38-14_09_GML.zip",
+  "A38-14_10_GML.zip",
+  "A38-14_11_GML.zip",
+  "A38-14_12_GML.zip",
+  "A38-14_13_GML.zip",
+  "A38-14_14_GML.zip",
+  "A38-14_15_GML.zip",
+  "A38-14_16_GML.zip",
+  "A38-14_17_GML.zip",
+  "A38-14_18_GML.zip",
+  "A38-14_19_GML.zip",
+  "A38-14_20_GML.zip",
+  "A38-14_21_GML.zip",
+  "A38-14_22_GML.zip",
+  "A38-14_23_GML.zip",
+  "A38-14_24_GML.zip",
+  "A38-14_25_GML.zip",
+  "A38-14_26_GML.zip",
+  "A38-14_27_GML.zip",
+  "A38-14_28_GML.zip",
+  "A38-14_29_GML.zip",
+  "A38-14_30_GML.zip",
+  "A38-14_31_GML.zip",
+  "A38-14_32_GML.zip",
+  "A38-14_33_GML.zip",
+  "A38-14_34_GML.zip",
+  "A38-14_35_GML.zip",
+  "A38-14_36_GML.zip",
+  "A38-14_37_GML.zip",
+  "A38-14_38_GML.zip",
+  "A38-14_39_GML.zip",
+  "A38-14_40_GML.zip",
+  "A38-14_41_GML.zip",
+  "A38-14_42_GML.zip",
+  "A38-14_43_GML.zip",
+  "A38-14_44_GML.zip",
+  "A38-14_45_GML.zip",
+  "A38-14_46_GML.zip",
+  "A38-14_47_GML.zip",
+  "A38-14_GML.zip",
+  "A38-20_01_GML.zip",
+  "A38-20_02_GML.zip",
+  "A38-20_03_GML.zip",
+  "A38-20_04_GML.zip",
+  "A38-20_05_GML.zip",
+  "A38-20_06_GML.zip",
+  "A38-20_07_GML.zip",
+  "A38-20_08_GML.zip",
+  "A38-20_09_GML.zip",
+  "A38-20_10_GML.zip",
+  "A38-20_11_GML.zip",
+  "A38-20_12_GML.zip",
+  "A38-20_13_GML.zip",
+  "A38-20_14_GML.zip",
+  "A38-20_15_GML.zip",
+  "A38-20_16_GML.zip",
+  "A38-20_17_GML.zip",
+  "A38-20_18_GML.zip",
+  "A38-20_19_GML.zip",
+  "A38-20_20_GML.zip",
+  "A38-20_21_GML.zip",
+  "A38-20_22_GML.zip",
+  "A38-20_23_GML.zip",
+  "A38-20_24_GML.zip",
+  "A38-20_25_GML.zip",
+  "A38-20_26_GML.zip",
+  "A38-20_27_GML.zip",
+  "A38-20_28_GML.zip",
+  "A38-20_29_GML.zip",
+  "A38-20_30_GML.zip",
+  "A38-20_31_GML.zip",
+  "A38-20_32_GML.zip",
+  "A38-20_33_GML.zip",
+  "A38-20_34_GML.zip",
+  "A38-20_35_GML.zip",
+  "A38-20_36_GML.zip",
+  "A38-20_37_GML.zip",
+  "A38-20_38_GML.zip",
+  "A38-20_39_GML.zip",
+  "A38-20_40_GML.zip",
+  "A38-20_41_GML.zip",
+  "A38-20_42_GML.zip",
+  "A38-20_43_GML.zip",
+  "A38-20_44_GML.zip",
+  "A38-20_45_GML.zip",
+  "A38-20_46_GML.zip",
+  "A38-20_47_GML.zip",
+  "A38-20_GML.zip"
+ ]
+}
