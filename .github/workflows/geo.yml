@@ -1,0 +1,28 @@
+name: fetch-geo
+# 国土数値情報 医療圏(A38, 2020) から 市区町村→二次医療圏 対応表と簡略化した境界を作る
+on:
+  workflow_dispatch:
+  push:
+    paths: [.github/workflows/geo.yml, scripts/geo.sh]
+permissions:
+  contents: write
+jobs:
+  geo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install -g mapshaper@0.6
+      - run: bash scripts/geo.sh geo_out
+      - name: Report
+        run: |
+          echo "::notice title=files::$(ls -la geo_out geo_out/* | sed ':a;N;$!ba;s/\n/%0A/g')"
+          echo "::notice title=info::$(cat geo_out/info.txt | head -c 6000 | sed ':a;N;$!ba;s/\n/%0A/g')"
+      - name: Push geo branch
+        run: |
+          cd geo_out
+          git init -q -b geo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "geo $(date -u +%F)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" geo
