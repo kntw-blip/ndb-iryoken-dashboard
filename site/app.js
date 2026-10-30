@@ -13,7 +13,7 @@ const fmt = (v, d = 0) => (v == null || !isFinite(v)) ? "–" : Number(v).toLoca
 const fy = (y) => `${y}年度`;
 
 const D = { index: null, items: new Map(), pop: null, areas: [], areaName: {}, geo: {} };
-const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "65", cmpMetric: "rate", cmpYear: "", saYear: "" };
+const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "t", cmpMetric: "rate", cmpYear: "", saYear: "" };
 let G = null; // 現在の項目データ
 const charts = {};
 
@@ -314,8 +314,29 @@ function renderTrend() {
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 2) }),
     series: ser,
   }), true);
+  // 年齢調整比（SCR）の推移
+  const sr = ys.map((y) => ysR.includes(y) ? scr(r, y) : null);
+  const sp = pr ? ys.map((y) => scr(pr, y)) : null;
+  const sser = [lineS(r.short, sr, T.s1, { label: { show: r.lv !== "nation", position: "top", color: T.text2, fontSize: 11,
+    formatter: (d) => d.dataIndex === sr.length - 1 || d.dataIndex === sr.findIndex((v) => v != null) ? fmt(d.value, 1) : "" } })];
+  if (sp) sser.push(lineS(pr.short, sp, T.s3, { lineStyle: { width: 2, color: T.s3, type: "dotted" } }));
+  sser[0].markLine = { symbol: "none", silent: true, lineStyle: { color: T.s2, type: "dashed", width: 2 },
+    label: { formatter: "全国＝100", color: T.text2, position: "insideEndTop" }, data: [{ yAxis: 100 }] };
+  const sv = [...sr, ...(sp || [])].filter((v) => v != null);
+  chart("cScr").setOption(Object.assign(baseOpt(T), {
+    legend: sser.length > 1 ? { top: 0, right: 0, textStyle: { color: T.text2 }, itemWidth: 18 } : undefined,
+    grid: { left: 52, right: 16, top: sser.length > 1 ? 30 : 24, bottom: 32 },
+    xAxis: axisX(T, xl), yAxis: axisY(T, { min: sv.length ? Math.max(0, Math.floor(Math.min(90, ...sv) / 10) * 10) : 0,
+      max: sv.length ? Math.ceil(Math.max(110, ...sv) / 10) * 10 : 200 }),
+    tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }),
+    series: sser,
+  }), true);
+  $("#scrNote").textContent = r.lv === "nation"
+    ? "全国は定義上つねに100です。都道府県または医療圏を選ぶと推移を表示します。"
+    : "性・年齢構成の違いを除いた全国比。各年度の全国の性・年齢別算定率を基準にしているため、全国全体の増減ではなく「全国に対する相対的な水準」の変化を示します。";
+
   table("trend", ["年度", "算定回数", DENOM[S.denom].lab, "千人あたり", "全国 千人あたり", ...(rp ? [pr.short + " 千人あたり"] : []), "SCR"],
-    ys.map((y, i) => [fy(y), fmt(o[i]), fmt(p[i]), fmt(rt[i], 3), fmt(rn[i], 3), ...(rp ? [fmt(rp[i], 3)] : []), ysR.includes(y) ? fmt(scr(r, y), 1) : "–"]),
+    ys.map((y, i) => [fy(y), fmt(o[i]), fmt(p[i]), fmt(rt[i], 3), fmt(rn[i], 3), ...(rp ? [fmt(rp[i], 3)] : []), fmt(sr[i], 1)]),
     `${G.id}_${r.short}_年次推移`);
 }
 
