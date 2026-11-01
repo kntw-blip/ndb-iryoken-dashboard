@@ -84,3 +84,10 @@ thead th{position:sticky;top:0;background:var(--surface-1);color:var(--text-seco
 .method ul{padding-left:18px;color:var(--text-secondary)}
 .method li{margin:4px 0}
 .foot{color:var(--text-muted);font-size:12px;padding-bottom:30px}
+.scen{display:flex;flex-direction:column;gap:6px;margin:10px 0 2px;font-size:13px;color:var(--text-secondary)}
+.scen b{color:var(--text-primary)}
+.scen input[type=number]{width:70px;font:inherit;padding:3px 6px;border:1px solid var(--border);border-radius:6px;background:var(--surface-1);color:var(--text-primary)}
+.scen input[type=range]{width:180px;vertical-align:middle}
+.scen select{min-height:28px;padding:2px 6px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.sw-a{background:var(--series-1)}.sw-b{background:var(--series-2)}

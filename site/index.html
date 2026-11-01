@@ -111,6 +111,16 @@
       <h2>将来推計 <span class="sub" id="futTitle"></span></h2>
       <button class="link" data-table="fut" type="button">表で見る</button>
     </div>
+    <div class="scen">
+      <div class="scen-a"><span class="sw sw-a"></span><b>受療率一定</b>：最新年度の性・年齢別算定率のまま、人口構成の変化だけを反映</div>
+      <div class="scen-b"><span class="sw sw-b"></span><b>トレンド延長</b>：算定率が毎年
+        <input id="gNum" type="number" step="0.1" min="-20" max="30" aria-label="算定率の年伸び率（%）">%
+        <input id="gRange" type="range" step="0.1" min="-10" max="20" aria-label="算定率の年伸び率スライダー">
+        ずつ変化し、<select id="gUntil" aria-label="伸びが続く年"><option value="2030">2030年</option><option value="2035">2035年</option><option value="2040">2040年</option><option value="2050">2050年</option></select>以降は横ばい
+        <button id="gReset" type="button" class="link">過去トレンドに戻す</button>
+        <div class="note" id="gInfo"></div>
+      </div>
+    </div>
     <div class="grid2">
       <figure><figcaption>推計算定回数</figcaption><div class="chart" id="cFut"></div></figure>
       <figure><figcaption>指数（2025年＝100）</figcaption><div class="chart" id="cFutIdx"></div></figure>
@@ -129,7 +139,7 @@
       <li><b>秘匿</b>：10未満（リハビリの単位数は100未満）の値は「‐」で公表されており、本ツールでは0として合計しています。件数の少ない項目・地域では過小になります。</li>
       <li><b>人口</b>：総務省「住民基本台帳に基づく人口」（翌年1月1日現在、例：2022年度＝2023年1月1日）。市区町村を国土数値情報「医療圏データ（2020年度）」で二次医療圏に集計。</li>
       <li><b>年齢調整比（SCR）</b>：全国の性・年齢階級別算定率（算定回数÷人口）をその地域の性・年齢別人口に当てはめた期待値に対する、実際の算定回数の比（×100）。100＝全国並み。</li>
-      <li><b>将来推計</b>：国立社会保障・人口問題研究所「日本の地域別将来推計人口（令和5年推計）」に、最新年度の全国の性・年齢階級別算定率を当てはめた期待値の変化率を、地域の実績値に掛けて推計。受療率・診療報酬・医療提供体制は最新年度のまま一定と仮定しています。</li>
+      <li><b>将来推計</b>：国立社会保障・人口問題研究所「日本の地域別将来推計人口（令和5年推計）」に、最新年度の全国の性・年齢階級別算定率を当てはめた期待値の変化率を、地域の実績値に掛けて推計（受療率一定）。「トレンド延長」は、全国の年齢調整算定率（2025年推計人口を基準人口とした直接法）の直近5年度の年平均伸び率を既定値とし、指定年まで算定率が伸び、その後横ばいと仮定します。伸び率は全国値を全地域に共通で適用します。診療報酬改定・医療提供体制の変化は考慮していません。</li>
     </ul>
   </section>
 </main>
