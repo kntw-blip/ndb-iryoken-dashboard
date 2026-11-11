@@ -284,7 +284,7 @@ function renderKpis() {
     ["算定回数", fmt(o), `${r.short}・${y ? fy(y) : ""}・${SETTING_LAB[S.setting]}`],
     [`${DENOM[S.denom].lab}千人あたり`, fmt(rate(o, p), 2), `全国 ${fmt(rate(obs({ lv: "nation" }, y), denomOf(popVec({ lv: "nation" }, y))), 2)}`],
     ["年齢調整比 SCR", fmt(s, 1), "全国＝100（性・年齢構成を調整）"],
-    ["2040年の推計（2025年比）", pc(chg), `受療率一定。トレンド延長（年${fmt(growthPct(), 1)}%）では ${pc(chgB)}`],
+    ["2040年の推計（2025年比）", pc(chg), `算定率一定。トレンド延長（年${fmt(growthPct(), 1)}%）では ${pc(chgB)}`],
   ].map(([k, v, s2]) => `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s2}</div></div>`).join("");
 }
 
@@ -534,23 +534,23 @@ function renderFuture() {
     grid: { left: 64, right: 16, top: 30, bottom: 32 }, xAxis: axisX(T, xl), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v) }),
     series: [
-      { name: "受療率一定", type: "bar", barMaxWidth: 22, barGap: "10%", data: [{ value: f.o, itemStyle: { color: T.muted } }, ...FUT_YEARS.map((y) => f.proj[y])],
+      { name: "算定率一定", type: "bar", barMaxWidth: 22, barGap: "10%", data: [{ value: f.o, itemStyle: { color: T.muted } }, ...FUT_YEARS.map((y) => f.proj[y])],
         itemStyle: { color: T.s1, borderRadius: [4, 4, 0, 0] }, label: lab(0) },
       { name: "トレンド延長", type: "bar", barMaxWidth: 22, data: [null, ...FUT_YEARS.map((y) => f.projB[y])],
         itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] }, label: lab(0) },
     ] }), true);
   const ser = [
-    lineS(`${r.short}・受療率一定`, FUT_YEARS.map((y) => f.idx[y]), T.s1, { label: lab(1) }),
+    lineS(`${r.short}・算定率一定`, FUT_YEARS.map((y) => f.idx[y]), T.s1, { label: lab(1) }),
     lineS(`${r.short}・トレンド延長`, FUT_YEARS.map((y) => f.idxB[y]), T.s2, { label: lab(1) }),
   ];
-  if (fn) ser.push(lineS("全国・受療率一定", FUT_YEARS.map((y) => fn.idx[y]), T.s3, { lineStyle: { width: 2, color: T.s3, type: "dashed" } }));
+  if (fn) ser.push(lineS("全国・算定率一定", FUT_YEARS.map((y) => fn.idx[y]), T.s3, { lineStyle: { width: 2, color: T.s3, type: "dashed" } }));
   const fp = pr ? futureSeries(pr) : null;
-  if (fp) ser.push(lineS(`${pr.short}・受療率一定`, FUT_YEARS.map((y) => fp.idx[y]), T.s4, { lineStyle: { width: 2, color: T.s4, type: "dotted" } }));
+  if (fp) ser.push(lineS(`${pr.short}・算定率一定`, FUT_YEARS.map((y) => fp.idx[y]), T.s4, { lineStyle: { width: 2, color: T.s4, type: "dotted" } }));
   chart("cFutIdx").setOption(Object.assign(baseOpt(T), { legend: { top: 0, left: 0, textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 16 },
     grid: { left: 52, right: 16, top: ser.length > 2 ? 52 : 30, bottom: 32 }, xAxis: axisX(T, FUT_YEARS.map((y) => y + "年")), yAxis: axisY(T, { scale: true }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }), series: ser }), true);
   $("#futNote").textContent = `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は算定率が年${fmt(f.g, 1)}%で${S.gUntil}年まで変化し、その後横ばいと仮定。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
-  table("fut", ["年", "受療率一定", "トレンド延長", "指数：受療率一定", "指数：トレンド延長", ...(fn ? ["全国 指数（受療率一定）"] : []), ...(fp ? [pr.short + " 指数（受療率一定）"] : [])],
+  table("fut", ["年", "算定率一定", "トレンド延長", "指数：算定率一定", "指数：トレンド延長", ...(fn ? ["全国 指数（算定率一定）"] : []), ...(fp ? [pr.short + " 指数（算定率一定）"] : [])],
     [[fy(f.base) + "実績", fmt(f.o), fmt(f.o), "–", "–", ...(fn ? ["–"] : []), ...(fp ? ["–"] : [])],
       ...FUT_YEARS.map((y) => [y + "年", fmt(f.proj[y]), fmt(f.projB[y]), fmt(f.idx[y], 1), fmt(f.idxB[y], 1), ...(fn ? [fmt(fn.idx[y], 1)] : []), ...(fp ? [fmt(fp.idx[y], 1)] : [])])],
     `${G.id}_${r.short}_将来推計`, `トレンド延長：年${fmt(f.g, 1)}%、${S.gUntil}年まで`);
