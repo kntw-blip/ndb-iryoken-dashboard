@@ -588,6 +588,30 @@ async function applyHash(h) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 window.applyHash = applyHash;
+
+// 計算方法の説明用：現在の選択条件での計算過程を返す
+window.ndbCalc = () => {
+  if (!G) return null;
+  const r = region(), meta = D.index.find((x) => x.id === S.item);
+  const ysR = yearsOf(r.lv === "area" ? "area" : "pref"), ysS = yearsOf("sa");
+  const y = ysR.filter((yy) => ysS.includes(yy) && (r.lv !== "area" || areaYearOK(yy))).pop();
+  if (!y) return { item: meta, region: r, none: true };
+  const sa = sumKind("sa", y), np = popVec({ lv: "nation" }, y), rp = popVec(r, y);
+  const natObs = obs({ lv: "nation" }, y), saSum = sum(sa), k = natObs && saSum ? natObs / saSum : 1;
+  const rates = natRates(y);
+  const rows = [];
+  for (let s = 0; s < 2; s++) for (let i = 0; i < 19; i++) {
+    const j = s * 19 + i;
+    rows.push({ band: BANDS[i], sex: s ? "女" : "男", cnt: sa ? sa[j] : null, npop: np ? np[j] : null,
+      rate: rates ? rates[j] * 1000 : null, rpop: rp ? rp[j] : null, exp: rates && rp ? rates[j] * rp[j] : null });
+  }
+  const o = obs(r, y), expTot = rows.reduce((t, x) => t + (x.exp || 0), 0);
+  const f = futureSeries(r), t = pastTrend();
+  return { item: meta, region: r, year: y, setting: SETTING_LAB[S.setting], natObs, saSum, k, rows, o, expTot,
+    scr: o != null && expTot ? o / expTot * 100 : null,
+    pop: denomOf(rp), denomLab: DENOM[S.denom].lab, rate: rate(o, denomOf(rp)),
+    fut: f, trend: t, g: growthPct(), gUntil: S.gUntil, fmt, fy };
+};
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   S.item = p.get("i") || S.item; S.pref = p.get("p") || ""; S.area = p.get("a") || ""; S.setting = p.get("s") || "all";

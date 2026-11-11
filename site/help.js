@@ -23,13 +23,15 @@
   function showTip(btn) {
     const t = TIPS[btn.dataset.help]; if (!t) return;
     if (popFor === btn && !pop.hidden) { hideTip(); return; }
-    pop.innerHTML = `<b>${t[0]}</b>${t[1]}<br><button type="button" class="link more" data-open="terms">用語集を見る</button>`;
+    const calcKeys = ["denom", "trend", "cmp", "sa", "fut"];
+    pop.innerHTML = `<b>${t[0]}</b>${t[1]}<br><button type="button" class="link more" data-open="terms">用語集を見る</button>` +
+      (calcKeys.includes(btn.dataset.help) ? ` <button type="button" class="link more" data-open="calc">計算方法を見る</button>` : "");
     pop.hidden = false; popFor = btn;
     const r = btn.getBoundingClientRect(), w = Math.min(340, window.innerWidth - 24);
     pop.style.maxWidth = w + "px";
     const left = Math.max(12, Math.min(window.scrollX + r.left - 20, window.scrollX + window.innerWidth - w - 12));
     pop.style.left = left + "px"; pop.style.top = (window.scrollY + r.bottom + 8) + "px";
-    pop.querySelector("[data-open]").onclick = () => { hideTip(); openHelp("terms"); };
+    pop.querySelectorAll("[data-open]").forEach((b) => (b.onclick = () => { hideTip(); openHelp(b.dataset.open); }));
   }
   function hideTip() { pop.hidden = true; popFor = null; }
   document.addEventListener("click", (e) => {
@@ -48,7 +50,71 @@
     { t: "伸びている治療（カテーテルアブレーション）の将来需要を見積もる", h: "#i=K595&p=27",
       s: ["診療行為で「経皮的カテーテル心筋焼灼術（K595）」を選ぶ", "「将来推計」の2つのシナリオを比べる。人口だけで見ると横ばい〜減少でも、算定率の伸び（トレンド延長）を入れると増加になる", "伸び率のスライダーを動かし、控えめな見通し（例：年2%）でも採算が合うか検討する"] },
   ];
+
+  function calcBody() {
+    const c = window.ndbCalc && window.ndbCalc();
+    if (!c) return "<p>データを読み込み中です。少し待ってから開き直してください。</p>";
+    const f = c.fmt, item = c.item ? `${c.item.id.includes(":") ? "" : c.item.id + " "}${c.item.n}` : "";
+    if (c.none) return `<p>${item}（${c.region.name}）は、計算に必要な性・年齢別データがありません。</p>`;
+    const reg = c.region.name, yl = c.fy(c.year), isNat = c.region.lv === "nation";
+    const top = c.rows.filter((x) => x.rate != null).sort((a, b) => b.rate - a.rate)[0];
+    const fu = c.fut, t = c.trend;
+    const rowsHtml = c.rows.map((x) => `<tr><td>${x.sex}</td><td>${x.band}</td><td>${f(x.cnt)}</td><td>${f(x.npop)}</td><td>${f(x.rate, 3)}</td>${isNat ? "" : `<td>${f(x.rpop)}</td><td>${f(x.exp, 1)}</td>`}</tr>`).join("");
+    return `
+      <p>このページの数値が、どのような計算で求められているかを説明します。後半の<b>計算例</b>は、いま画面で選んでいる条件<br>
+      （<b>${item}</b>／<b>${reg}</b>／${c.setting}／${yl}）の実際の数値で計算しています。条件を変えてから開き直すと、計算例も変わります。</p>
+
+      <h3>0. 本ツールの「受療率」とは</h3>
+      <p>本ツールでいう受療率（画面上は「算定率」とも表記）は、<b>人口あたりの算定回数</b>です。レセプトで請求された回数を人口で割ったもので、同じ患者が何度も算定されれば、その回数分数えます。厚生労働省「患者調査」の受療率（調査日に医療機関を受診した推計患者数 ÷ 人口 × 10万）とは定義が異なります。</p>
+
+      <h3>1. 人口千人あたり算定回数</h3>
+      <div class="formula">人口千人あたり算定回数 ＝ 算定回数 ÷ 人口（総人口・65歳以上・75歳以上のいずれか） × 1,000</div>
+      <div class="ex">計算例（${reg}・${yl}）：${f(c.o)} ÷ ${f(c.pop)}（${c.denomLab}） × 1,000 ＝ <b>${f(c.rate, 2)}</b></div>
+
+      <h3>2. 性・年齢階級別算定率（受療率）</h3>
+      <div class="formula">算定率（性 s・年齢 a） ＝ 全国の算定回数（s, a） ÷ 全国の人口（s, a） × 補正係数 k</div>
+      <div class="formula">補正係数 k ＝ 全国の算定回数の総計（都道府県別の合計） ÷ 性・年齢別の算定回数の合計</div>
+      <p>性・年齢別の表は秘匿（10未満は「‐」）などのため、合計が都道府県別の総計と少しずれることがあります。k でこのずれを補正し、全国の期待値が実績と一致するようにしています。性・年齢別は全国の値しか公表されていないため、算定率は全国共通の値です。年齢は5歳刻み（90歳以上はまとめて1区分）、男女別の38区分です。</p>
+      <div class="ex">計算例（全国・${yl}）：k ＝ ${f(c.natObs)} ÷ ${f(c.saSum)} ＝ ${f(c.k, 4)}。算定率がもっとも高いのは ${top ? `${top.sex}性 ${top.band}歳の <b>人口千人あたり ${f(top.rate, 3)}</b>（${f(top.cnt)} ÷ ${f(top.npop)} × 1,000 × k）` : "–"}。全区分は下の表を参照してください。</div>
+
+      <h3>3. 年齢調整比（SCR）</h3>
+      <div class="formula">期待値 ＝ Σ（全国の算定率（s, a） × その地域の人口（s, a））　※38区分の合計</div>
+      <div class="formula">SCR ＝ その地域の算定回数（実績） ÷ 期待値 × 100</div>
+      <p>「その地域の年齢構成で、全国平均どおりに算定された場合の回数」が期待値です。実績が期待値と同じなら100。高齢者の多い地域は期待値も大きくなるため、年齢構成の違いを除いて比べられます（間接法）。基準となる算定率は年度ごとに計算するため、SCRの推移は「全国に対する相対的な水準」の変化を表します。</p>
+      <div class="ex">計算例（${reg}・${yl}）：${isNat ? "全国は定義上、期待値＝実績となり SCR＝100 です。都道府県・医療圏を選んで開き直すと、その地域での計算例を表示します。" : `期待値 ${f(c.expTot, 1)}、実績 ${f(c.o)} → SCR ＝ ${f(c.o)} ÷ ${f(c.expTot, 1)} × 100 ＝ <b>${f(c.scr, 1)}</b>`}</div>
+
+      <h3>4. 将来推計：受療率一定</h3>
+      <div class="formula">期待値（Y年） ＝ Σ（基準年度の全国算定率（s, a） × その地域の将来推計人口（Y年, s, a））</div>
+      <div class="formula">推計算定回数（Y年） ＝ 基準年度の実績 × 期待値（Y年） ÷ 期待値（2025年）</div>
+      <p>算定率は基準年度（最新年度）のまま変わらないと仮定し、人口の増減と年齢構成の変化だけを反映します。基準年度の実績（2024年度＝2024年4月〜2025年3月）は、2025年時点の値とみなしています。</p>
+      ${fu ? `<div class="ex">計算例（${reg}）：基準 ${c.fy(fu.base)} の実績 ${f(fu.o)}、期待値の比（2040年 ÷ 2025年） ＝ ${f(fu.idx["2040"] / 100, 4)} → 2040年 ＝ ${f(fu.o)} × ${f(fu.idx["2040"] / 100, 4)} ＝ <b>${f(fu.proj["2040"])}</b></div>` : ""}
+
+      <h3>5. 年齢調整算定率と過去の伸び率</h3>
+      <div class="formula">年齢調整算定率（年度 y） ＝ Σ（年度 y の全国算定率（s, a） × 基準人口（s, a）） ÷ 基準人口の総数 × 1,000　※基準人口＝2025年の全国推計人口</div>
+      <div class="formula">年平均伸び率 g ＝（年齢調整算定率（最新年度） ÷ 年齢調整算定率（5年度前））^（1 ÷ 年数） − 1</div>
+      <p>人口構成を2025年に固定して比べることで、高齢化の影響を除いた「算定率そのものの伸び」を測ります（直接法）。既定値は −10%〜+20% の範囲に制限しています。</p>
+      ${t ? `<div class="ex">計算例（全国）：${c.fy(t.from)} ${f(t.r0, 3)} → ${c.fy(t.to)} ${f(t.r1, 3)}（人口千人あたり）。g ＝（${f(t.r1, 3)} ÷ ${f(t.r0, 3)}）^（1 ÷ ${+t.to - +t.from}） − 1 ＝ <b>${t.g >= 0 ? "+" : ""}${f(t.g, 2)}%</b></div>` : `<div class="ex">この項目は5年度分の性・年齢別データがないため、過去の伸び率を計算できません。</div>`}
+
+      <h3>6. 将来推計：トレンド延長</h3>
+      <div class="formula">推計算定回数（Y年） ＝ 受療率一定の推計（Y年） × （1 ＋ g）^（min（Y, 伸びが続く最後の年） − 2025）</div>
+      <p>算定率が毎年 g ずつ変化し、指定した年（既定は2030年）以降は横ばいと仮定します。g は全国の値をすべての地域に共通で使います。画面の入力欄で g と期間を変更できます。</p>
+      ${fu ? `<div class="ex">計算例（${reg}、g ＝ ${f(c.g, 1)}%、${c.gUntil}年まで）：2040年 ＝ ${f(fu.proj["2040"])} × （1 ＋ ${f(c.g / 100, 4)}）^${Math.max(0, Math.min(2040, +c.gUntil) - (+fu.base + 1))} ＝ <b>${f(fu.projB["2040"])}</b></div>` : ""}
+
+      <h3>7. 使っている人口の時点</h3>
+      <ul>
+        <li>実績（2014〜2024年度）：総務省「住民基本台帳に基づく人口」の<b>翌年1月1日</b>現在（例：2024年度 → 2025年1月1日）。市区町村の人口を二次医療圏ごとに合計。</li>
+        <li>将来（2025〜2050年）：国立社会保障・人口問題研究所「日本の地域別将来推計人口（令和5年推計）」の各年10月1日。</li>
+      </ul>
+
+      <h3>計算例：性・年齢階級別の算定率${isNat ? "" : "と期待値"}（${reg}・${yl}・${c.setting}）</h3>
+      <div class="calc-tbl"><table>
+        <thead><tr><th>性</th><th>年齢</th><th>全国 算定回数</th><th>全国 人口</th><th>算定率（千人あたり、k補正後）</th>${isNat ? "" : `<th>${reg} 人口</th><th>期待値</th>`}</tr></thead>
+        <tbody>${rowsHtml}</tbody>
+        ${isNat ? "" : `<tfoot><tr><td colspan="6">期待値の合計 → 実績 ${f(c.o)} ÷ ${f(c.expTot, 1)} × 100 ＝ SCR ${f(c.scr, 1)}</td><td>${f(c.expTot, 1)}</td></tr></tfoot>`}
+      </table></div>`;
+  }
   const BODY = {
+    calc: calcBody,
     about: `
       <p>厚生労働省が公表している<b>NDBオープンデータ</b>（全国のレセプト＝診療報酬明細書の集計）を使い、<b>どの地域で、どの診療行為が、どれだけ行われているか</b>を、人口と組み合わせて見るためのツールです。</p>
       <h3>わかること</h3>
@@ -89,6 +155,7 @@
         <dt>年齢調整比（SCR）</dt><dd>その地域の年齢構成で全国平均どおりに算定された場合の回数（期待値）に対する、実際の回数の比率×100。<b>100＝全国並み</b>、120なら全国より2割多い。高齢者が多い地域ほど回数が多くなるのは当然なので、その影響を除いて比べるための指標です。</dd>
         <dt>秘匿（‐）</dt><dd>個人や医療機関が特定されないよう、10未満の値は公表されていません。本ツールでは0として合計するため、件数の少ない項目・地域では実際より少なくなります。</dd>
         <dt>捕捉率</dt><dd>医療圏別の値の合計が全国合計の何％にあたるか。2018〜2021年度は医療圏別の値の多くが秘匿されている項目があり、捕捉率が90％未満の年度は表示していません。</dd>
+        <dt>算定率（受療率）</dt><dd>人口あたりの算定回数。性・年齢階級別に全国の算定回数を人口で割って求め、SCRや将来推計の基礎にしています。患者調査の「受療率」（推計患者数ベース）とは定義が異なります。計算式は「計算方法」タブを参照。</dd>
         <dt>受療率一定（将来推計）</dt><dd>今の年代別の算定率が将来も変わらないと仮定し、人口の増減と高齢化だけを反映した推計。</dd>
         <dt>トレンド延長（将来推計）</dt><dd>過去5年の算定率の伸び（年齢構成の影響を除いた値）が指定した年まで続き、その後は横ばいと仮定した推計。伸び率は画面で変更できます。</dd>
         <dt>公費レセプト</dt><dd>生活保護などの公費負担医療のレセプト。年度間で比べられるよう、全年度「公費レセプトを含まない」集計を使っています。</dd>
@@ -123,6 +190,7 @@
   }
   document.querySelectorAll(".help-tabs [data-tab]").forEach((b) => (b.onclick = () => showTab(b.dataset.tab)));
   $("#helpOpen").onclick = () => openHelp();
+  const co = $("#calcOpen"); if (co) co.onclick = () => openHelp("calc");
   $("#helpClose").onclick = closeHelp;
   dlg.addEventListener("click", (e) => { if (e.target === dlg) closeHelp(); });
   $("#helpTour").onclick = () => { closeHelp(); startTour(); };
@@ -140,7 +208,7 @@
     { sel: "#cSa", up: "section", t: "⑦ 性・年齢別", x: "どの年代・性別で多い診療行為かが分かります（全国の値）。対象患者の年代をつかむのに役立ちます。" },
     { sel: ".scen", up: "section", t: "⑧ 将来推計", x: "人口構成の変化だけを見る「受療率一定」と、過去の伸びが続く「トレンド延長」の2通りで2050年まで推計します。伸び率は自由に変えられます。" },
     { sel: "[data-table=trend]", t: "⑨ 数値の確認と保存", x: "「表で見る」で数値を表に表示し、CSVでダウンロードできます。画面のURLには選んだ条件が入っているので、共有すれば同じ画面を開けます。" },
-    { sel: ".help-btns", t: "いつでも見返せます", x: "使い方や用語は「使い方ガイド」で確認できます。各見出しの「?」を押すと、その部分の説明が出ます。" },
+    { sel: ".help-btns", t: "いつでも見返せます", x: "使い方・用語・計算方法は「使い方ガイド」で確認できます。各見出しの「?」を押すと、その部分の説明が出ます。" },
   ];
   let ti = 0, tourOn = false;
   const tour = $("#tour"), hole = $("#tourHole"), card = $("#tourCard");
