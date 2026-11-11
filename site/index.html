@@ -11,6 +11,10 @@
 <div class="viz-root">
 <header class="site-header">
   <div class="wrap">
+    <div class="help-btns">
+      <button type="button" id="helpOpen" class="btn-help">使い方ガイド</button>
+      <button type="button" id="tourStart" class="btn-help ghost">画面ツアー</button>
+    </div>
     <h1>NDB 医療圏ダッシュボード</h1>
     <p class="lead">厚生労働省「NDBオープンデータ」の医科診療行為（算定回数）を、都道府県・二次医療圏ごとに人口と組み合わせて見るためのツールです。</p>
   </div>
@@ -18,7 +22,7 @@
 
 <section class="controls wrap" aria-label="条件">
   <div class="ctl ctl-item">
-    <label for="itemSearch">診療行為（分類）</label>
+    <label for="itemSearch">診療行為（分類） <button type="button" class="q" data-help="item" aria-label="診療行為の選び方">?</button></label>
     <div class="search">
       <input id="itemSearch" type="search" placeholder="例：特定集中治療室、A301、人工腎臓、内視鏡" autocomplete="off">
       <div id="searchResults" class="search-results" role="listbox" hidden></div>
@@ -26,7 +30,7 @@
     <div class="item-title"><span id="itemName">読み込み中…</span> <button id="codeToggle" class="link" type="button" aria-expanded="false">対象コードを選ぶ</button></div>
   </div>
   <div class="ctl">
-    <label for="setting">入院／外来</label>
+    <label for="setting">入院／外来 <button type="button" class="q" data-help="setting" aria-label="入院／外来の説明">?</button></label>
     <select id="setting"><option value="all">全体</option><option value="in">入院</option><option value="out">外来</option></select>
   </div>
   <div class="ctl">
@@ -34,11 +38,11 @@
     <select id="prefSel"></select>
   </div>
   <div class="ctl">
-    <label for="areaSel">二次医療圏</label>
+    <label for="areaSel">二次医療圏 <button type="button" class="q" data-help="area" aria-label="二次医療圏の説明">?</button></label>
     <select id="areaSel"></select>
   </div>
   <div class="ctl">
-    <label for="denom">人口あたりの分母</label>
+    <label for="denom">人口あたりの分母 <button type="button" class="q" data-help="denom" aria-label="分母の説明">?</button></label>
     <select id="denom"><option value="t">総人口</option><option value="65">65歳以上人口</option><option value="75">75歳以上人口</option></select>
   </div>
 </section>
@@ -60,7 +64,7 @@
 
   <section class="panel">
     <div class="panel-head">
-      <h2>年次推移 <span class="sub" id="trendRegion"></span></h2>
+      <h2>年次推移 <button type="button" class="q" data-help="trend" aria-label="年次推移の説明">?</button><span class="sub" id="trendRegion"></span></h2>
       <button class="link" data-table="trend" type="button">表で見る</button>
     </div>
     <div class="grid2">
@@ -74,7 +78,7 @@
 
   <section class="panel">
     <div class="panel-head">
-      <h2>地域比較 <span class="sub" id="cmpTitle"></span></h2>
+      <h2>地域比較 <button type="button" class="q" data-help="cmp" aria-label="地域比較の説明">?</button><span class="sub" id="cmpTitle"></span></h2>
       <div class="inline">
         <label>指標 <select id="cmpMetric"><option value="rate">人口千人あたり</option><option value="scr">年齢調整比 SCR</option><option value="count">算定回数</option></select></label>
         <label>年度 <select id="cmpYear"></select></label>
@@ -92,7 +96,7 @@
 
   <section class="panel">
     <div class="panel-head">
-      <h2>性・年齢別（全国） <span class="sub" id="saYearLab"></span></h2>
+      <h2>性・年齢別（全国） <button type="button" class="q" data-help="sa" aria-label="性・年齢別（全国）の説明">?</button><span class="sub" id="saYearLab"></span></h2>
       <div class="inline">
         <label>年度 <select id="saYear"></select></label>
         <button class="link" data-table="sa" type="button">表で見る</button>
@@ -108,7 +112,7 @@
 
   <section class="panel">
     <div class="panel-head">
-      <h2>将来推計 <span class="sub" id="futTitle"></span></h2>
+      <h2>将来推計 <button type="button" class="q" data-help="fut" aria-label="将来推計の説明">?</button><span class="sub" id="futTitle"></span></h2>
       <button class="link" data-table="fut" type="button">表で見る</button>
     </div>
     <div class="scen">
@@ -144,11 +148,44 @@
   </section>
 </main>
 <footer class="wrap foot">
-  <p>データ：厚生労働省 NDBオープンデータ／総務省 住民基本台帳人口／国立社会保障・人口問題研究所／国土交通省 国土数値情報（医療圏データ）を加工して作成。<a href="https://github.com/kentowatanabe00-blip/ndb-iryoken-dashboard" target="_blank" rel="noopener">GitHub</a></p>
+  <p>データ：厚生労働省 NDBオープンデータ／総務省 住民基本台帳人口／国立社会保障・人口問題研究所／国土交通省 国土数値情報（医療圏データ）を加工して作成。<a href="https://github.com/kntw-blip/ndb-iryoken-dashboard" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
+<dialog id="helpDlg" class="help-dlg" aria-labelledby="helpTitle">
+  <div class="help-head">
+    <h2 id="helpTitle">使い方ガイド</h2>
+    <button type="button" class="help-x" id="helpClose" aria-label="閉じる">×</button>
+  </div>
+  <nav class="help-tabs" role="tablist">
+    <button type="button" role="tab" data-tab="about" aria-selected="true">このツールでわかること</button>
+    <button type="button" role="tab" data-tab="steps">基本の使い方</button>
+    <button type="button" role="tab" data-tab="cases">活用例</button>
+    <button type="button" role="tab" data-tab="terms">用語集</button>
+    <button type="button" role="tab" data-tab="faq">注意点・Q&amp;A</button>
+  </nav>
+  <div class="help-body" id="helpBody"></div>
+  <div class="help-foot">
+    <button type="button" id="helpTour" class="btn-help">画面ツアーを始める</button>
+  </div>
+</dialog>
+<div id="pop" class="pop" role="tooltip" hidden></div>
+<div id="tour" class="tour" hidden>
+  <div class="tour-hole" id="tourHole"></div>
+  <div class="tour-card" id="tourCard" role="dialog" aria-live="polite">
+    <div class="tour-step" id="tourStep"></div>
+    <h3 id="tourTitle"></h3>
+    <p id="tourText"></p>
+    <div class="tour-nav">
+      <button type="button" id="tourSkip" class="link">ツアーを終了</button>
+      <span class="sp"></span>
+      <button type="button" id="tourPrev">戻る</button>
+      <button type="button" id="tourNext" class="btn-help">次へ</button>
+    </div>
+  </div>
+</div>
 </div>
 <script src="vendor/echarts.min.js"></script>
 <script src="vendor/topojson-client.min.js"></script>
 <script src="app.js"></script>
+<script src="help.js"></script>
 </body>
 </html>

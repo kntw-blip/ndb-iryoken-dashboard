@@ -578,6 +578,16 @@ function writeHash() {
   const x = [...S.excl].filter((k) => G?.codes[k]); if (x.length) p.set("x", x.join("."));
   history.replaceState(null, "", "#" + p.toString());
 }
+// URLの条件を画面に反映（ガイドの「この例を開く」から使用）
+async function applyHash(h) {
+  history.replaceState(null, "", h);
+  readHash();
+  $("#prefSel").value = S.pref; fillAreas(); $("#denom").value = S.denom; $("#cmpMetric").value = S.cmpMetric;
+  if (S.setting) $("#setting").value = S.setting;
+  await loadItem(S.item, true);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+window.applyHash = applyHash;
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   S.item = p.get("i") || S.item; S.pref = p.get("p") || ""; S.area = p.get("a") || ""; S.setting = p.get("s") || "all";
