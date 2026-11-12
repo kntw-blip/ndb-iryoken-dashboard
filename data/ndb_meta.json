@@ -1,0 +1,78 @@
+{
+ "editions": [
+  {
+   "n": 1,
+   "fy": 2014,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 2,
+   "fy": 2015,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 3,
+   "fy": 2016,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 4,
+   "fy": 2017,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 5,
+   "fy": 2018,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 6,
+   "fy": 2019,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 7,
+   "fy": 2020,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 8,
+   "fy": 2021,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 9,
+   "fy": 2022,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 10,
+   "fy": 2023,
+   "months": 12,
+   "used": true
+  },
+  {
+   "n": 11,
+   "fy": 2024,
+   "months": 12,
+   "used": true
+  }
+ ],
+ "groups": 2432,
+ "codes": 11841,
+ "areas": 335,
+ "warnings": {
+  "dental_file": 342,
+  "area_remap 2017 unmatched=17": 2,
+  "no_header": 14
+ }
+}
