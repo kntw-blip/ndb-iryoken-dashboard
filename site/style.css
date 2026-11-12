@@ -143,3 +143,4 @@ thead th{position:sticky;top:0;background:var(--surface-1);color:var(--text-seco
 .method h2 .link{font-size:13px;font-weight:400;margin-left:8px}
 .help-body table.txt th,.help-body table.txt td{text-align:left;white-space:normal;vertical-align:top}
 .help-body table.txt td:first-child{white-space:nowrap;color:var(--text-secondary)}
+.data-status{margin:6px 0 0;font-size:12px;color:var(--text-muted)}

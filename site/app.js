@@ -62,8 +62,24 @@ async function init() {
   bindUI();
   await loadItem(S.item, true);
   loadGeo();
+  showDataStatus();
   window.addEventListener("resize", () => Object.values(charts).forEach((c) => c.resize()));
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", render);
+}
+
+// 収載データと自動確認の状況
+async function showDataStatus() {
+  const d = (ts) => ts ? new Date(ts).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo", year: "numeric", month: "long", day: "numeric" }) : null;
+  const [meta, st] = await Promise.all([getJSON("data/meta.json").catch(() => null), getJSON("data/status.json?t=" + Date.now()).catch(() => null)]);
+  if (!meta) return;
+  const sm = meta.summary || {}, ys = sm.years || [], eu = sm.editions_used || [];
+  const parts = [];
+  if (ys.length) parts.push(`収載データ：${ys[0]}〜${ys[ys.length - 1]}年度（NDBオープンデータ 第${Math.min(...eu)}〜${Math.max(...eu)}回）`);
+  parts.push(`データ更新：${d(meta.built_at)}`);
+  const checked = st?.checked_at && (!meta.checked_at || st.checked_at > meta.checked_at) ? st.checked_at : meta.checked_at;
+  if (checked) parts.push(`公表状況の最終確認：${d(checked)}（毎月2日に厚生労働省などのサイトを自動確認）`);
+  const partial = (sm.editions_partial || []).map((e) => `第${e.n}回は${e.months}か月分のみの公表のため、1年度分そろってから反映します`);
+  $("#dataStatus").textContent = [...parts, ...partial].join("｜");
 }
 
 async function loadGeo() {

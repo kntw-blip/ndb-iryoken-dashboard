@@ -1,6 +1,8 @@
 name: build-and-publish
-# 一次データ取得 → 加工 → gh-pages ブランチへ公開
+# 毎月：厚労省などの公表状況を確認 → 新しいデータがあれば取得・加工・検証 → gh-pages へ公開 → Issue で通知
 on:
+  schedule:
+    - cron: "17 21 1 * *"   # 毎月2日 06:17 JST
   workflow_dispatch:
     inputs:
       refresh:
@@ -10,56 +12,88 @@ on:
   push:
     branches: [main]
     paths: [site/**, scripts/**, .github/workflows/build.yml]
-  schedule:
-    - cron: "17 21 1 * *"   # 毎月2日 06:17 JST（新しい回の公表を取り込む）
 permissions:
   contents: write
+  issues: write
 concurrency:
   group: build
   cancel-in-progress: false
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - uses: actions/setup-node@v4
-        with: { node-version: "20" }
       - run: pip install requests beautifulsoup4 python-calamine
-      - run: npm install -g mapshaper@0.6
-      - name: Cache key (月単位で一次データを更新)
-        id: key
-        run: echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+      - name: 公表状況の確認
+        id: check
+        run: |
+          python scripts/fetch.py --check sources.json
+          curl -fsSL "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/gh-pages/data/meta.json" -o prev_meta.json || echo '{}' > prev_meta.json
+          python scripts/pipeline.py compare sources.json prev_meta.json | tee -a "$GITHUB_OUTPUT"
+
+      - name: 更新の要否
+        id: need
+        env:
+          EVENT: ${{ github.event_name }}
+          CHANGED: ${{ steps.check.outputs.changed }}
+        run: |
+          # 定期実行で新しいデータがなければ何もしない（手動実行・コード変更時は常に再構築）
+          if [ "$EVENT" = "schedule" ] && [ "$CHANGED" != "true" ]; then build=false; else build=true; fi
+          echo "build=$build" >> "$GITHUB_OUTPUT"
+          {
+            echo "## 公表状況の確認"
+            echo "- 起動：$EVENT"
+            echo "- 前回公開時からの変化：$CHANGED"
+            echo "- 再構築：$build"
+            python -c "import json;s=json.load(open('sources.json'));print('- 公表済みの回：第'+'・'.join(str(e['n']) for e in s['editions'])+'回');print('- 住基人口：'+'・'.join(s['jumin'])+'年')"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/setup-node@v4
+        if: steps.need.outputs.build == 'true'
+        with: { node-version: "20" }
+      - if: steps.need.outputs.build == 'true'
+        run: npm install -g mapshaper@0.6
       - uses: actions/cache@v4
         id: cache
-        if: ${{ !inputs.refresh }}
+        if: steps.need.outputs.build == 'true' && !inputs.refresh
         with:
           path: |
             raw
             geo_out
-          key: rawdata-v1-${{ steps.key.outputs.month }}
-      - name: Fetch raw data
-        if: steps.cache.outputs.cache-hit != 'true'
+          key: rawdata-v2-${{ steps.check.outputs.fp }}
+      - name: 一次データの取得
+        if: steps.need.outputs.build == 'true' && steps.cache.outputs.cache-hit != 'true'
         run: |
+          rm -rf raw geo_out
           python scripts/fetch.py raw
           bash scripts/geo.sh geo_out
-      - name: Build data
+          test -s geo_out/muni_attr.csv && test -s geo_out/areas_0.5.topo.json
+
+      - name: 加工
+        if: steps.need.outputs.build == 'true'
         run: |
           mkdir -p site/data
-          ls raw raw/ndb geo_out > build_log.txt 2>&1 || true
-          python scripts/build_ndb.py raw site/data 2>&1 | grep -v '^parsed' | tee -a build_log.txt
+          python scripts/build_ndb.py raw site/data 2>&1 | grep -v '^parsed' | tee build_log.txt
           python scripts/build_pop.py raw geo_out site/data 2>&1 | tee -a build_log.txt
           cp geo_out/areas_0.5.topo.json site/data/areas.topo.json
           cp geo_out/prefs_0.5.topo.json site/data/prefs.topo.json
-          date -u +%FT%TZ > site/data/built_at.txt
           du -sh site/data
-          echo "::notice title=build::$(tail -c 3000 build_log.txt | sed ':a;N;$!ba;s/\n/%0A/g')"
-      - name: Report failure
-        if: failure()
-        run: echo "::error title=log::$(tail -c 4000 build_log.txt 2>/dev/null | sed ':a;N;$!ba;s/\n/%0A/g')"
-      - name: Publish to gh-pages
+
+      - name: 検証
+        id: val
+        if: steps.need.outputs.build == 'true'
+        run: |
+          python scripts/pipeline.py validate site/data sources.json prev_meta.json | tee -a "$GITHUB_OUTPUT"
+          python -c "import json;v=json.load(open('site/data/meta.json'))['validation'];print('## 検証');[print('- ❌',e) for e in v['errors']];[print('- ',n) for n in v['notes']];print('- 合格' if not v['errors'] else '')" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 公開（gh-pages）
+        if: steps.need.outputs.build == 'true' && steps.val.outputs.ok == 'true'
         run: |
           cd site
           touch .nojekyll
@@ -67,4 +101,41 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
           git add -A && git commit -qm "publish $(date -u +%F)"
-          git -c http.postBuffer=524288000 push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" gh-pages
+          git -c http.postBuffer=524288000 push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}" gh-pages
+
+      - name: 確認日時の記録（サイトの再公開なし）
+        if: steps.need.outputs.build == 'false' || steps.val.outputs.ok == 'false'
+        env:
+          RESULT: ${{ steps.need.outputs.build == 'false' && 'nochange' || 'held' }}
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse -b gh-pages "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}" ghp
+          cd ghp
+          git sparse-checkout set --no-cone /data/status.json
+          mkdir -p data
+          python -c "import json,os;json.dump({'checked_at':json.load(open('../sources.json'))['checked_at'],'result':os.environ['RESULT']},open('data/status.json','w'))"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add data/status.json && git commit -qm "status: $RESULT $(date -u +%F)" && git push -q
+
+      - name: 通知（GitHub Issue）
+        if: always() && (steps.check.outputs.changed == 'true' || steps.val.outputs.ok == 'false' || job.status == 'failure')
+        env:
+          STATUS: ${{ job.status }}
+          OK: ${{ steps.val.outputs.ok }}
+          FIRST: ${{ steps.check.outputs.first }}
+          BUILD: ${{ steps.need.outputs.build }}
+        run: |
+          if [ "$OK" = "false" ]; then kind=held
+          elif [ "$STATUS" = "failure" ] || [ "$BUILD" != "true" ]; then kind=error
+          elif [ "$FIRST" = "true" ]; then kind=first
+          else kind=updated; fi
+          [ -f sources.json ] || echo '{}' > sources.json
+          [ -f prev_meta.json ] || echo '{}' > prev_meta.json
+          title=$(NOTIFY_BODY=notify_body.md python scripts/pipeline.py notify "$kind" sources.json prev_meta.json site/data)
+          # 同じ内容の未解決Issueがあればコメントを追加（重複を防ぐ）
+          num=$(gh issue list --state open --limit 50 --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -1)
+          if [ -n "$num" ] && [ "$kind" != "updated" ]; then
+            gh issue comment "$num" --body-file notify_body.md
+          else
+            gh issue create --title "$title" --body-file notify_body.md
+          fi

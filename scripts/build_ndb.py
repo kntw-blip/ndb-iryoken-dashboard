@@ -21,12 +21,22 @@ def num(v):
     s = str(v).strip().replace(",", "")
     return int(float(s)) if re.fullmatch(r"-?\d+(\.\d+)?", s) else None
 
+def _year(tok):
+    m = re.fullmatch(r"(H|R)?(\d+)", tok)
+    y = int(m.group(2))
+    return {"H": 1988 + y, "R": 2018 + y}.get(m.group(1), y if y > 1900 else 2000 + y)
+
+def period_of(title):
+    """表題の「診療年月：2024年04月～2025年03月」から (年度, 月数) を返す。読めなければ (None, None)"""
+    m = re.search(r"((?:H|R)?\d+)年(\d+)月\s*[～~〜-]\s*((?:H|R)?\d+)年(\d+)月", str(title))
+    if not m: return None, None
+    y1, m1, y2, m2 = _year(m.group(1)), int(m.group(2)), _year(m.group(3)), int(m.group(4))
+    fy = y1 if m1 >= 4 else y1 - 1
+    return fy, (y2 - y1) * 12 + (m2 - m1) + 1
+
 def fy_of(title, ed):
-    m = re.search(r"(H|R|20)(\d+)年0?4月", str(title))
-    if m:
-        y = int(m.group(2))
-        return {"H": 1988 + y, "R": 2018 + y, "20": 2000 + y}[m.group(1)]
-    return 2013 + ed
+    fy, _ = period_of(title)
+    return fy if fy else 2013 + ed
 
 def parse_sheet(rows, kind, grp_label):
     """rows: list of lists -> (地域等の見出し, レコード一覧)"""
@@ -98,6 +108,18 @@ def setting_of(sheet):
 groups = {}
 meta_area = {}
 files = sorted(glob.glob(str(RAW / "ndb" / "ed*" / "*.xls*")))
+# 各回の対象期間を確認し、1年度分（12か月）そろっていない回（部分公開）は使わない
+editions = {}
+for f in files:
+    ed = int(re.search(r"ed(\d+)", f).group(1))
+    if ed in editions or not kind_of(os.path.basename(f)): continue
+    wb = CalamineWorkbook.from_path(f)
+    fy, months = period_of((wb.get_sheet_by_name(wb.sheet_names[0]).to_python() or [[""]])[0][0])
+    editions[ed] = {"n": ed, "fy": fy or 2013 + ed, "months": months or 12}
+for e in editions.values():
+    e["used"] = e["months"] >= 12
+    if not e["used"]: warn[f"partial_edition ed{e['n']} months={e['months']}"] += 1
+files = [f for f in files if editions.get(int(re.search(r"ed(\d+)", f).group(1)), {}).get("used")]
 # 医療圏の並び順は最新回のファイルを基準にする（古い回で並び・区分が異なる場合はコードで並べ替え）
 CANON = None
 for f in reversed(files):
@@ -198,6 +220,10 @@ for gid, g in sorted(groups.items()):
                   "c": [[k, v["n"]] for k, v in codes_out.items()],
                   "st": sorted({s for v in codes_out.values() for s in v["st"]})})
 (OUT / "items.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")))
+(OUT / "ndb_meta.json").write_text(json.dumps({
+    "editions": sorted(editions.values(), key=lambda e: e["n"]),
+    "groups": len(groups), "codes": sum(len(g["codes"]) for g in groups.values()), "areas": len(base),
+    "warnings": {k: v for k, v in warn.items() if not k.startswith("dup")}}, ensure_ascii=False, indent=1))
 (OUT / "areas_ndb.json").write_text(json.dumps([{"code": a, "name": b} for a, b in base], ensure_ascii=False))
 print("groups", len(groups), "codes", sum(len(g["codes"]) for g in groups.values()))
 print("warnings", dict(warn))
