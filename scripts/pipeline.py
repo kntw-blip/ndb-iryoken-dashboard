@@ -96,6 +96,10 @@ def validate(data_p, src_p, prev_p):
                 if nv is None: errors.append(f"{g} の {y}年度の値がなくなりました。")
                 elif abs(nv - v) / v > 0.02: errors.append(f"{g} の {y}年度の全国値が前回から2%以上変わりました（{v:,} → {nv:,}）。厚労省の訂正か、集計処理の不具合の可能性があります。")
     new_years = [y for y in years if y not in pm.get("years", [])] if pm else []
+    found = {e["n"] for e in nm.get("editions", [])}
+    for e in src.get("editions", []):
+        if e["n"] not in found:
+            notes.append(f"第{e['n']}回は公表されていますが、医科診療行為（算定回数）のファイルが見つかりませんでした（医科診療行為が未公表、またはファイル構成が変わった可能性）。")
     for e in nm.get("editions", []):
         if not e.get("used"): notes.append(f"第{e['n']}回は{e['months']}か月分のみの公表（部分公開）のため、1年度分そろうまで反映しません。")
     meta = {
@@ -105,6 +109,7 @@ def validate(data_p, src_p, prev_p):
         "summary": {"years": years, "groups": nm.get("groups"), "codes": nm.get("codes"), "areas": nm.get("areas"),
                     "editions_used": [e["n"] for e in nm.get("editions", []) if e.get("used")],
                     "editions_partial": [{"n": e["n"], "months": e["months"]} for e in nm.get("editions", []) if not e.get("used")],
+                    "editions_no_ika": [e["n"] for e in src.get("editions", []) if e["n"] not in found],
                     "pop_years": sorted(pop.get("jumin", {}), key=int)},
         "checks": checks, "validation": {"errors": errors, "notes": notes, "new_years": new_years},
     }

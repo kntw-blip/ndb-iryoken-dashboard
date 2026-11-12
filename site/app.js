@@ -78,7 +78,8 @@ async function showDataStatus() {
   parts.push(`データ更新：${d(meta.built_at)}`);
   const checked = st?.checked_at && (!meta.checked_at || st.checked_at > meta.checked_at) ? st.checked_at : meta.checked_at;
   if (checked) parts.push(`公表状況の最終確認：${d(checked)}（毎月2日に厚生労働省などのサイトを自動確認）`);
-  const partial = (sm.editions_partial || []).map((e) => `第${e.n}回は${e.months}か月分のみの公表のため、1年度分そろってから反映します`);
+  const partial = (sm.editions_partial || []).map((e) => `第${e.n}回は${e.months}か月分のみの公表のため、1年度分そろってから反映します`)
+    .concat((sm.editions_no_ika || []).map((n) => `第${n}回は医科診療行為のデータが未公表のため未反映`));
   $("#dataStatus").textContent = [...parts, ...partial].join("｜");
 }
 
