@@ -13,7 +13,7 @@ const fmt = (v, d = 0) => (v == null || !isFinite(v)) ? "–" : Number(v).toLoca
 const fy = (y) => `${y}年度`;
 
 const D = { index: null, items: new Map(), pop: null, areas: [], areaName: {}, geo: {} };
-const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "t", cmpMetric: "rate", cmpYear: "", saYear: "", g: null, gUntil: "2030" };
+const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "t", cmpMetric: "rate", cmpYear: "", saYear: "", k: 100 };
 let G = null; // 現在の項目データ
 const charts = {};
 
@@ -98,7 +98,7 @@ async function loadGeo() {
 async function loadItem(id, keepExcl) {
   const meta = D.index.find((x) => x.id === id) || D.index.find((x) => x.id === "A301") || D.index[0];
   S.item = meta.id;
-  if (!keepExcl) { S.excl = new Set(); S.g = null; }
+  if (!keepExcl) { S.excl = new Set(); }
   $("#itemName").textContent = `${meta.id.includes(":") ? "" : meta.id + "　"}${meta.n}`;
   if (!D.items.has(meta.id)) D.items.set(meta.id, await getJSON(`data/items/${meta.f}.json`));
   G = D.items.get(meta.id);
@@ -206,11 +206,10 @@ function bindUI() {
   $("#cmpYear").onchange = (e) => { S.cmpYear = e.target.value; renderCompare(); };
   $("#saYear").onchange = (e) => { S.saYear = e.target.value; renderSexAge(); };
   $("#pyrMode").onchange = () => renderSexAge();
-  const setG = (v) => { S.g = v === "" || v == null || isNaN(+v) ? null : Math.max(-20, Math.min(30, +v)); renderFuture(); renderKpis(); writeHash(); };
-  $("#gNum").onchange = (e) => setG(e.target.value);
-  $("#gRange").oninput = (e) => { $("#gNum").value = (+e.target.value).toFixed(1); setG(e.target.value); };
-  $("#gUntil").onchange = (e) => { S.gUntil = e.target.value; renderFuture(); renderKpis(); writeHash(); };
-  $("#gReset").onclick = () => { S.g = null; renderFuture(); renderKpis(); writeHash(); };
+  const setK = (v) => { S.k = v === "" || isNaN(+v) ? 100 : Math.max(0, Math.min(150, Math.round(+v))); renderFuture(); renderKpis(); writeHash(); };
+  $("#kNum").onchange = (e) => setK(e.target.value);
+  $("#kRange").oninput = (e) => { $("#kNum").value = e.target.value; setK(e.target.value); };
+  $("#kReset").onclick = () => setK(100);
   $("#codeToggle").onclick = () => { const p = $("#codePanel"); p.hidden = !p.hidden; $("#codeToggle").setAttribute("aria-expanded", String(!p.hidden)); };
   $("#codeFilter").oninput = buildCodeList;
   $("#codeAll").onclick = () => { visibleCodes().forEach((c) => S.excl.delete(c)); buildCodeList(); render(); };
@@ -303,7 +302,7 @@ function renderKpis() {
     ["算定回数", fmt(o), `${r.short}・${y ? fy(y) : ""}・${SETTING_LAB[S.setting]}`],
     [`${DENOM[S.denom].lab}千人あたり`, fmt(rate(o, p), 2), `全国 ${fmt(rate(obs({ lv: "nation" }, y), denomOf(popVec({ lv: "nation" }, y))), 2)}`],
     ["年齢調整比 SCR", fmt(s, 1), "全国＝100（性・年齢構成を調整）"],
-    ["2040年の推計（2025年比）", pc(chg), `実績ベース・算定率一定。トレンド延長（年${fmt(growthPct(), 1)}%）では ${pc(chgB)}` +
+    ["2040年の推計（2025年比）", pc(chg), `実績ベース・算定率一定。トレンド延長（過去トレンドの${S.k}%）では ${pc(chgB)}` +
       (r.lv === "nation" || !f ? "" : f.o
         ? `<br>住民ベース：${pc(f.idxR["2040"] - 100)}（トレンド延長 ${pc(f.idxRB["2040"] - 100)}）`
         : `<br>住民ベース：${f.res["2040"] >= 0 ? "+" : "−"}${fmt(Math.abs(f.res["2040"]))}回（トレンド延長 ${fmt(f.resB["2040"])}回）`)],
@@ -570,7 +569,7 @@ function asr(y) {
   const rates = natRates(y), std = popVec({ lv: "nation" }, "2025", "future");
   return rates && std ? rates.reduce((s, x, i) => s + x * std[i], 0) : null;
 }
-// 直近5年度の年平均伸び率
+// 直近5年度の年齢調整算定率の変化（表示用）
 function pastTrend() {
   const ys = yearsOf("sa"); const to = ys[ys.length - 1]; if (!to) return null;
   const from = ys.filter((y) => +y >= +to - 5)[0];
@@ -580,37 +579,59 @@ function pastTrend() {
   const std = popVec({ lv: "nation" }, "2025", "future"), tot = std.reduce((a, b) => a + b, 0);
   return { g: (Math.pow(a1 / a0, 1 / (+to - +from)) - 1) * 100, from, to, r0: a0 / tot * 1000, r1: a1 / tot * 1000 };
 }
-function growthPct() { if (S.g != null) return S.g; const t = pastTrend(); return t ? Math.max(-10, Math.min(20, t.g)) : 0; }
+// 性・年齢階級別の算定率のトレンド（直近5年度＋基準年度の回帰直線の傾き、1年あたり）
+function trendModel(base) {
+  const key = "trend" + base + S.setting + [...S.excl].join();
+  if (G._cache?.[key]) return G._cache[key];
+  const ys = yearsOf("sa").filter((y) => +y >= +base - 5 && +y <= +base);
+  const R = ys.map((y) => natRates(y)).filter(Boolean);
+  let m = null;
+  if (R.length >= 3) {
+    const xs = ys.map(Number), xm = xs.reduce((s, x) => s + x, 0) / xs.length, sxx = xs.reduce((s, x) => s + (x - xm) ** 2, 0);
+    const slope = R[0].map((_, i) => xs.reduce((s, x, j) => s + (x - xm) * R[j][i], 0) / sxx);
+    m = { from: ys[0], to: ys[ys.length - 1], n: ys.length, slope, rateBase: natRates(base) };
+  }
+  (G._cache ||= {})[key] = m;
+  return m;
+}
+// Y年の性・年齢階級別算定率（トレンド延長）：基準年度の算定率 ＋ 傾き × 強さ × 経過年数（0未満は0）
+//   基準年度Bの実績は B+1年（2025年）の推計人口時点に相当するとみなす
+function trendRates(m, Y, base) {
+  const t = +Y - (+base + 1), k = S.k / 100;
+  return m.rateBase.map((r, i) => Math.max(0, r + m.slope[i] * k * t));
+}
 function futureSeries(r) {
   const ysR = yearsOf(r.lv === "area" ? "area" : "pref"), ysS = yearsOf("sa");
   const base = ysR.filter((y) => ysS.includes(y) && (r.lv !== "area" || areaYearOK(y))).pop();
   if (!base) return null;
   const rates = natRates(base), o = obs(r, base);
   if (!rates || o == null) return null;
-  const e = {};
-  FUT_YEARS.forEach((Y) => { const v = popVec(r, Y, "future"); e[Y] = v ? v.reduce((s, x, i) => s + x * rates[i], 0) : null; });
-  const g = growthPct() / 100, until = +S.gUntil;
-  // 算定率の倍率（基準年度→Y年、until年以降は横ばい）。基準年度Bの実績は概ね B+1年の推計人口時点に相当
-  const mult = (Y) => Math.pow(1 + g, Math.max(0, Math.min(+Y, until) - (+base + 1)));
+  const m = trendModel(base);
+  const e = {}, eT = {};
+  FUT_YEARS.forEach((Y) => {
+    const v = popVec(r, Y, "future");
+    e[Y] = v ? v.reduce((s, x, i) => s + x * rates[i], 0) : null;
+    const tr = m ? trendRates(m, Y, base) : rates;
+    eT[Y] = v ? v.reduce((s, x, i) => s + x * tr[i], 0) : null;
+  });
   const proj = {}, projB = {}, idx = {}, idxB = {};
   FUT_YEARS.forEach((Y) => {
     if (!e["2025"] || e[Y] == null) { proj[Y] = projB[Y] = idx[Y] = idxB[Y] = null; return; }
-    const ratio = e[Y] / e["2025"];
-    proj[Y] = o * ratio; idx[Y] = ratio * 100;
-    projB[Y] = o * ratio * mult(Y); idxB[Y] = ratio * mult(Y) / mult("2025") * 100;
+    proj[Y] = o * e[Y] / e["2025"]; idx[Y] = e[Y] / e["2025"] * 100;
+    projB[Y] = o * eT[Y] / e["2025"]; idxB[Y] = eT[Y] / e["2025"] * 100;
   });
   // 住民ベース：起点は実績（地域差を含む）、増減は住民の人口変化 × 全国の性・年齢別算定率（地域差なし）
   //   住民ベース(Y) = 実績 + (住民ベース需要(Y) − 住民ベース需要(2025))
   const need = {}, needB = {}, res = {}, resB = {}, idxR = {}, idxRB = {};
   FUT_YEARS.forEach((Y) => {
-    need[Y] = e[Y]; needB[Y] = e[Y] == null ? null : e[Y] * mult(Y);
+    need[Y] = e[Y]; needB[Y] = eT[Y];
     res[Y] = e[Y] == null || e["2025"] == null ? null : Math.max(0, o + need[Y] - e["2025"]);
-    resB[Y] = e[Y] == null || e["2025"] == null ? null : Math.max(0, o + needB[Y] - e["2025"] * mult("2025"));
+    resB[Y] = eT[Y] == null || e["2025"] == null ? null : Math.max(0, o + needB[Y] - e["2025"]);
     idxR[Y] = o && res[Y] != null ? res[Y] / o * 100 : null;
     idxRB[Y] = o && resB[Y] != null ? resB[Y] / o * 100 : null;
   });
   const resBase = expected(r, base, rates);  // 基準年度の住民ベース需要（実績との差＝流入・流出の目安）
-  return { base, o, proj, idx, projB, idxB, need, needB, res, resB, idxR, idxRB, resBase, g: g * 100 };
+  return { base, o, proj, idx, projB, idxB, need, needB, res, resB, idxR, idxRB, resBase, trend: m, k: S.k };
 }
 function renderFuture() {
   const T = theme(), r = region(), f = futureSeries(r);
@@ -618,12 +639,14 @@ function renderFuture() {
   const fn = r.lv !== "nation" ? futureSeries({ lv: "nation" }) : null;
   $("#futTitle").textContent = `${r.name}｜${SETTING_LAB[S.setting]}`;
   // 伸び率の入力欄
-  const t = pastTrend(), gp = growthPct();
-  if (document.activeElement !== $("#gNum")) $("#gNum").value = gp.toFixed(1);
-  $("#gRange").value = gp; $("#gUntil").value = S.gUntil;
-  $("#gInfo").textContent = t
-    ? `過去トレンド：全国の年齢調整算定率は ${fy(t.from)}→${fy(t.to)} に年平均 ${t.g >= 0 ? "+" : ""}${fmt(t.g, 1)}%（人口千人あたり ${fmt(t.r0, 3)}→${fmt(t.r1, 3)}、2025年人口で標準化）${t.g > 20 || t.g < -10 ? "。既定値は −10〜+20% の範囲に制限しています" : ""}${S.g != null ? "。※現在は手入力の伸び率を使用中" : ""}`
-    : "過去トレンドを計算できるデータがありません（性・年齢別データが5年度分ない項目）。";
+  const t = pastTrend();
+  if (document.activeElement !== $("#kNum")) $("#kNum").value = S.k;
+  $("#kRange").value = S.k;
+  const tm = f && f.trend;
+  $("#gInfo").textContent = (t
+    ? `過去トレンド：全国の年齢調整算定率は ${fy(t.from)}→${fy(t.to)} に人口千人あたり ${fmt(t.r0, 3)}→${fmt(t.r1, 3)}（年平均 ${t.g >= 0 ? "+" : ""}${fmt(t.g, 1)}%、2025年人口で標準化）。`
+    : "") + (tm ? `性・年齢階級別（38区分）に ${fy(tm.from)}〜${fy(tm.to)} の${tm.n}年度分の算定率から回帰直線の傾きを求め、${S.k === 100 ? "" : `その${S.k}%の傾きで`}延長しています。`
+    : "性・年齢別データが3年度分以上ない項目のため、トレンド延長は算定率一定と同じ値になります。");
   if (!f) { chart("cFut").clear(); chart("cFutIdx").clear(); $("#futNote").textContent = "推計に必要なデータがありません。"; return; }
   const xl = [fy(f.base) + "実績", ...FUT_YEARS.map((y) => y + "年")];
   const lab = (dp) => ({ show: true, position: "top", color: T.text2, fontSize: 10, formatter: (d) => d.value == null ? "" : fmt(d.value, dp) });
@@ -659,14 +682,14 @@ function renderFuture() {
     grid: { left: 52, right: 16, top: ser.length > 4 ? 76 : ser.length > 2 ? 52 : 30, bottom: 32 }, xAxis: axisX(T, FUT_YEARS.map((y) => y + "年")), yAxis: axisY(T, { scale: true }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }), series: ser }), true);
   $("#futNote").textContent = (r.lv === "nation" ? "" : `棒＝実績ベース（実績 × 人口構成による増減率。流入している患者も同じ割合で増減すると仮定）。ひし形の点線＝住民ベース（起点は実績、増減は「その地域の住民の人口変化 × 全国の性・年齢別算定率」の分だけ。地域差がないと仮定し、流入・流出の量は一定と仮定）。`) +
-    `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は算定率が年${fmt(f.g, 1)}%で${S.gUntil}年まで変化し、その後横ばいと仮定。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
+    `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は性・年齢階級別の算定率が過去の回帰直線の傾き（×${S.k}%）で直線的に変化すると仮定し、各年の推計人口に掛けて算出。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
   const rb = r.lv !== "nation";
   table("fut", ["年", "実績ベース・算定率一定", "実績ベース・トレンド延長", ...(rb ? ["住民ベース・算定率一定", "住民ベース・トレンド延長", "（参考）住民ベース需要・算定率一定"] : []),
     ...(rb ? ["指数：実績ベース・算定率一定", "指数：実績ベース・トレンド延長"] : ["指数：算定率一定", "指数：トレンド延長"]), ...(fn ? ["全国 指数（算定率一定）"] : []), ...(fp ? [pr.short + " 指数（算定率一定）"] : [])],
     [[fy(f.base) + "実績", fmt(f.o), fmt(f.o), ...(rb ? [fmt(f.o), fmt(f.o), fmt(f.resBase)] : []), "–", "–", ...(fn ? ["–"] : []), ...(fp ? ["–"] : [])],
       ...FUT_YEARS.map((y) => [y + "年", fmt(f.proj[y]), fmt(f.projB[y]), ...(rb ? [fmt(f.res[y]), fmt(f.resB[y]), fmt(f.need[y])] : []),
         fmt(f.idx[y], 1), fmt(f.idxB[y], 1), ...(fn ? [fmt(fn.idx[y], 1)] : []), ...(fp ? [fmt(fp.idx[y], 1)] : [])])],
-    `${G.id}_${r.short}_将来推計`, `トレンド延長：年${fmt(f.g, 1)}%、${S.gUntil}年まで`);
+    `${G.id}_${r.short}_将来推計`, `トレンド延長：性・年齢階級別の算定率を過去トレンドの${S.k}%で直線延長`);
 }
 
 /* ---------- 表とCSV ---------- */
@@ -687,7 +710,7 @@ function writeHash() {
   const p = new URLSearchParams();
   p.set("i", S.item); if (S.pref) p.set("p", S.pref); if (S.area) p.set("a", S.area);
   if (S.setting !== "all") p.set("s", S.setting); p.set("d", S.denom); if (S.cmpMetric !== "rate") p.set("m", S.cmpMetric);
-  if (S.g != null) p.set("g", S.g.toFixed(1)); if (S.gUntil !== "2030") p.set("gu", S.gUntil);
+  if (S.k !== 100) p.set("k", S.k);
   const x = [...S.excl].filter((k) => G?.codes[k]); if (x.length) p.set("x", x.join("."));
   history.replaceState(null, "", "#" + p.toString());
 }
@@ -723,14 +746,14 @@ window.ndbCalc = () => {
   return { item: meta, region: r, year: y, setting: SETTING_LAB[S.setting], natObs, saSum, k, rows, o, expTot,
     scr: o != null && expTot ? o / expTot * 100 : null,
     pop: denomOf(rp), denomLab: DENOM[S.denom].lab, rate: rate(o, denomOf(rp)),
-    fut: f, trend: t, g: growthPct(), gUntil: S.gUntil, fmt, fy };
+    fut: f, trend: t, k: S.k, fmt, fy };
 };
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   S.item = p.get("i") || S.item; S.pref = p.get("p") || ""; S.area = p.get("a") || ""; S.setting = p.get("s") || "all";
   S.denom = p.get("d") || S.denom; S.cmpMetric = p.get("m") || "rate";
   S.excl = new Set((p.get("x") || "").split(".").filter(Boolean));
-  S.g = p.get("g") != null ? +p.get("g") : null; S.gUntil = p.get("gu") || "2030";
+  S.k = p.get("k") != null && !isNaN(+p.get("k")) ? Math.max(0, Math.min(150, +p.get("k"))) : 100;
 }
 
 init().catch((e) => { $("#notice").hidden = false; $("#notice").textContent = "データの読み込みに失敗しました：" + e.message; console.error(e); });
