@@ -154,3 +154,4 @@ thead th{position:sticky;top:0;background:var(--surface-1);color:var(--text-seco
 .pyr .s{font-size:12px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
 .pyr .s b{color:var(--text-primary)}
 .pyr-hint{display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-muted);font-size:13px;border:1px dashed var(--border);border-radius:8px;padding:16px;min-height:120px}
+.scen-c{border-top:1px dashed var(--grid);padding-top:6px}

@@ -285,8 +285,9 @@ function render() {
 function renderKpis() {
   const r = region(), ys = yearsOf(r.lv === "area" ? "area" : "pref"), y = (r.lv === "area" ? ys.filter(areaYearOK) : ys).pop();
   const o = obs(r, y), p = denomOf(popVec(r, y)), s = scr(r, y), f = futureSeries(r);
-  const chg = f && f.proj["2040"] != null && f.proj["2025"] ? (f.proj["2040"] / f.proj["2025"] - 1) * 100 : null;
-  const chgB = f && f.projB["2040"] != null && f.projB["2025"] ? (f.projB["2040"] / f.projB["2025"] - 1) * 100 : null;
+  // 増減率は実績ベース・住民ベースで共通（指数から計算するため実績が0の地域でも求まる）
+  const chg = f && f.idx["2040"] != null ? f.idx["2040"] - 100 : null;
+  const chgB = f && f.idxB["2040"] != null ? f.idxB["2040"] - 100 : null;
   const pc = (v) => v == null ? "–" : (v >= 0 ? "+" : "") + fmt(v, 1) + "%";
   const notice = [];
   if (r.lv === "area" && !ys.length) notice.push("この項目には二次医療圏別のデータがありません。");
@@ -303,6 +304,12 @@ function renderKpis() {
     [`${DENOM[S.denom].lab}千人あたり`, fmt(rate(o, p), 2), `全国 ${fmt(rate(obs({ lv: "nation" }, y), denomOf(popVec({ lv: "nation" }, y))), 2)}`],
     ["年齢調整比 SCR", fmt(s, 1), "全国＝100（性・年齢構成を調整）"],
     ["2040年の推計（2025年比）", pc(chg), `算定率一定。トレンド延長（年${fmt(growthPct(), 1)}%）では ${pc(chgB)}`],
+    ...(r.lv === "nation" || !f || f.resBase == null ? [] : (() => {
+      const d = f.o - f.resBase, ratio = f.resBase ? f.o / f.resBase * 100 : null;
+      const lab = d >= 0 ? "流入超過の目安" : "流出・地域外受療の目安";
+      return [[`実績と住民ベース需要の差（${fy(f.base)}）`, (d >= 0 ? "+" : "−") + fmt(Math.abs(d)),
+        `${lab}：実績 ${fmt(f.o)}／住民ベース需要 ${fmt(f.resBase)}（実績は需要の${fmt(ratio, 0)}%）`]];
+    })()),
   ].map(([k, v, s2]) => `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s2}</div></div>`).join("");
 }
 
@@ -589,7 +596,11 @@ function futureSeries(r) {
     proj[Y] = o * ratio; idx[Y] = ratio * 100;
     projB[Y] = o * ratio * mult(Y); idxB[Y] = ratio * mult(Y) / mult("2025") * 100;
   });
-  return { base, o, proj, idx, projB, idxB, g: g * 100 };
+  // 住民ベース（全国並み・地域差なし）：全国の性・年齢別算定率 × その地域の人口
+  const res = {}, resB = {};
+  FUT_YEARS.forEach((Y) => { res[Y] = e[Y]; resB[Y] = e[Y] == null ? null : e[Y] * mult(Y); });
+  const resBase = expected(r, base, rates);
+  return { base, o, proj, idx, projB, idxB, res, resB, resBase, g: g * 100 };
 }
 function renderFuture() {
   const T = theme(), r = region(), f = futureSeries(r);
@@ -607,14 +618,20 @@ function renderFuture() {
   const xl = [fy(f.base) + "実績", ...FUT_YEARS.map((y) => y + "年")];
   const lab = (dp) => ({ show: true, position: "top", color: T.text2, fontSize: 10, formatter: (d) => d.value == null ? "" : fmt(d.value, dp) });
   chart("cFut").setOption(Object.assign(baseOpt(T), {
-    legend: { top: 0, right: 0, textStyle: { color: T.text2 }, itemWidth: 14 },
-    grid: { left: 64, right: 16, top: 30, bottom: 32 }, xAxis: axisX(T, xl), yAxis: axisY(T),
+    legend: { top: 0, left: 0, textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 14,
+      formatter: (n) => ({ "算定率一定": "実績ベース・算定率一定", "トレンド延長": "実績ベース・トレンド延長" }[n] || n) },
+    grid: { left: 64, right: 16, top: r.lv === "nation" ? 30 : 54, bottom: 32 }, xAxis: axisX(T, xl), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v) }),
     series: [
       { name: "算定率一定", type: "bar", barMaxWidth: 22, barGap: "10%", data: [{ value: f.o, itemStyle: { color: T.muted } }, ...FUT_YEARS.map((y) => f.proj[y])],
         itemStyle: { color: T.s1, borderRadius: [4, 4, 0, 0] }, label: lab(0) },
       { name: "トレンド延長", type: "bar", barMaxWidth: 22, data: [null, ...FUT_YEARS.map((y) => f.projB[y])],
-        itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] }, label: lab(0) },
+        itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] },
+        label: Object.assign(lab(0), { formatter: (d) => d.value == null || (d.dataIndex === 1 && FUT_YEARS[0] === "2025" && Math.round(d.value) === Math.round(f.proj["2025"])) ? "" : fmt(d.value) }) },
+      ...(r.lv === "nation" ? [] : [
+        lineS("住民ベース・算定率一定", [f.resBase, ...FUT_YEARS.map((y) => f.res[y])], T.s1, { lineStyle: { width: 2, color: T.s1, type: "dashed" }, symbol: "diamond", symbolSize: 9, z: 5 }),
+        lineS("住民ベース・トレンド延長", [null, ...FUT_YEARS.map((y) => f.resB[y])], T.s2, { lineStyle: { width: 2, color: T.s2, type: "dashed" }, symbol: "diamond", symbolSize: 9, z: 5 }),
+      ]),
     ] }), true);
   const ser = [
     lineS(`${r.short}・算定率一定`, FUT_YEARS.map((y) => f.idx[y]), T.s1, { label: lab(1) }),
@@ -626,10 +643,14 @@ function renderFuture() {
   chart("cFutIdx").setOption(Object.assign(baseOpt(T), { legend: { top: 0, left: 0, textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 16 },
     grid: { left: 52, right: 16, top: ser.length > 2 ? 52 : 30, bottom: 32 }, xAxis: axisX(T, FUT_YEARS.map((y) => y + "年")), yAxis: axisY(T, { scale: true }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }), series: ser }), true);
-  $("#futNote").textContent = `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は算定率が年${fmt(f.g, 1)}%で${S.gUntil}年まで変化し、その後横ばいと仮定。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
-  table("fut", ["年", "算定率一定", "トレンド延長", "指数：算定率一定", "指数：トレンド延長", ...(fn ? ["全国 指数（算定率一定）"] : []), ...(fp ? [pr.short + " 指数（算定率一定）"] : [])],
-    [[fy(f.base) + "実績", fmt(f.o), fmt(f.o), "–", "–", ...(fn ? ["–"] : []), ...(fp ? ["–"] : [])],
-      ...FUT_YEARS.map((y) => [y + "年", fmt(f.proj[y]), fmt(f.projB[y]), fmt(f.idx[y], 1), fmt(f.idxB[y], 1), ...(fn ? [fmt(fn.idx[y], 1)] : []), ...(fp ? [fmt(fp.idx[y], 1)] : [])])],
+  $("#futNote").textContent = (r.lv === "nation" ? "" : `棒＝実績ベース（その地域の医療機関での算定回数をもとに推計）、ひし形の点線＝住民ベース（地域差がないと仮定し、全国の性・年齢別算定率 × その地域の人口で推計した住民の需要）。両者の差は患者の流入・流出や地域の診療の違いの目安です。増減率は両者で同じです。`) +
+    `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は算定率が年${fmt(f.g, 1)}%で${S.gUntil}年まで変化し、その後横ばいと仮定。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
+  const rb = r.lv !== "nation";
+  table("fut", ["年", "実績ベース・算定率一定", "実績ベース・トレンド延長", ...(rb ? ["住民ベース・算定率一定", "住民ベース・トレンド延長"] : []),
+    "指数：算定率一定", "指数：トレンド延長", ...(fn ? ["全国 指数（算定率一定）"] : []), ...(fp ? [pr.short + " 指数（算定率一定）"] : [])],
+    [[fy(f.base) + "実績", fmt(f.o), fmt(f.o), ...(rb ? [fmt(f.resBase), fmt(f.resBase)] : []), "–", "–", ...(fn ? ["–"] : []), ...(fp ? ["–"] : [])],
+      ...FUT_YEARS.map((y) => [y + "年", fmt(f.proj[y]), fmt(f.projB[y]), ...(rb ? [fmt(f.res[y]), fmt(f.resB[y])] : []),
+        fmt(f.idx[y], 1), fmt(f.idxB[y], 1), ...(fn ? [fmt(fn.idx[y], 1)] : []), ...(fp ? [fmt(fp.idx[y], 1)] : [])])],
     `${G.id}_${r.short}_将来推計`, `トレンド延長：年${fmt(f.g, 1)}%、${S.gUntil}年まで`);
 }
 
