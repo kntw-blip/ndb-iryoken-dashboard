@@ -205,6 +205,7 @@ function bindUI() {
   $("#cmpMetric").onchange = (e) => { S.cmpMetric = e.target.value; renderCompare(); writeHash(); };
   $("#cmpYear").onchange = (e) => { S.cmpYear = e.target.value; renderCompare(); };
   $("#saYear").onchange = (e) => { S.saYear = e.target.value; renderSexAge(); };
+  $("#pyrMode").onchange = () => renderSexAge();
   const setG = (v) => { S.g = v === "" || v == null || isNaN(+v) ? null : Math.max(-20, Math.min(30, +v)); renderFuture(); renderKpis(); writeHash(); };
   $("#gNum").onchange = (e) => setG(e.target.value);
   $("#gRange").oninput = (e) => { $("#gNum").value = (+e.target.value).toFixed(1); setG(e.target.value); };
@@ -450,7 +451,7 @@ function renderCompare() {
   const box = $("#multiples");
   Object.keys(charts).filter((k) => k.startsWith("mult_")).forEach((k) => { charts[k].dispose(); delete charts[k]; });
   box.innerHTML = series.map((s, i) => `<div class="mult ${s.u.code === selCode ? "sel" : ""}"><div class="t" title="${s.u.short}">${s.u.short}</div><div class="c" id="mult_${i}"></div></div>`).join("");
-  $(".h3").textContent = `${U.lv === "pref" ? "都道府県" : "医療圏"}ごとの推移（${m === "scr" ? "SCR" : "人口千人あたり"}・同じ目盛り）`;
+  $("#multTitle").textContent = `${U.lv === "pref" ? "都道府県" : "医療圏"}ごとの推移（${m === "scr" ? "SCR" : "人口千人あたり"}・同じ目盛り）`;
   series.forEach((s, i) => {
     chart("mult_" + i).setOption({ animation: false, grid: { left: 30, right: 6, top: 6, bottom: 16 },
       tooltip: { trigger: "axis", backgroundColor: T.surface, borderColor: T.grid, textStyle: { color: T.text, fontSize: 11 }, valueFormatter: (v) => fmt(v, m === "scr" ? 1 : 2) },
@@ -491,8 +492,67 @@ function renderSexAge() {
     xAxis: Object.assign(axisX(T, BANDS), { axisLabel: { color: T.text2, rotate: 45, fontSize: 10 } }), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 2) }),
     series: [lineS("男性", rm, T.s1), lineS("女性", rf, T.s2)] }), true);
-  table("sa", ["年齢階級", "男性", "女性", "合計", "男性 千人あたり", "女性 千人あたり"],
-    BANDS.map((b, i) => [b, fmt(m[i]), fmt(f[i]), fmt(t[i]), fmt(rm[i], 3), fmt(rf[i], 3)]), `${G.id}_全国_性年齢_${y}`);
+  const regs = renderPyramids(y);
+  table("sa", ["年齢階級", "算定回数 男性", "算定回数 女性", "算定回数 合計", "男性 千人あたり", "女性 千人あたり",
+    ...regs.flatMap((r) => [`${r.short} 人口 男性`, `${r.short} 人口 女性`])],
+    BANDS.map((b, i) => [b, fmt(m[i]), fmt(f[i]), fmt(t[i]), fmt(rm[i], 3), fmt(rf[i], 3),
+      ...regs.flatMap((r) => r.v ? [fmt(r.v[i]), fmt(r.v[19 + i])] : ["–", "–"])]), `${G.id}_性年齢_${y}`,
+    "算定回数は全国、人口は住民基本台帳（翌年1月1日）");
+}
+
+// 人口ピラミッド（全国・選択中の都道府県・医療圏を並べる）
+function renderPyramids(y) {
+  const T = theme(), mode = $("#pyrMode").value;
+  const regs = [{ lv: "nation", code: "00", short: "全国", name: "全国" }];
+  if (S.pref || S.area) { const pc = S.area ? S.area.slice(0, 2) : S.pref; regs.push({ lv: "pref", code: pc, short: PREFS[+pc - 1], name: PREFS[+pc - 1] }); }
+  if (S.area) regs.push({ lv: "area", code: S.area, short: D.areaName[S.area], name: `${D.areaName[S.area]}（二次医療圏）` });
+  regs.forEach((r) => (r.v = y ? popVec(r, y) : null));
+  $("#pyrYear").textContent = y ? `${fy(y)}（${+y + 1}年1月1日 住民基本台帳）` : "";
+  const share = (v) => { const tot = v.reduce((s, x) => s + x, 0); return v.map((x) => tot ? x / tot * 100 : 0); };
+  const nat = regs[0].v ? share(regs[0].v) : null;
+  const xmax = mode === "pct" ? Math.ceil(Math.max(...regs.filter((r) => r.v).flatMap((r) => share(r.v))) * 1.05 * 2) / 2 : null;
+  const old = (v, from) => { let s = 0; for (let i = from; i < 19; i++) s += v[i] + v[19 + i]; return s; };
+  Object.keys(charts).filter((k) => k.startsWith("pyr_")).forEach((k) => { charts[k].dispose(); delete charts[k]; });
+  const grid = $("#pyrGrid");
+  grid.innerHTML = regs.map((r, i) => {
+    if (!r.v) return `<div class="pyr"><div class="t">${r.name}</div><div class="pyr-hint">人口データがありません</div></div>`;
+    const tot = r.v.reduce((s, x) => s + x, 0), p65 = old(r.v, 13) / tot * 100, p75 = old(r.v, 15) / tot * 100;
+    const n65 = regs[0].v ? old(regs[0].v, 13) / regs[0].v.reduce((s, x) => s + x, 0) * 100 : null;
+    const n75 = regs[0].v ? old(regs[0].v, 15) / regs[0].v.reduce((s, x) => s + x, 0) * 100 : null;
+    return `<div class="pyr"><div class="t">${r.name}</div><div class="c" id="pyr_${i}"></div>
+      <div class="s">総人口 <b>${fmt(tot)}</b>人｜65歳以上 <b>${fmt(p65, 1)}%</b>｜75歳以上 <b>${fmt(p75, 1)}%</b>${i && n65 != null ? `<br>（全国 65歳以上 ${fmt(n65, 1)}%・75歳以上 ${fmt(n75, 1)}%）` : ""}</div></div>`;
+  }).join("") + (regs.length === 1 ? `<div class="pyr-hint">画面上部で都道府県・二次医療圏を選ぶと、<br>その地域の人口ピラミッドを全国と並べて比較できます。</div>` : "");
+  regs.forEach((r, i) => {
+    if (!r.v) return;
+    const sh = share(r.v), val = mode === "pct" ? sh : r.v;
+    const male = val.slice(0, 19).map((x) => -x), female = val.slice(19);
+    const series = [
+      { name: "男性", type: "bar", data: male, barGap: "-100%", barCategoryGap: "12%", itemStyle: { color: T.s1, borderRadius: [4, 0, 0, 4] } },
+      { name: "女性", type: "bar", data: female, itemStyle: { color: T.s2, borderRadius: [0, 4, 4, 0] } },
+    ];
+    if (mode === "pct" && i > 0 && nat) {
+      const ls = { color: T.text, width: 1.5, type: "dashed" };
+      series.push({ name: "全国の構成比", type: "line", data: nat.slice(0, 19).map((x) => -x), symbol: "none", step: "middle", lineStyle: ls, itemStyle: { color: T.text }, z: 5 });
+      series.push({ name: "全国の構成比 ", type: "line", data: nat.slice(19), symbol: "none", step: "middle", lineStyle: ls, itemStyle: { color: T.text }, z: 5 });
+    }
+    const amax = mode === "pct" ? xmax : Math.max(...r.v) * 1.05;
+    chart("pyr_" + i).setOption({
+      animation: false, textStyle: { fontFamily: getComputedStyle(document.body).fontFamily, color: T.text2 },
+      legend: { top: 0, left: "center", textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 14, data: ["男性", "女性", ...(series.length > 2 ? ["全国の構成比"] : [])] },
+      grid: { left: 44, right: 12, top: 28, bottom: 26 },
+      tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: T.surface, borderColor: T.grid, textStyle: { color: T.text, fontSize: 12 },
+        formatter: (ps) => { const k = ps[0].dataIndex; return `<b>${BANDS[k]}歳</b><br>男性 ${fmt(r.v[k])}人（${fmt(sh[k], 2)}%）` +
+          `<br>女性 ${fmt(r.v[19 + k])}人（${fmt(sh[19 + k], 2)}%）` + (i > 0 && nat ? `<br><span style="color:${T.text2}">全国 男性 ${fmt(nat[k], 2)}%／女性 ${fmt(nat[19 + k], 2)}%</span>` : ""); } },
+      xAxis: { type: "value", min: -amax, max: amax, splitNumber: 4, splitLine: { lineStyle: { color: T.grid } },
+        axisLabel: { color: T.text2, fontSize: 10, showMinLabel: false, showMaxLabel: false, formatter: (v) => mode === "pct" ? Math.abs(v) + "%" : (Math.abs(v) >= 10000 ? (Math.abs(v) / 10000).toLocaleString("ja-JP") + "万" : Math.abs(v).toLocaleString("ja-JP")) } },
+      yAxis: { type: "category", data: BANDS, axisTick: { show: false }, axisLine: { lineStyle: { color: T.grid } }, axisLabel: { color: T.text2, fontSize: 10, interval: 1 } },
+      series,
+    }, true);
+  });
+  $("#pyrNote").textContent = mode === "pct"
+    ? "構成比は各地域の総人口に占める割合で、全地域とも同じ目盛りです。点線は全国の構成比で、点線より棒が長い年代はその地域で割合が高い年代です。"
+    : "人数表示では、地域ごとに目盛りが異なります。地域どうしの形を比べるときは「構成比」を選んでください。";
+  return regs;
 }
 
 // 全国の年齢調整算定率（直接法、基準人口＝2025年推計人口）

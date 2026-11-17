@@ -90,24 +90,32 @@
       <figure><div class="chart tall" id="cMap"></div><figcaption class="note" id="mapNote"></figcaption></figure>
       <figure><div class="chart tall" id="cRank"></div></figure>
     </div>
-    <h3 class="h3">医療圏ごとの推移（人口千人あたり・同じ目盛り）</h3>
+    <h3 class="h3" id="multTitle">医療圏ごとの推移（人口千人あたり・同じ目盛り）</h3>
     <div id="multiples" class="multiples"></div>
     <div class="table-wrap" id="tbl-cmp" hidden></div>
   </section>
 
   <section class="panel">
     <div class="panel-head">
-      <h2>性・年齢別（全国） <button type="button" class="q" data-help="sa" aria-label="性・年齢別（全国）の説明">?</button><span class="sub" id="saYearLab"></span></h2>
+      <h2>性・年齢別 <button type="button" class="q" data-help="sa" aria-label="性・年齢別の説明">?</button><span class="sub" id="saYearLab"></span></h2>
       <div class="inline">
         <label>年度 <select id="saYear"></select></label>
         <button class="link" data-table="sa" type="button">表で見る</button>
       </div>
     </div>
     <div class="grid2">
-      <figure><figcaption>性・年齢階級別 算定回数</figcaption><div class="chart" id="cSa"></div></figure>
-      <figure><figcaption>性・年齢階級別 人口千人あたり算定回数</figcaption><div class="chart" id="cSaRate"></div></figure>
+      <figure><figcaption>性・年齢階級別 算定回数（全国）</figcaption><div class="chart" id="cSa"></div></figure>
+      <figure><figcaption>性・年齢階級別 人口千人あたり算定回数（全国）</figcaption><div class="chart" id="cSaRate"></div></figure>
     </div>
-    <p class="note">NDBオープンデータでは、性・年齢別の内訳は全国単位のみ公表されています（都道府県・医療圏別の内訳はありません）。</p>
+    <p class="note">NDBオープンデータでは、算定回数の性・年齢別の内訳は全国単位のみ公表されています（都道府県・医療圏別の内訳はありません）。</p>
+    <div class="pyr-head">
+      <h3 class="h3">人口ピラミッド <button type="button" class="q" data-help="pyr" aria-label="人口ピラミッドの説明">?</button><span class="sub" id="pyrYear"></span></h3>
+      <div class="inline">
+        <label>表示 <select id="pyrMode"><option value="pct">構成比（％）</option><option value="abs">人数</option></select></label>
+      </div>
+    </div>
+    <div class="pyr-grid" id="pyrGrid"></div>
+    <p class="note" id="pyrNote"></p>
     <div class="table-wrap" id="tbl-sa" hidden></div>
   </section>
 

@@ -144,3 +144,13 @@ thead th{position:sticky;top:0;background:var(--surface-1);color:var(--text-seco
 .help-body table.txt th,.help-body table.txt td{text-align:left;white-space:normal;vertical-align:top}
 .help-body table.txt td:first-child{white-space:nowrap;color:var(--text-secondary)}
 .data-status{margin:6px 0 0;font-size:12px;color:var(--text-muted)}
+.pyr-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px;margin-top:18px;border-top:1px solid var(--grid);padding-top:12px}
+.pyr-head .h3{margin:0}
+.pyr-head .sub{font-weight:400;color:var(--text-secondary);margin-left:6px}
+.pyr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:8px}
+.pyr{border:1px solid var(--grid);border-radius:8px;padding:8px 10px}
+.pyr .t{font-weight:600;font-size:14px}
+.pyr .c{height:380px}
+.pyr .s{font-size:12px;color:var(--text-secondary);font-variant-numeric:tabular-nums}
+.pyr .s b{color:var(--text-primary)}
+.pyr-hint{display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-muted);font-size:13px;border:1px dashed var(--border);border-radius:8px;padding:16px;min-height:120px}
