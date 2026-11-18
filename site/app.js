@@ -13,7 +13,7 @@ const fmt = (v, d = 0) => (v == null || !isFinite(v)) ? "–" : Number(v).toLoca
 const fy = (y) => `${y}年度`;
 
 const D = { index: null, items: new Map(), pop: null, areas: [], areaName: {}, geo: {} };
-const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "t", cmpMetric: "rate", cmpYear: "", saYear: "", k: 100 };
+const S = { item: "A301", excl: new Set(), setting: "all", pref: "", area: "", denom: "t", cmpMetric: "rate", cmpYear: "", saYear: "", k: 100, ty: "2040" };
 let G = null; // 現在の項目データ
 const charts = {};
 
@@ -210,6 +210,10 @@ function bindUI() {
   $("#kNum").onchange = (e) => setK(e.target.value);
   $("#kRange").oninput = (e) => { $("#kNum").value = e.target.value; setK(e.target.value); };
   $("#kReset").onclick = () => setK(100);
+  $("#cagrTo").onchange = (e) => { S.ty = e.target.value; renderFuture(); renderKpis(); writeHash(); };
+  $("#ctlToggle").onclick = () => setControls($("#controls").classList.contains("collapsed"));
+  setControls(!mqMobile.matches);
+  mqMobile.addEventListener("change", (e) => setControls(!e.matches));
   $("#codeToggle").onclick = () => { const p = $("#codePanel"); p.hidden = !p.hidden; $("#codeToggle").setAttribute("aria-expanded", String(!p.hidden)); };
   $("#codeFilter").oninput = buildCodeList;
   $("#codeAll").onclick = () => { visibleCodes().forEach((c) => S.excl.delete(c)); buildCodeList(); render(); };
@@ -287,7 +291,7 @@ function renderKpis() {
   // 増減率は実績ベース・住民ベースで共通（指数から計算するため実績が0の地域でも求まる）
   const chg = f && f.idx["2040"] != null ? f.idx["2040"] - 100 : null;
   const chgB = f && f.idxB["2040"] != null ? f.idxB["2040"] - 100 : null;
-  const pc = (v) => v == null ? "–" : (v >= 0 ? "+" : "") + fmt(v, 1) + "%";
+  const pc = (v) => pcs(v);
   const notice = [];
   if (r.lv === "area" && !ys.length) notice.push("この項目には二次医療圏別のデータがありません。");
   if (o === 0) notice.push("選択地域の値は0です（10未満の秘匿を含む）。");
@@ -302,10 +306,17 @@ function renderKpis() {
     ["算定回数", fmt(o), `${r.short}・${y ? fy(y) : ""}・${SETTING_LAB[S.setting]}`],
     [`${DENOM[S.denom].lab}千人あたり`, fmt(rate(o, p), 2), `全国 ${fmt(rate(obs({ lv: "nation" }, y), denomOf(popVec({ lv: "nation" }, y))), 2)}`],
     ["年齢調整比 SCR", fmt(s, 1), "全国＝100（性・年齢構成を調整）"],
-    ["2040年の推計（2025年比）", pc(chg), `実績ベース・算定率一定。トレンド延長（過去トレンドの${S.k}%）では ${pc(chgB)}` +
-      (r.lv === "nation" || !f ? "" : f.o
-        ? `<br>住民ベース：${pc(f.idxR["2040"] - 100)}（トレンド延長 ${pc(f.idxRB["2040"] - 100)}）`
-        : `<br>住民ベース：${f.res["2040"] >= 0 ? "+" : "−"}${fmt(Math.abs(f.res["2040"]))}回（トレンド延長 ${fmt(f.resB["2040"])}回）`)],
+    (() => {
+      const Y = S.ty, n = +Y - 2025;
+      if (!f) return [`将来推計 2025→${Y}年`, "–", "推計に必要なデータがありません"];
+      const gA = cagr(f.proj["2025"], f.proj[Y], n), gB = cagr(f.projB["2025"], f.projB[Y], n);
+      const v = `<div class="v2"><span><small>算定率一定</small>${pcs(gA)}</span><span><small>トレンド延長</small>${pcs(gB)}</span></div>`;
+      let sub = `年平均成長率（${r.lv === "nation" ? "" : "実績ベース、"}2025→${Y}年）。${Y}年は2025年比 ${pc(f.idx[Y] - 100)}／${pc(f.idxB[Y] - 100)}`;
+      if (r.lv !== "nation") sub += f.o
+        ? `<br>住民ベース：年平均 ${pcs(cagr(f.o, f.res[Y], n))}／${pcs(cagr(f.o, f.resB[Y], n))}`
+        : `<br>住民ベース：${fmt(f.res[Y])}回／${fmt(f.resB[Y])}回（実績0のため率は算出不可）`;
+      return [`将来推計 2025→${Y}年`, v, sub];
+    })(),
     ...(r.lv === "nation" || !f || f.resBase == null ? [] : (() => {
       const d = f.o - f.resBase, ratio = f.resBase ? f.o / f.resBase * 100 : null;
       const lab = d >= 0 ? "流入超過の目安" : "流出・地域外受療の目安";
@@ -313,6 +324,7 @@ function renderKpis() {
         `${lab}：実績 ${fmt(f.o)}／住民ベース需要 ${fmt(f.resBase)}（実績は需要の${fmt(ratio, 0)}%）`]];
     })()),
   ].map(([k, v, s2]) => `<div class="kpi"><div class="k">${k}</div><div class="v">${v}</div><div class="s">${s2}</div></div>`).join("");
+  renderCtlSummary();
 }
 
 function renderTrend() {
@@ -600,6 +612,17 @@ function trendRates(m, Y, base) {
   const t = +Y - (+base + 1), k = S.k / 100;
   return m.rateBase.map((r, i) => Math.max(0, r + m.slope[i] * k * t));
 }
+// 年平均成長率（CAGR）
+function cagr(a, b, n) { return a > 0 && b != null && b >= 0 && n > 0 ? (Math.pow(b / a, 1 / n) - 1) * 100 : null; }
+const pcs = (v, d = 1) => v == null || !isFinite(v) ? "–" : (v >= 0 ? "+" : "−") + fmt(Math.abs(v), d) + "%";
+// 実績の年平均成長率（基準年度の5年度前から。医療圏は秘匿の多い年度を除く）
+function pastCagr(r, base) {
+  const ys = yearsOf(r.lv === "area" ? "area" : "pref").filter((y) => +y >= +base - 5 && +y <= +base && (r.lv !== "area" || areaYearOK(y)));
+  const pts = ys.map((y) => [y, obs(r, y)]).filter(([, v]) => v != null && v > 0);
+  if (pts.length < 2) return null;
+  const [y0, v0] = pts[0], [y1, v1] = pts[pts.length - 1];
+  return y0 === y1 ? null : { from: y0, to: y1, v0, v1, g: cagr(v0, v1, +y1 - +y0) };
+}
 function futureSeries(r) {
   const ysR = yearsOf(r.lv === "area" ? "area" : "pref"), ysS = yearsOf("sa");
   const base = ysR.filter((y) => ysS.includes(y) && (r.lv !== "area" || areaYearOK(y))).pop();
@@ -647,6 +670,8 @@ function renderFuture() {
     ? `過去トレンド：全国の年齢調整算定率は ${fy(t.from)}→${fy(t.to)} に人口千人あたり ${fmt(t.r0, 3)}→${fmt(t.r1, 3)}（年平均 ${t.g >= 0 ? "+" : ""}${fmt(t.g, 1)}%、2025年人口で標準化）。`
     : "") + (tm ? `性・年齢階級別（38区分）に ${fy(tm.from)}〜${fy(tm.to)} の${tm.n}年度分の算定率から回帰直線の傾きを求め、${S.k === 100 ? "" : `その${S.k}%の傾きで`}延長しています。`
     : "性・年齢別データが3年度分以上ない項目のため、トレンド延長は算定率一定と同じ値になります。");
+  $("#cagrTo").value = S.ty;
+  renderCagrTiles(r, f);
   if (!f) { chart("cFut").clear(); chart("cFutIdx").clear(); $("#futNote").textContent = "推計に必要なデータがありません。"; return; }
   const xl = [fy(f.base) + "実績", ...FUT_YEARS.map((y) => y + "年")];
   const lab = (dp) => ({ show: true, position: "top", color: T.text2, fontSize: 10, formatter: (d) => d.value == null ? "" : fmt(d.value, dp) });
@@ -692,6 +717,39 @@ function renderFuture() {
     `${G.id}_${r.short}_将来推計`, `トレンド延長：性・年齢階級別の算定率を過去トレンドの${S.k}%で直線延長`);
 }
 
+function renderCagrTiles(r, f) {
+  const box = $("#cagrTiles");
+  if (!f) { box.innerHTML = `<div class="cagr"><div class="s">推計に必要なデータがありません。</div></div>`; return; }
+  const Y = S.ty, n = +Y - 2025, past = pastCagr(r, f.base), reg = r.lv !== "nation";
+  const tile = (cls, mk, label, g, sub) => `<div class="cagr ${cls}"><div class="k">${mk}${label}</div><div class="v">${pcs(g)}<small>／年</small></div><div class="s">${sub}</div></div>`;
+  const fc = (v, base) => `${Y}年 ${fmt(v)}回（2025年比 ${base ? pc((v / base - 1) * 100) : "–"}）`;
+  const pc = (v) => pcs(v);
+  const t = [];
+  t.push(tile("past", `<span class="mk bar c0"></span>`, past ? `実績 ${fy(past.from)}→${fy(past.to)}` : "実績",
+    past?.g, past ? `${fmt(past.v0)} → ${fmt(past.v1)}回` : "比較できる年度がありません"));
+  t.push(tile("", `<span class="mk bar c1"></span>`, reg ? "実績ベース・算定率一定" : "算定率一定", cagr(f.proj["2025"], f.proj[Y], n), fc(f.proj[Y], f.proj["2025"])));
+  t.push(tile("", `<span class="mk bar c2"></span>`, `${reg ? "実績ベース・" : ""}トレンド延長（${S.k}%）`, cagr(f.projB["2025"], f.projB[Y], n), fc(f.projB[Y], f.projB["2025"])));
+  if (reg) {
+    const z = !f.o;
+    t.push(tile("", `<span class="mk dia c1"></span>`, "住民ベース・算定率一定", z ? null : cagr(f.o, f.res[Y], n), z ? `${Y}年 ${fmt(f.res[Y])}回（実績0のため率は算出不可）` : fc(f.res[Y], f.o)));
+    t.push(tile("", `<span class="mk dia c2"></span>`, `住民ベース・トレンド延長（${S.k}%）`, z ? null : cagr(f.o, f.resB[Y], n), z ? `${Y}年 ${fmt(f.resB[Y])}回（実績0のため率は算出不可）` : fc(f.resB[Y], f.o)));
+  }
+  box.innerHTML = t.join("");
+}
+
+/* ---------- スマホ：条件欄の折りたたみ ---------- */
+const mqMobile = window.matchMedia("(max-width: 700px)");
+function setControls(open) {
+  $("#controls").classList.toggle("collapsed", !open);
+  $("#ctlToggle").setAttribute("aria-expanded", String(open));
+  $("#ctlToggle").textContent = open ? "閉じる" : "条件を変更";
+}
+window.ndbControls = (open) => { if (mqMobile.matches) setControls(open); };
+function renderCtlSummary() {
+  const meta = D.index && D.index.find((x) => x.id === S.item), r = region();
+  $("#ctlSum").innerHTML = `<b>${meta ? (meta.id.includes(":") ? "" : meta.id + " ") + meta.n : ""}</b><br><span class="muted">${r.name}｜${SETTING_LAB[S.setting]}｜${DENOM[S.denom].lab}</span>`;
+}
+
 /* ---------- 表とCSV ---------- */
 function table(key, head, rows, fname, cap = "") {
   const el = $("#tbl-" + key);
@@ -710,7 +768,7 @@ function writeHash() {
   const p = new URLSearchParams();
   p.set("i", S.item); if (S.pref) p.set("p", S.pref); if (S.area) p.set("a", S.area);
   if (S.setting !== "all") p.set("s", S.setting); p.set("d", S.denom); if (S.cmpMetric !== "rate") p.set("m", S.cmpMetric);
-  if (S.k !== 100) p.set("k", S.k);
+  if (S.k !== 100) p.set("k", S.k); if (S.ty !== "2040") p.set("ty", S.ty);
   const x = [...S.excl].filter((k) => G?.codes[k]); if (x.length) p.set("x", x.join("."));
   history.replaceState(null, "", "#" + p.toString());
 }
@@ -753,6 +811,7 @@ function readHash() {
   S.item = p.get("i") || S.item; S.pref = p.get("p") || ""; S.area = p.get("a") || ""; S.setting = p.get("s") || "all";
   S.denom = p.get("d") || S.denom; S.cmpMetric = p.get("m") || "rate";
   S.excl = new Set((p.get("x") || "").split(".").filter(Boolean));
+  S.ty = ["2030", "2035", "2040", "2045", "2050"].includes(p.get("ty")) ? p.get("ty") : "2040";
   S.k = p.get("k") != null && !isNaN(+p.get("k")) ? Math.max(0, Math.min(150, +p.get("k"))) : 100;
 }
 

@@ -21,7 +21,12 @@
   </div>
 </header>
 
-<section class="controls wrap" aria-label="条件">
+<section class="controls wrap" id="controls" aria-label="条件">
+  <div class="ctl-bar">
+    <div class="ctl-sum" id="ctlSum"></div>
+    <button type="button" id="ctlToggle" class="btn-help ghost" aria-expanded="true" aria-controls="ctlBody">閉じる</button>
+  </div>
+  <div class="ctl-body" id="ctlBody">
   <div class="ctl ctl-item">
     <label for="itemSearch">診療行為（分類） <button type="button" class="q" data-help="item" aria-label="診療行為の選び方">?</button></label>
     <div class="search">
@@ -45,6 +50,7 @@
   <div class="ctl">
     <label for="denom">人口あたりの分母 <button type="button" class="q" data-help="denom" aria-label="分母の説明">?</button></label>
     <select id="denom"><option value="t">総人口</option><option value="65">65歳以上人口</option><option value="75">75歳以上人口</option></select>
+  </div>
   </div>
 </section>
 
@@ -124,6 +130,11 @@
       <h2>将来推計 <button type="button" class="q" data-help="fut" aria-label="将来推計の説明">?</button><span class="sub" id="futTitle"></span></h2>
       <button class="link" data-table="fut" type="button">表で見る</button>
     </div>
+    <div class="cagr-head">
+      <h3 class="h3">年平均成長率（CAGR） <button type="button" class="q" data-help="cagr" aria-label="年平均成長率の説明">?</button></h3>
+      <label>推計期間 2025年 → <select id="cagrTo"><option>2030</option><option>2035</option><option selected>2040</option><option>2045</option><option>2050</option></select>年</label>
+    </div>
+    <div class="cagr-tiles" id="cagrTiles"></div>
     <div class="scen">
       <div class="scen-a"><span class="sw sw-a"></span><b>算定率一定</b>：最新年度の性・年齢別算定率のまま、人口構成の変化だけを反映</div>
       <div class="scen-b"><span class="sw sw-b"></span><b>トレンド延長</b>：性・年齢階級別の算定率が、過去の増加幅（回帰直線の傾き）のまま直線的に変化すると仮定し、各年の推計人口に掛けて算出。過去トレンドの
