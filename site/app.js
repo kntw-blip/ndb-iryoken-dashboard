@@ -48,6 +48,35 @@ function axisY(T, extra = {}) {
   return Object.assign({ type: "value", splitLine: { lineStyle: { color: T.grid } }, axisLabel: { color: T.text2,
     formatter: (v) => Math.abs(v) >= 10000 ? (v / 10000).toLocaleString("ja-JP") + "万" : v.toLocaleString("ja-JP") } }, extra);
 }
+// 凡例はグラフの外（上）にHTMLで表示（重なり防止）。クリックで表示・非表示を切替
+const LEG_OFF = { show: false };
+function applyLegend(id, rename = {}) {
+  const c = charts[id], el = document.getElementById(id); if (!c || !el) return;
+  let box = document.getElementById("lg_" + id);
+  if (!box) { box = document.createElement("div"); box.className = "lg"; box.id = "lg_" + id; el.insertAdjacentElement("beforebegin", box); }
+  const groups = [];
+  for (const s of c.getOption().series || []) {
+    if (!s.name) continue;
+    const key = s.name.trim(), g = groups.find((x) => x.key === key);
+    if (g) { g.names.push(s.name); continue; }
+    const color = s.itemStyle?.color || s.lineStyle?.color || "#888";
+    const dash = s.lineStyle?.type === "dashed" ? "4 3" : s.lineStyle?.type === "dotted" ? "1.5 2.5" : "";
+    let sw;
+    if (s.type === "bar") sw = `<rect x="5" y="1" width="12" height="10" rx="2" fill="${color}"/>`;
+    else {
+      const mk = s.symbol === "none" ? "" : s.symbol === "diamond" ? `<rect x="7.5" y="2.5" width="7" height="7" fill="${color}" transform="rotate(45 11 6)"/>` : `<circle cx="11" cy="6" r="3.5" fill="${color}"/>`;
+      sw = `<line x1="1" y1="6" x2="21" y2="6" stroke="${color}" stroke-width="2" ${dash ? `stroke-dasharray="${dash}"` : ""}/>${mk}`;
+    }
+    groups.push({ key, names: [s.name], label: rename[key] || key, sw });
+  }
+  box.hidden = groups.length < 2;
+  box.innerHTML = groups.map((g, i) => `<button type="button" class="lg-i" data-i="${i}" aria-pressed="true"><svg width="22" height="12" aria-hidden="true">${g.sw}</svg>${g.label}</button>`).join("");
+  box.querySelectorAll(".lg-i").forEach((b) => (b.onclick = () => {
+    groups[+b.dataset.i].names.forEach((n) => c.dispatchAction({ type: "legendToggleSelect", name: n }));
+    const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", String(on));
+  }));
+}
+const narrow = (id) => (document.getElementById(id)?.clientWidth || 999) < 520;
 const lineS = (name, data, color, extra = {}) => Object.assign({ name, type: "line", data, connectNulls: false, symbol: "circle", symbolSize: 8,
   lineStyle: { width: 2, color }, itemStyle: { color, borderColor: "transparent" } }, extra);
 
@@ -354,12 +383,12 @@ function renderTrend() {
   if (r.lv !== "nation") ser.push(lineS("全国", rn, T.s2, { lineStyle: { width: 2, color: T.s2, type: "dashed" } }));
   if (rp) ser.push(lineS(pr.short, rp, T.s3, { lineStyle: { width: 2, color: T.s3, type: "dotted" } }));
   chart("cRate").setOption(Object.assign(baseOpt(T), {
-    legend: ser.length > 1 ? { top: 0, right: 0, textStyle: { color: T.text2 }, itemWidth: 18 } : undefined,
-    grid: { left: 52, right: 16, top: ser.length > 1 ? 30 : 24, bottom: 32 },
+    legend: LEG_OFF, grid: { left: 52, right: 16, top: 24, bottom: 32 },
     xAxis: axisX(T, xl), yAxis: axisY(T, { scale: false }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 2) }),
     series: ser,
   }), true);
+  applyLegend("cRate");
   // 年齢調整比（SCR）の推移
   const sr = ys.map((y) => ysR.includes(y) ? scr(r, y) : null);
   const sp = pr ? ys.map((y) => scr(pr, y)) : null;
@@ -370,13 +399,13 @@ function renderTrend() {
     label: { formatter: "全国＝100", color: T.text2, position: "insideEndTop" }, data: [{ yAxis: 100 }] };
   const sv = [...sr, ...(sp || [])].filter((v) => v != null);
   chart("cScr").setOption(Object.assign(baseOpt(T), {
-    legend: sser.length > 1 ? { top: 0, right: 0, textStyle: { color: T.text2 }, itemWidth: 18 } : undefined,
-    grid: { left: 52, right: 16, top: sser.length > 1 ? 30 : 24, bottom: 32 },
+    legend: LEG_OFF, grid: { left: 52, right: 16, top: 24, bottom: 32 },
     xAxis: axisX(T, xl), yAxis: axisY(T, { min: sv.length ? Math.max(0, Math.floor(Math.min(90, ...sv) / 10) * 10) : 0,
       max: sv.length ? Math.ceil(Math.max(110, ...sv) / 10) * 10 : 200 }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }),
     series: sser,
   }), true);
+  applyLegend("cScr");
   $("#scrNote").textContent = r.lv === "nation"
     ? "全国は定義上つねに100です。都道府県または医療圏を選ぶと推移を表示します。"
     : "性・年齢構成の違いを除いた全国比。各年度の全国の性・年齢別算定率を基準にしているため、全国全体の増減ではなく「全国に対する相対的な水準」の変化を示します。";
@@ -502,17 +531,19 @@ function renderSexAge() {
   $("#saYearLab").textContent = y ? `${fy(y)}｜${SETTING_LAB[S.setting]}` : "データなし";
   const m = sa ? sa.slice(0, 19) : [], f = sa ? sa.slice(19) : [], t = sa ? m.map((v, i) => v + f[i]) : [];
   const rm = np ? m.map((v, i) => rate(v, np[i])) : [], rf = np ? f.map((v, i) => rate(v, np[19 + i])) : [];
-  const leg = { top: 0, right: 0, textStyle: { color: T.text2 }, itemWidth: 18 };
-  chart("cSa").setOption(Object.assign(baseOpt(T), { legend: leg, grid: { left: 64, right: 16, top: 30, bottom: 40 },
+  const leg = LEG_OFF;
+  chart("cSa").setOption(Object.assign(baseOpt(T), { legend: leg, grid: { left: 64, right: 16, top: 16, bottom: 40 },
     xAxis: Object.assign(axisX(T, BANDS), { axisLabel: { color: T.text2, rotate: 45, fontSize: 10 } }), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v) }),
     series: [{ name: "男性", type: "bar", data: m, itemStyle: { color: T.s1, borderRadius: [4, 4, 0, 0] }, barGap: "8%" },
       { name: "女性", type: "bar", data: f, itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] } },
       lineS("合計", t, T.s3, { symbolSize: 6 })] }), true);
-  chart("cSaRate").setOption(Object.assign(baseOpt(T), { legend: leg, grid: { left: 52, right: 16, top: 30, bottom: 40 },
+  applyLegend("cSa");
+  chart("cSaRate").setOption(Object.assign(baseOpt(T), { legend: leg, grid: { left: 52, right: 16, top: 16, bottom: 40 },
     xAxis: Object.assign(axisX(T, BANDS), { axisLabel: { color: T.text2, rotate: 45, fontSize: 10 } }), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 2) }),
     series: [lineS("男性", rm, T.s1), lineS("女性", rf, T.s2)] }), true);
+  applyLegend("cSaRate");
   const regs = renderPyramids(y);
   table("sa", ["年齢階級", "算定回数 男性", "算定回数 女性", "算定回数 合計", "男性 千人あたり", "女性 千人あたり",
     ...regs.flatMap((r) => [`${r.short} 人口 男性`, `${r.short} 人口 女性`])],
@@ -559,8 +590,8 @@ function renderPyramids(y) {
     const amax = mode === "pct" ? xmax : Math.max(...r.v) * 1.05;
     chart("pyr_" + i).setOption({
       animation: false, textStyle: { fontFamily: getComputedStyle(document.body).fontFamily, color: T.text2 },
-      legend: { top: 0, left: "center", textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 14, data: ["男性", "女性", ...(series.length > 2 ? ["全国の構成比"] : [])] },
-      grid: { left: 44, right: 12, top: 28, bottom: 26 },
+      legend: LEG_OFF,
+      grid: { left: 44, right: 12, top: 10, bottom: 26 },
       tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: T.surface, borderColor: T.grid, textStyle: { color: T.text, fontSize: 12 },
         formatter: (ps) => { const k = ps[0].dataIndex; return `<b>${BANDS[k]}歳</b><br>男性 ${fmt(r.v[k])}人（${fmt(sh[k], 2)}%）` +
           `<br>女性 ${fmt(r.v[19 + k])}人（${fmt(sh[19 + k], 2)}%）` + (i > 0 && nat ? `<br><span style="color:${T.text2}">全国 男性 ${fmt(nat[k], 2)}%／女性 ${fmt(nat[19 + k], 2)}%</span>` : ""); } },
@@ -569,6 +600,7 @@ function renderPyramids(y) {
       yAxis: { type: "category", data: BANDS, axisTick: { show: false }, axisLine: { lineStyle: { color: T.grid } }, axisLabel: { color: T.text2, fontSize: 10, interval: 1 } },
       series,
     }, true);
+    applyLegend("pyr_" + i);
   });
   $("#pyrNote").textContent = mode === "pct"
     ? "構成比は各地域の総人口に占める割合で、全地域とも同じ目盛りです。点線は全国の構成比で、点線より棒が長い年代はその地域で割合が高い年代です。"
@@ -672,28 +704,33 @@ function renderFuture() {
     : "性・年齢別データが3年度分以上ない項目のため、トレンド延長は算定率一定と同じ値になります。");
   $("#cagrTo").value = S.ty;
   renderCagrTiles(r, f);
-  if (!f) { chart("cFut").clear(); chart("cFutIdx").clear(); $("#futNote").textContent = "推計に必要なデータがありません。"; return; }
-  const xl = [fy(f.base) + "実績", ...FUT_YEARS.map((y) => y + "年")];
-  const lab = (dp) => ({ show: true, position: "top", color: T.text2, fontSize: 10, formatter: (d) => d.value == null ? "" : fmt(d.value, dp) });
+  if (!f) {
+    chart("cFut").clear(); chart("cFutIdx").clear();
+    ["lg_cFut", "lg_cFutIdx"].forEach((id) => { const e = document.getElementById(id); if (e) e.hidden = true; });
+    $("#futNote").textContent = "推計に必要なデータがありません（選択地域の値が秘匿されている、または医療圏別の公表値の多くが秘匿されている項目です）。"; return;
+  }
+  // 数値ラベルは重なるため表示しない（年平均成長率のタイル・ツールチップ・表で確認）
+  const nw = narrow("cFut");
+  const xl = [nw ? "実績" : fy(f.base) + "実績", ...FUT_YEARS.map((y) => nw ? y : y + "年")];
+  const xAx = (d) => Object.assign(axisX(T, d), { axisLabel: { color: T.text2, interval: 0, fontSize: nw ? 10 : 12 } });
   chart("cFut").setOption(Object.assign(baseOpt(T), {
-    legend: { top: 0, left: 0, textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 14,
-      formatter: (n) => ({ "算定率一定": "実績ベース・算定率一定", "トレンド延長": "実績ベース・トレンド延長" }[n] || n) },
-    grid: { left: 64, right: 16, top: r.lv === "nation" ? 30 : 54, bottom: 32 }, xAxis: axisX(T, xl), yAxis: axisY(T),
+    legend: LEG_OFF,
+    grid: { left: nw ? 46 : 64, right: 12, top: 16, bottom: 28 }, xAxis: xAx(xl), yAxis: axisY(T),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v) }),
     series: [
       { name: "算定率一定", type: "bar", barMaxWidth: 22, barGap: "10%", data: [{ value: f.o, itemStyle: { color: T.muted } }, ...FUT_YEARS.map((y) => f.proj[y])],
-        itemStyle: { color: T.s1, borderRadius: [4, 4, 0, 0] }, label: lab(0) },
+        itemStyle: { color: T.s1, borderRadius: [4, 4, 0, 0] } },
       { name: "トレンド延長", type: "bar", barMaxWidth: 22, data: [null, ...FUT_YEARS.map((y) => f.projB[y])],
-        itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] },
-        label: Object.assign(lab(0), { formatter: (d) => d.value == null || (d.dataIndex === 1 && FUT_YEARS[0] === "2025" && Math.round(d.value) === Math.round(f.proj["2025"])) ? "" : fmt(d.value) }) },
+        itemStyle: { color: T.s2, borderRadius: [4, 4, 0, 0] } },
       ...(r.lv === "nation" ? [] : [
         lineS("住民ベース・算定率一定", [f.o, ...FUT_YEARS.map((y) => f.res[y])], T.s1, { lineStyle: { width: 2, color: T.s1, type: "dashed" }, symbol: "diamond", symbolSize: 9, z: 5 }),
         lineS("住民ベース・トレンド延長", [f.o, ...FUT_YEARS.map((y) => f.resB[y])], T.s2, { lineStyle: { width: 2, color: T.s2, type: "dashed" }, symbol: "diamond", symbolSize: 9, z: 5 }),
       ]),
     ] }), true);
+  applyLegend("cFut", r.lv === "nation" ? {} : { "算定率一定": "実績ベース・算定率一定", "トレンド延長": "実績ベース・トレンド延長" });
   const ser = [
-    lineS(`${r.short}・${r.lv === "nation" ? "" : "実績ベース・"}算定率一定`, FUT_YEARS.map((y) => f.idx[y]), T.s1, { label: lab(1) }),
-    lineS(`${r.short}・${r.lv === "nation" ? "" : "実績ベース・"}トレンド延長`, FUT_YEARS.map((y) => f.idxB[y]), T.s2, { label: lab(1) }),
+    lineS(`${r.short}・${r.lv === "nation" ? "" : "実績ベース・"}算定率一定`, FUT_YEARS.map((y) => f.idx[y]), T.s1),
+    lineS(`${r.short}・${r.lv === "nation" ? "" : "実績ベース・"}トレンド延長`, FUT_YEARS.map((y) => f.idxB[y]), T.s2),
   ];
   if (r.lv !== "nation" && f.o) {
     const dl = (c) => ({ lineStyle: { width: 2, color: c, type: "dashed" }, symbol: "diamond", symbolSize: 8 });
@@ -703,9 +740,10 @@ function renderFuture() {
   if (fn) ser.push(lineS("全国・算定率一定", FUT_YEARS.map((y) => fn.idx[y]), T.s3, { lineStyle: { width: 2, color: T.s3, type: "dashed" } }));
   const fp = pr ? futureSeries(pr) : null;
   if (fp) ser.push(lineS(`${pr.short}・算定率一定`, FUT_YEARS.map((y) => fp.idx[y]), T.s4, { lineStyle: { width: 2, color: T.s4, type: "dotted" } }));
-  chart("cFutIdx").setOption(Object.assign(baseOpt(T), { legend: { top: 0, left: 0, textStyle: { color: T.text2, fontSize: 11 }, itemWidth: 16 },
-    grid: { left: 52, right: 16, top: ser.length > 4 ? 76 : ser.length > 2 ? 52 : 30, bottom: 32 }, xAxis: axisX(T, FUT_YEARS.map((y) => y + "年")), yAxis: axisY(T, { scale: true }),
+  chart("cFutIdx").setOption(Object.assign(baseOpt(T), { legend: LEG_OFF,
+    grid: { left: nw ? 40 : 52, right: 12, top: 16, bottom: 28 }, xAxis: xAx(FUT_YEARS.map((y) => nw ? y : y + "年")), yAxis: axisY(T, { scale: true }),
     tooltip: Object.assign(baseOpt(T).tooltip, { valueFormatter: (v) => fmt(v, 1) }), series: ser }), true);
+  applyLegend("cFutIdx");
   $("#futNote").textContent = (r.lv === "nation" ? "" : `棒＝実績ベース（実績 × 人口構成による増減率。流入している患者も同じ割合で増減すると仮定）。ひし形の点線＝住民ベース（起点は実績、増減は「その地域の住民の人口変化 × 全国の性・年齢別算定率」の分だけ。地域差がないと仮定し、流入・流出の量は一定と仮定）。`) +
     `基準：${fy(f.base)}の実績と全国の性・年齢階級別算定率。将来人口は社人研 令和5年推計（各年10月1日）。トレンド延長は性・年齢階級別の算定率が過去の回帰直線の傾き（×${S.k}%）で直線的に変化すると仮定し、各年の推計人口に掛けて算出。指数は2025年＝100（トレンド延長も同シナリオの2025年値＝100）。`;
   const rb = r.lv !== "nation";

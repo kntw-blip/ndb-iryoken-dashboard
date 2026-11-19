@@ -193,3 +193,9 @@ thead th{position:sticky;top:0;background:var(--surface-1);color:var(--text-seco
   .cagr .k{font-size:11px}
   .cagr .s{font-size:11px}
 }
+/* ---------- 凡例（グラフの外） ---------- */
+.lg{display:flex;flex-wrap:wrap;gap:4px 12px;margin:6px 0 2px}
+.lg-i{display:inline-flex;align-items:center;gap:5px;border:none;background:none;padding:2px 0;font-size:12px;color:var(--text-secondary);cursor:pointer;text-align:left}
+.lg-i[aria-pressed=false]{opacity:.4;text-decoration:line-through}
+.lg-i svg{flex:none}
+@media (max-width:700px){.lg{gap:2px 10px}.lg-i{font-size:11px}}
